@@ -20,6 +20,13 @@ let package = Package(
             resources: [
                 .process("Resources/cards.json")
             ]
+        ),
+        .testTarget(
+            name: "FamousPeersCoreTests",
+            dependencies: ["FamousPeersCore"],
+            resources: [
+                .process("Resources/test-cards.json")
+            ]
         )
     ]
 )

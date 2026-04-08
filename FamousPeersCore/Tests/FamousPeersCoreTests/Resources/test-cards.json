@@ -1,0 +1,6 @@
+[
+  {"id": 1, "category": "music", "duoName": "Simon & Garfunkel", "member1": "Paul Simon", "member1Points": 1, "member2": "Art Garfunkel", "member2Points": 2, "hint": "Classic 1960s folk duo"},
+  {"id": 2, "category": "music", "duoName": "Steely Dan", "member1": "Donald Fagen", "member1Points": 1, "member2": "Walter Becker", "member2Points": 3, "hint": "Jazz-rock duo, 1970s"},
+  {"id": 3, "category": "movies", "duoName": "Lethal Weapon", "member1": "Mel Gibson", "member1Points": 1, "member2": "Danny Glover", "member2Points": 2, "hint": "Action buddy cop series"},
+  {"id": 4, "category": "tech", "duoName": "Apple", "member1": "Steve Jobs", "member1Points": 1, "member2": "Steve Wozniak", "member2Points": 2, "hint": "Apple founders"}
+]

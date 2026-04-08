@@ -12,6 +12,7 @@ struct TVGameView: View {
     @State private var isCorrect = false
     @State private var waitingForAnswer = false
     @State private var answerTimeout: Timer?
+    @State private var soundManager = SoundManager.shared
     
     var onGameEnd: () -> Void
     
@@ -34,7 +35,7 @@ struct TVGameView: View {
             if let round = gameLogic.currentRound {
                 VStack(spacing: 32) {
                     VStack(spacing: 16) {
-                        Text("\(round.guesser.name), guess the pair!")
+                        Text("\(round.guesser.name), guess the other member!")
                             .font(.system(size: 44, weight: .semibold))
                             .foregroundColor(.white)
                         
@@ -46,20 +47,31 @@ struct TVGameView: View {
                         }
                     }
                     
-                    Text(round.clue)
-                        .font(.system(size: 96, weight: .bold))
-                        .foregroundColor(.yellow)
-                        .padding(60)
-                        .background(Color.blue.opacity(0.2))
-                        .cornerRadius(24)
-                        .popIn()
+                    VStack(spacing: 24) {
+                        Text(round.duoName)
+                            .font(.system(size: 80, weight: .bold))
+                            .foregroundColor(.cyan)
+                        
+                        Text("Given:")
+                            .font(.system(size: 32))
+                            .foregroundColor(.gray)
+                        
+                        Text(round.readMember)
+                            .font(.system(size: 72, weight: .semibold))
+                            .foregroundColor(.green)
+                            .padding(40)
+                            .background(Color.green.opacity(0.2))
+                            .cornerRadius(20)
+                            .popIn()
+                    }
                     
                     if showResult {
                         TVResultCard(
                             isCorrect: isCorrect,
                             message: resultMessage,
                             pointsAwarded: round.pointsAwarded,
-                            submittedAnswer: lastSubmittedAnswer
+                            submittedAnswer: lastSubmittedAnswer,
+                            correctAnswer: round.correctAnswer
                         )
                         .popIn()
                     }
@@ -89,7 +101,7 @@ struct TVGameView: View {
     
     private func handleNetworkMessage(_ message: GameMessage) {
         switch message {
-        case .answerSubmitted(let answer, let playerId):
+        case .answerSubmitted(let answer, _):
             handleAnswerSubmission(answer)
             
         default:
@@ -110,10 +122,9 @@ struct TVGameView: View {
             return
         }
         
-        // Broadcast round start to all connected players
         networkCoordinator.broadcastRoundStart(
             duoId: round.duoId,
-            clue: round.clue,
+            clue: round.readMember,
             guesserName: round.guesser.name
         )
         
@@ -121,7 +132,6 @@ struct TVGameView: View {
         waitingForAnswer = true
         lastSubmittedAnswer = ""
         
-        // Set 30-second timeout for answer
         answerTimeout?.invalidate()
         answerTimeout = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { _ in
             if waitingForAnswer {
@@ -137,22 +147,25 @@ struct TVGameView: View {
         waitingForAnswer = false
         lastSubmittedAnswer = answer
         
-        // Check answer
         isCorrect = gameLogic.submitAnswer(answer)
         resultMessage = isCorrect ? "Correct! 🎉" : "Incorrect ❌"
         
-        // Broadcast result to all players
+        if isCorrect {
+            soundManager.playCorrectSound()
+        } else {
+            soundManager.playIncorrectSound()
+        }
+        
         networkCoordinator.broadcastRoundResult(
             isCorrect: isCorrect,
             pointsAwarded: round.pointsAwarded,
-            correctAnswer: round.clue
+            correctAnswer: round.correctAnswer
         )
         
         withAnimation(AnimationConstants.spring) {
             showResult = true
         }
         
-        // Auto-advance to next round after 3 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             currentRoundIndex += 1
             startNextRound()
@@ -164,6 +177,8 @@ struct TVGameView: View {
         isCorrect = false
         resultMessage = "Time's up! ⏱️"
         lastSubmittedAnswer = "(No answer)"
+        
+        soundManager.playIncorrectSound()
         
         withAnimation(AnimationConstants.spring) {
             showResult = true
@@ -186,6 +201,7 @@ struct TVResultCard: View {
     let message: String
     let pointsAwarded: Int
     let submittedAnswer: String
+    let correctAnswer: String
     
     var body: some View {
         VStack(spacing: 24) {
@@ -193,9 +209,13 @@ struct TVResultCard: View {
                 .font(.system(size: 56, weight: .bold))
                 .foregroundColor(isCorrect ? .green : .red)
             
-            Text("Answer: \(submittedAnswer)")
+            Text("Guessed: \(submittedAnswer)")
                 .font(.system(size: 32))
                 .foregroundColor(.white)
+            
+            Text("Correct: \(correctAnswer)")
+                .font(.system(size: 32))
+                .foregroundColor(.cyan)
             
             if isCorrect {
                 Text("+\(pointsAwarded) points")

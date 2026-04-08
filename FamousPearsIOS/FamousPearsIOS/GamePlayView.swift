@@ -45,22 +45,33 @@ struct GamePlayView: View {
             } else if let round = gameLogic.currentRound {
                 VStack(spacing: 24) {
                     VStack(spacing: 12) {
-                        Text("\(round.guesser.name), guess the pair!")
+                        Text("\(round.guesser.name), guess the other member!")
                             .font(.headline)
                             .foregroundColor(.gray)
                         
-                        Text(round.clue)
-                            .font(.system(size: 44, weight: .bold))
+                        Text(round.duoName)
+                            .font(.system(size: 32, weight: .bold))
                             .foregroundColor(.blue)
                             .padding()
                             .background(Color.blue.opacity(0.1))
+                            .cornerRadius(12)
+                        
+                        Text("Given:")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        
+                        Text(round.readMember)
+                            .font(.system(size: 28, weight: .semibold))
+                            .foregroundColor(.green)
+                            .padding()
+                            .background(Color.green.opacity(0.1))
                             .cornerRadius(12)
                             .popIn()
                     }
                     
                     if !showResult {
                         VStack(spacing: 12) {
-                            TextField("Your answer", text: $answerText)
+                            TextField("Guess the other member", text: $answerText)
                                 .textFieldStyle(.roundedBorder)
                                 .font(.headline)
                                 .padding(.horizontal)
@@ -81,7 +92,8 @@ struct GamePlayView: View {
                         ResultCard(
                             isCorrect: isCorrect,
                             message: resultMessage,
-                            pointsAwarded: gameLogic.currentRound?.pointsAwarded ?? 0
+                            pointsAwarded: gameLogic.currentRound?.pointsAwarded ?? 0,
+                            correctAnswer: round.correctAnswer
                         )
                         .popIn()
                         
@@ -134,13 +146,10 @@ struct GamePlayView: View {
     
     private func handleNetworkMessage(_ message: GameMessage) {
         switch message {
-        case .roundStarted(let duoId, let clue, let guesserName):
-            // Host sent us a new round
-            let round = gameLogic.startNewRound(askerIndex: 0)
+        case .roundStarted:
             waitingForHost = false
             
-        case .roundResult(let isCorrect, let points, let answer):
-            // Host sent us the result
+        case .roundResult(let isCorrect, let points, _):
             self.isCorrect = isCorrect
             self.resultMessage = isCorrect ? "Correct! 🎉" : "Incorrect ❌"
             
@@ -155,7 +164,7 @@ struct GamePlayView: View {
                 }
             }
             
-        case .gameEnded(let leaderboard):
+        case .gameEnded:
             onGameEnd()
             
         default:
@@ -168,14 +177,12 @@ struct GamePlayView: View {
         self.isCorrect = isCorrect
         self.resultMessage = isCorrect ? "Correct! 🎉" : "Incorrect ❌"
         
-        // Play sound and haptic feedback
         if isCorrect {
             soundManager.playCorrectSound()
         } else {
             soundManager.playIncorrectSound()
         }
         
-        // Broadcast answer if multiplayer
         if isMultiplayer {
             networkCoordinator.broadcastAnswerSubmission(answerText, playerId: gameLogic.players.first?.id.uuidString ?? "")
         }
@@ -210,6 +217,7 @@ struct ResultCard: View {
     let isCorrect: Bool
     let message: String
     let pointsAwarded: Int
+    let correctAnswer: String
     
     var body: some View {
         VStack(spacing: 12) {
@@ -217,6 +225,10 @@ struct ResultCard: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .foregroundColor(isCorrect ? .green : .red)
+            
+            Text("Answer: \(correctAnswer)")
+                .font(.subheadline)
+                .foregroundColor(.gray)
             
             if isCorrect {
                 Text("+\(pointsAwarded) points")

@@ -46,7 +46,19 @@ public class GameLogic {
         }
         
         usedCardIds.insert(duo.id)
-        let round = GameRound(duoId: duo.id, asker: asker, guesser: guesser, clue: duo.member1)
+        
+        // Randomly pick which member to read
+        let readMember = duo.getRandomMember()
+        let correctAnswer = duo.getOtherMember(readMember)
+        
+        let round = GameRound(
+            duoId: duo.id,
+            asker: asker,
+            guesser: guesser,
+            duoName: duo.duoName,
+            readMember: readMember,
+            correctAnswer: correctAnswer
+        )
         currentRound = round
         state = .playing
         
@@ -54,16 +66,14 @@ public class GameLogic {
     }
     
     public func submitAnswer(_ answer: String) -> Bool {
-        guard let round = currentRound,
-              let duo = cardDatabase.getCard(id: round.duoId) else {
-            return false
-        }
+        guard let round = currentRound else { return false }
         
-        let isCorrect = Validator.checkAnswer(answer, against: duo.member2)
-        currentRound?.answer = answer
+        let isCorrect = Validator.checkAnswer(answer, against: round.correctAnswer)
+        currentRound?.submittedAnswer = answer
         currentRound?.isCorrect = isCorrect
         
         if isCorrect {
+            guard let duo = cardDatabase.getCard(id: round.duoId) else { return false }
             let points = duo.difficulty
             currentRound?.pointsAwarded = points
             

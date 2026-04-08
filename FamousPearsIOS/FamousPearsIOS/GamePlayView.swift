@@ -3,12 +3,15 @@ import FamousPearsCore
 
 struct GamePlayView: View {
     @ObservedReferencedObject var gameLogic: GameLogic
+    @StateObject private var networkCoordinator = NetworkGameCoordinator()
     @State private var answerText = ""
     @State private var currentRoundIndex = 0
     @State private var showResult = false
     @State private var resultMessage = ""
     @State private var isCorrect = false
     @State private var showNextButton = false
+    @State private var isMultiplayer = false
+    @State private var waitingForHost = false
     
     var onGameEnd: () -> Void
     
@@ -22,10 +25,23 @@ struct GamePlayView: View {
                 Text("Round \(gameLogic.rounds.count + 1)/\(gameLogic.maxRounds)")
                     .font(.caption)
                     .foregroundColor(.gray)
+                if isMultiplayer {
+                    Image(systemName: "network")
+                        .foregroundColor(.green)
+                }
             }
             .padding()
             
-            if let round = gameLogic.currentRound {
+            if waitingForHost {
+                VStack(spacing: 16) {
+                    ProgressView()
+                        .scaleEffect(1.5)
+                    Text("Waiting for host to start round...")
+                        .foregroundColor(.gray)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .popIn()
+            } else if let round = gameLogic.currentRound {
                 VStack(spacing: 24) {
                     VStack(spacing: 12) {
                         Text("\(round.guesser.name), guess the pair!")
@@ -64,21 +80,27 @@ struct GamePlayView: View {
                         ResultCard(
                             isCorrect: isCorrect,
                             message: resultMessage,
-                            pointsAwarded: round.pointsAwarded
+                            pointsAwarded: gameLogic.currentRound?.pointsAwarded ?? 0
                         )
                         .popIn()
                         
                         if showNextButton {
-                            Button(action: nextRound) {
-                                Text("Next Round")
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(8)
+                            if isMultiplayer {
+                                Text("Waiting for next round...")
+                                    .foregroundColor(.gray)
+                                    .slideIn(from: .bottom)
+                            } else {
+                                Button(action: nextRound) {
+                                    Text("Next Round")
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(8)
+                                }
+                                .padding(.horizontal)
+                                .slideIn(from: .bottom)
                             }
-                            .padding(.horizontal)
-                            .slideIn(from: .bottom)
                         }
                     }
                 }
@@ -98,12 +120,57 @@ struct GamePlayView: View {
             )
             .ignoresSafeArea()
         )
+        .onAppear {
+            setupNetworkHandling()
+        }
+    }
+    
+    private func setupNetworkHandling() {
+        networkCoordinator.onMessageReceived = { [weak self] message in
+            self?.handleNetworkMessage(message)
+        }
+    }
+    
+    private func handleNetworkMessage(_ message: GameMessage) {
+        switch message {
+        case .roundStarted(let duoId, let clue, let guesserName):
+            // Host sent us a new round
+            let round = gameLogic.startNewRound(askerIndex: 0)
+            waitingForHost = false
+            
+        case .roundResult(let isCorrect, let points, let answer):
+            // Host sent us the result
+            self.isCorrect = isCorrect
+            self.resultMessage = isCorrect ? "Correct! 🎉" : "Incorrect ❌"
+            
+            withAnimation(AnimationConstants.spring) {
+                showResult = true
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                withAnimation(AnimationConstants.easeInOut) {
+                    showNextButton = true
+                    waitingForHost = true
+                }
+            }
+            
+        case .gameEnded(let leaderboard):
+            onGameEnd()
+            
+        default:
+            break
+        }
     }
     
     private func submitAnswer() {
         let isCorrect = gameLogic.submitAnswer(answerText)
         self.isCorrect = isCorrect
         self.resultMessage = isCorrect ? "Correct! 🎉" : "Incorrect ❌"
+        
+        // Broadcast answer if multiplayer
+        if isMultiplayer {
+            networkCoordinator.broadcastAnswerSubmission(answerText, playerId: gameLogic.players.first?.id.uuidString ?? "")
+        }
         
         withAnimation(AnimationConstants.spring) {
             showResult = true

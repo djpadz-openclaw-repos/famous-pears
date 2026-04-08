@@ -1,0 +1,32 @@
+# Xcode
+.DS_Store
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.swiftpm/xcode/package.xcworkspace/xcuserdata/
+*.playground/playground.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+.swiftpm/
+
+# Build
+build/
+.build/
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+
+# Xcode
+*.pbxproj
+*.xcworkspace
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log

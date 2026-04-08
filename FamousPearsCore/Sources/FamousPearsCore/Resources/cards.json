@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "category": "music",
+    "member1": "Steely Dan",
+    "member2": "Donald Fagen",
+    "difficulty": 3,
+    "hint": "Jazz-rock duo, 1970s"
+  },
+  {
+    "id": 2,
+    "category": "music",
+    "member1": "The Black Keys",
+    "member2": "Dan Auerbach",
+    "difficulty": 2,
+    "hint": "Blues rock duo"
+  },
+  {
+    "id": 3,
+    "category": "music",
+    "member1": "Simon & Garfunkel",
+    "member2": "Paul Simon",
+    "difficulty": 1,
+    "hint": "Classic 1960s folk duo"
+  },
+  {
+    "id": 4,
+    "category": "music",
+    "member1": "Daft Punk",
+    "member2": "Thomas Bangalter",
+    "difficulty": 2,
+    "hint": "French electronic duo"
+  },
+  {
+    "id": 5,
+    "category": "movies",
+    "member1": "Laurel and Hardy",
+    "member2": "Stan Laurel",
+    "difficulty": 2,
+    "hint": "Silent film comedy duo"
+  },
+  {
+    "id": 6,
+    "category": "movies",
+    "member1": "Abbott and Costello",
+    "member2": "Bud Abbott",
+    "difficulty": 2,
+    "hint": "Classic comedy duo, 'Who's on First?'"
+  },
+  {
+    "id": 7,
+    "category": "movies",
+    "member1": "Cheech and Chong",
+    "member2": "Cheech Marin",
+    "difficulty": 2,
+    "hint": "Comedy duo, 1970s-80s"
+  },
+  {
+    "id": 8,
+    "category": "tech",
+    "member1": "Battery",
+    "member2": "Anode",
+    "difficulty": 3,
+    "hint": "Electrochemistry pair"
+  },
+  {
+    "id": 9,
+    "category": "tech",
+    "member1": "Steve Jobs",
+    "member2": "Steve Wozniak",
+    "difficulty": 1,
+    "hint": "Apple founders"
+  },
+  {
+    "id": 10,
+    "category": "tech",
+    "member1": "Bill Gates",
+    "member2": "Paul Allen",
+    "difficulty": 1,
+    "hint": "Microsoft founders"
+  },
+  {
+    "id": 11,
+    "category": "history",
+    "member1": "Lewis and Clark",
+    "member2": "Meriwether Lewis",
+    "difficulty": 2,
+    "hint": "American explorers, 1804"
+  },
+  {
+    "id": 12,
+    "category": "history",
+    "member1": "Bonnie and Clyde",
+    "member2": "Bonnie Parker",
+    "difficulty": 1,
+    "hint": "Notorious outlaws, 1930s"
+  },
+  {
+    "id": 13,
+    "category": "concepts",
+    "member1": "Yin and Yang",
+    "member2": "Yin",
+    "difficulty": 1,
+    "hint": "Chinese philosophy symbol"
+  },
+  {
+    "id": 14,
+    "category": "concepts",
+    "member1": "Cause and Effect",
+    "member2": "Cause",
+    "difficulty": 1,
+    "hint": "Logical relationship"
+  },
+  {
+    "id": 15,
+    "category": "music",
+    "member1": "The White Stripes",
+    "member2": "Jack White",
+    "difficulty": 2,
+    "hint": "Garage rock duo"
+  },
+  {
+    "id": 16,
+    "category": "music",
+    "member1": "Tears for Fears",
+    "member2": "Roland Orzabal",
+    "difficulty": 3,
+    "hint": "'Everybody Wants to Rule the World'"
+  },
+  {
+    "id": 17,
+    "category": "movies",
+    "member1": "Tango and Cash",
+    "member2": "Sylvester Stallone",
+    "difficulty": 2,
+    "hint": "1989 action film"
+  },
+  {
+    "id": 18,
+    "category": "movies",
+    "member1": "Lethal Weapon",
+    "member2": "Mel Gibson",
+    "difficulty": 1,
+    "hint": "Action buddy cop series"
+  },
+  {
+    "id": 19,
+    "category": "history",
+    "member1": "Romeo and Juliet",
+    "member2": "Romeo",
+    "difficulty": 1,
+    "hint": "Shakespeare's tragic lovers"
+  },
+  {
+    "id": 20,
+    "category": "tech",
+    "member1": "Sergey Brin",
+    "member2": "Larry Page",
+    "difficulty": 1,
+    "hint": "Google founders"
+  },
+  {
+    "id": 21,
+    "category": "music",
+    "member1": "Hall & Oates",
+    "member2": "Daryl Hall",
+    "difficulty": 2,
+    "hint": "Soul/pop duo, 'Rich Girl'"
+  },
+  {
+    "id": 22,
+    "category": "music",
+    "member1": "Pet Shop Boys",
+    "member2": "Neil Tennant",
+    "difficulty": 2,
+    "hint": "Synth-pop duo, 'West End Girls'"
+  },
+  {
+    "id": 23,
+    "category": "movies",
+    "member1": "Wayne's World",
+    "member2": "Wayne Campbell",
+    "difficulty": 2,
+    "hint": "SNL sketch turned movie"
+  },
+  {
+    "id": 24,
+    "category": "concepts",
+    "member1": "Salt and Pepper",
+    "member2": "Salt",
+    "difficulty": 1,
+    "hint": "Common seasonings"
+  },
+  {
+    "id": 25,
+    "category": "history",
+    "member1": "Cain and Abel",
+    "member2": "Cain",
+    "difficulty": 2,
+    "hint": "Biblical brothers"
+  },
+  {
+    "id": 26,
+    "category": "music",
+    "member1": "OutKast",
+    "member2": "André 3000",
+    "difficulty": 2,
+    "hint": "Hip-hop duo, 'Hey Ya Ya'"
+  },
+  {
+    "id": 27,
+    "category": "music",
+    "member1": "Run-DMC",
+    "member2": "Run",
+    "difficulty": 2,
+    "hint": "Hip-hop pioneers, 1980s"
+  },
+  {
+    "id": 28,
+    "category": "movies",
+    "member1": "Bad Boys",
+    "member2": "Will Smith",
+    "difficulty": 1,
+    "hint": "Action buddy cop franchise"
+  },
+  {
+    "id": 29,
+    "category": "tech",
+    "member1": "Mark Zuckerberg",
+    "member2": "Eduardo Saverin",
+    "difficulty": 2,
+    "hint": "Facebook co-founders"
+  },
+  {
+    "id": 30,
+    "category": "concepts",
+    "member1": "Peanut Butter and Jelly",
+    "member2": "Peanut Butter",
+    "difficulty": 1,
+    "hint": "Classic sandwich combo"
+  }
+]

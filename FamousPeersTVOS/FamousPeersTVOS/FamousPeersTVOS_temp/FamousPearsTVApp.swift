@@ -1,12 +1,11 @@
 import SwiftUI
-import FamousPearsCore
+import FamousPeersCore
 
 @main
-struct FamousPearsApp: App {
+struct FamousPeersTVApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(GameKitManager.shared)
+            TVContentView()
                 .environmentObject(MultipeerManager.shared)
         }
     }

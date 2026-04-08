@@ -2,20 +2,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "FamousPearsCore",
+    name: "FamousPeersCore",
     platforms: [
         .iOS(.v16),
         .tvOS(.v16)
     ],
     products: [
         .library(
-            name: "FamousPearsCore",
-            targets: ["FamousPearsCore"]
+            name: "FamousPeersCore",
+            targets: ["FamousPeersCore"]
         )
     ],
     targets: [
         .target(
-            name: "FamousPearsCore",
+            name: "FamousPeersCore",
             dependencies: [],
             resources: [
                 .process("Resources/cards.json")

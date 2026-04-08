@@ -1,5 +1,5 @@
 import SwiftUI
-import FamousPearsCore
+import FamousPeersCore
 
 struct ResultsView: View {
     let leaderboard: [Player]

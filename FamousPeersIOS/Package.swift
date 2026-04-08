@@ -2,18 +2,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "FamousPearsTVOS",
+    name: "FamousPeersIOS",
     platforms: [
-        .tvOS(.v16)
+        .iOS(.v16)
     ],
     dependencies: [
-        .package(path: "../FamousPearsCore")
+        .package(path: "../FamousPeersCore")
     ],
     targets: [
         .executableTarget(
-            name: "FamousPearsTVOS",
+            name: "FamousPeersIOS",
             dependencies: [
-                .product(name: "FamousPearsCore", package: "FamousPearsCore")
+                .product(name: "FamousPeersCore", package: "FamousPeersCore")
             ]
         )
     ]

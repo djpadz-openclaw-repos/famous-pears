@@ -1,5 +1,5 @@
 import SwiftUI
-import FamousPearsCore
+import FamousPeersCore
 
 struct ContentView: View {
     @State private var gameState: GameFlowState = .menu
@@ -91,7 +91,7 @@ struct DifficultySelectionView: View {
         VStack(spacing: 30) {
             HStack {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Famous Pears")
+                    Text("Famous Peers")
                         .font(.system(size: 48, weight: .bold))
                         .foregroundColor(.blue)
                     
@@ -152,7 +152,7 @@ struct DifficultyButton: View {
         switch difficulty {
         case .easy: return "Easy (1-2 pts)"
         case .medium: return "Medium (2-3 pts)"
-        case .hard: return "Hard (4-5 pts)"
+        case .hard: return "Hard (3-5 pts)"
         case .mixed: return "Mixed (All)"
         }
     }

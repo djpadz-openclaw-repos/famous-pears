@@ -1,36 +1,36 @@
-name: FamousPearsTVOS
+name: FamousPeersTVOS
 options:
-  bundleIdPrefix: com.famous-pears
+  bundleIdPrefix: com.famous-peers
   deploymentTarget:
     tvOS: "16.0"
   usesTabs: false
   indentWidth: 2
 
 packages:
-  FamousPearsCore:
-    path: ../FamousPearsCore
+  FamousPeersCore:
+    path: ../FamousPeersCore
 
 targets:
-  FamousPearsTVOS:
+  FamousPeersTVOS:
     type: application
     platform: tvOS
     deploymentTarget: "16.0"
     sources:
-      - path: FamousPearsTVOS
+      - path: FamousPeersTVOS
     dependencies:
-      - package: FamousPearsCore
+      - package: FamousPeersCore
     settings:
-      PRODUCT_NAME: FamousPearsTVOS
-      PRODUCT_BUNDLE_IDENTIFIER: com.famous-pears.tvos
+      PRODUCT_NAME: FamousPeersTVOS
+      PRODUCT_BUNDLE_IDENTIFIER: com.famous-peers.tvos
       CODE_SIGN_STYLE: Automatic
       DEVELOPMENT_TEAM: ""
       SWIFT_VERSION: "5.9"
       TVOS_DEPLOYMENT_TARGET: "16.0"
     schemes:
-      FamousPearsTVOS:
+      FamousPeersTVOS:
         build:
           targets:
-            FamousPearsTVOS: all
+            FamousPeersTVOS: all
         run:
           config: Debug
         test:

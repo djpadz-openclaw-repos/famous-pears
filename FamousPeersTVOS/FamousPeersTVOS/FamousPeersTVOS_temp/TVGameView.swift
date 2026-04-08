@@ -1,5 +1,5 @@
 import SwiftUI
-import FamousPearsCore
+import FamousPeersCore
 
 struct TVGameView: View {
     @ObservedReferencedObject var gameLogic: GameLogic

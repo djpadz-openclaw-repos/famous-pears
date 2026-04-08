@@ -1,5 +1,5 @@
 import SwiftUI
-import FamousPearsCore
+import FamousPeersCore
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss

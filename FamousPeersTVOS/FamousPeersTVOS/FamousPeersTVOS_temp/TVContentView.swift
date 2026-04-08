@@ -1,5 +1,5 @@
 import SwiftUI
-import FamousPearsCore
+import FamousPeersCore
 
 struct TVContentView: View {
     @State private var gameState: TVGameState = .menu

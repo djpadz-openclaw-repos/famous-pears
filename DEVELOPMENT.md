@@ -6,7 +6,7 @@ Famous Pears is a multiplayer iOS/tvOS game where players guess famous duos base
 
 ## What's Built
 
-### Core Framework (FamousPearsCore)
+### Core Framework (FamousPeersCore)
 
 **Models**
 - `Duo`: Card data (id, category, member1, member2, difficulty, hint)
@@ -41,7 +41,7 @@ Famous Pears is a multiplayer iOS/tvOS game where players guess famous duos base
 - Difficulty ratings 1-5 (determines points awarded)
 - Hints for each duo
 
-### iOS App (FamousPearsIOS)
+### iOS App (FamousPeersIOS)
 
 **Views**
 - `ContentView`: Main navigation and game flow state machine
@@ -61,7 +61,7 @@ Famous Pears is a multiplayer iOS/tvOS game where players guess famous duos base
 - Network message handling for multiplayer
 - Settings for audio/haptics control
 
-### tvOS App (FamousPearsTVOS)
+### tvOS App (FamousPeersTVOS)
 
 **Views**
 - `TVContentView`: Main navigation and game state machine
@@ -84,7 +84,7 @@ Famous Pears is a multiplayer iOS/tvOS game where players guess famous duos base
 ## Architecture
 
 ```
-FamousPearsCore (Swift Package)
+FamousPeersCore (Swift Package)
 ├── Models/
 │   ├── Models.swift (Duo, Player, GameRound, GameState, DifficultyMode)
 │   ├── CardDatabase.swift (JSON loader, filtering)
@@ -101,15 +101,15 @@ FamousPearsCore (Swift Package)
 └── Resources/
     └── cards.json (100 duos)
 
-FamousPearsIOS
-├── FamousPearsApp.swift
+FamousPeersIOS
+├── FamousPeersApp.swift
 ├── ContentView.swift (Menu + Setup)
 ├── GamePlayView.swift (Active game)
 ├── ResultsView.swift (Leaderboard)
 └── SettingsView.swift (Settings + Rules)
 
-FamousPearsTVOS
-├── FamousPearsTVApp.swift
+FamousPeersTVOS
+├── FamousPeersTVApp.swift
 ├── TVContentView.swift (Menu + Setup)
 └── TVGameView.swift (Active game + Results)
 ```
@@ -159,14 +159,14 @@ FamousPearsTVOS
 
 ### Build iOS
 ```bash
-cd FamousPearsIOS
-xcodebuild -scheme FamousPearsIOS -destination 'platform=iOS Simulator,name=iPhone 15'
+cd FamousPeersIOS
+xcodebuild -scheme FamousPeersIOS -destination 'platform=iOS Simulator,name=iPhone 15'
 ```
 
 ### Build tvOS
 ```bash
-cd FamousPearsTVOS
-xcodebuild -scheme FamousPearsTVOS -destination 'platform=tvOS Simulator,name=Apple TV'
+cd FamousPeersTVOS
+xcodebuild -scheme FamousPeersTVOS -destination 'platform=tvOS Simulator,name=Apple TV'
 ```
 
 ## Features Implemented

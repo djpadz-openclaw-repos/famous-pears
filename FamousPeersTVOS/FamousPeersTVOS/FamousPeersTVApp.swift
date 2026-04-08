@@ -1,8 +1,8 @@
 import SwiftUI
-import FamousPearsCore
+import FamousPeersCore
 
 @main
-struct FamousPearsTVApp: App {
+struct FamousPeersTVApp: App {
     var body: some Scene {
         WindowGroup {
             TVContentView()

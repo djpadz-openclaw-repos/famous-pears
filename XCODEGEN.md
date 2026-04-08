@@ -22,20 +22,20 @@ pod repo update
 ### Generate iOS Project
 
 ```bash
-cd FamousPearsIOS
+cd FamousPeersIOS
 xcodegen generate
 ```
 
-This creates `FamousPearsIOS.xcodeproj` in the `FamousPearsIOS` directory.
+This creates `FamousPeersIOS.xcodeproj` in the `FamousPeersIOS` directory.
 
 ### Generate tvOS Project
 
 ```bash
-cd FamousPearsTVOS
+cd FamousPeersTVOS
 xcodegen generate
 ```
 
-This creates `FamousPearsTVOS.xcodeproj` in the `FamousPearsTVOS` directory.
+This creates `FamousPeersTVOS.xcodeproj` in the `FamousPeersTVOS` directory.
 
 ### Generate Both Projects
 
@@ -46,8 +46,8 @@ This creates `FamousPearsTVOS.xcodeproj` in the `FamousPearsTVOS` directory.
 Or manually:
 
 ```bash
-cd FamousPearsIOS && xcodegen generate && cd ..
-cd FamousPearsTVOS && xcodegen generate && cd ..
+cd FamousPeersIOS && xcodegen generate && cd ..
+cd FamousPeersTVOS && xcodegen generate && cd ..
 ```
 
 ## Building
@@ -55,15 +55,15 @@ cd FamousPearsTVOS && xcodegen generate && cd ..
 ### Build iOS
 
 ```bash
-cd FamousPearsIOS
-xcodebuild -scheme FamousPearsIOS -destination 'platform=iOS Simulator,name=iPhone 15'
+cd FamousPeersIOS
+xcodebuild -scheme FamousPeersIOS -destination 'platform=iOS Simulator,name=iPhone 15'
 ```
 
 ### Build tvOS
 
 ```bash
-cd FamousPearsTVOS
-xcodebuild -scheme FamousPearsTVOS -destination 'platform=tvOS Simulator,name=Apple TV'
+cd FamousPeersTVOS
+xcodebuild -scheme FamousPeersTVOS -destination 'platform=tvOS Simulator,name=Apple TV'
 ```
 
 ## Opening in Xcode
@@ -71,8 +71,8 @@ xcodebuild -scheme FamousPearsTVOS -destination 'platform=tvOS Simulator,name=Ap
 After generating, open the projects in Xcode:
 
 ```bash
-open FamousPearsIOS/FamousPearsIOS.xcodeproj
-open FamousPearsTVOS/FamousPearsTVOS.xcodeproj
+open FamousPeersIOS/FamousPeersIOS.xcodeproj
+open FamousPeersTVOS/FamousPeersTVOS.xcodeproj
 ```
 
 ## Configuration
@@ -80,15 +80,15 @@ open FamousPearsTVOS/FamousPearsTVOS.xcodeproj
 Each `project.yml` file defines:
 - **name**: Project name
 - **options**: Global settings (bundle ID prefix, deployment targets, formatting)
-- **packages**: Swift Package dependencies (FamousPearsCore)
+- **packages**: Swift Package dependencies (FamousPeersCore)
 - **targets**: Build targets with sources, dependencies, settings, and schemes
 
 ## Customization
 
 To customize the generated projects, edit the respective `project.yml` files:
 
-- `FamousPearsIOS/project.yml` - iOS app configuration
-- `FamousPearsTVOS/project.yml` - tvOS app configuration
+- `FamousPeersIOS/project.yml` - iOS app configuration
+- `FamousPeersTVOS/project.yml` - tvOS app configuration
 
 After editing, regenerate the projects:
 
@@ -106,9 +106,9 @@ xcodegen generate
 
 If xcodegen fails:
 
-1. Ensure you're in the correct directory (FamousPearsIOS or FamousPearsTVOS)
+1. Ensure you're in the correct directory (FamousPeersIOS or FamousPeersTVOS)
 2. Check that `project.yml` is valid YAML
-3. Verify FamousPearsCore package path is correct
+3. Verify FamousPeersCore package path is correct
 4. Run `xcodegen generate --verbose` for detailed output
 
 ## CI/CD
@@ -117,5 +117,5 @@ For automated builds, add xcodegen generation to your CI pipeline:
 
 ```bash
 xcodegen generate
-xcodebuild -scheme FamousPearsIOS -destination 'platform=iOS Simulator,name=iPhone 15' build
+xcodebuild -scheme FamousPeersIOS -destination 'platform=iOS Simulator,name=iPhone 15' build
 ```

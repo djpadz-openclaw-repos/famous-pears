@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Generate Xcode projects for Famous Pears
+# Generate Xcode projects for Famous Peers
 
 set -e
 
-echo "🔨 Generating Famous Pears Xcode projects..."
+echo "🔨 Generating Famous Peers Xcode projects..."
 
 # Check if xcodegen is installed
 if ! command -v xcodegen &> /dev/null; then
@@ -14,18 +14,18 @@ fi
 
 # Generate iOS project
 echo "📱 Generating iOS project..."
-cd FamousPearsIOS
+cd FamousPeersIOS
 xcodegen generate
 cd ..
 
 # Generate tvOS project
 echo "📺 Generating tvOS project..."
-cd FamousPearsTVOS
+cd FamousPeersTVOS
 xcodegen generate
 cd ..
 
 echo "✅ Projects generated successfully!"
 echo ""
 echo "Next steps:"
-echo "  iOS:  open FamousPearsIOS/FamousPearsIOS.xcodeproj"
-echo "  tvOS: open FamousPearsTVOS/FamousPearsTVOS.xcodeproj"
+echo "  iOS:  open FamousPeersIOS/FamousPeersIOS.xcodeproj"
+echo "  tvOS: open FamousPeersTVOS/FamousPeersTVOS.xcodeproj"

@@ -1,0 +1,44 @@
+name: FamousPearsIOS
+options:
+  bundleIdPrefix: com.famous-pears
+  deploymentTarget:
+    iOS: "16.0"
+  usesTabs: false
+  indentWidth: 2
+
+packages:
+  FamousPearsCore:
+    path: ../FamousPearsCore
+
+targets:
+  FamousPearsIOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: FamousPearsIOS
+    dependencies:
+      - target: FamousPearsCore
+        embed: false
+    settings:
+      PRODUCT_NAME: FamousPearsIOS
+      PRODUCT_BUNDLE_IDENTIFIER: com.famous-pears.ios
+      CODE_SIGN_STYLE: Automatic
+      DEVELOPMENT_TEAM: ""
+      SWIFT_VERSION: "5.9"
+      IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+    schemes:
+      FamousPearsIOS:
+        build:
+          targets:
+            FamousPearsIOS: all
+        run:
+          config: Debug
+        test:
+          config: Debug
+        profile:
+          config: Release
+        analyze:
+          config: Debug
+        archive:
+          config: Release

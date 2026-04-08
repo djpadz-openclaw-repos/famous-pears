@@ -25,8 +25,10 @@ public class GameLogic {
     }
     
     private func filterCardsByDifficulty() {
-        let range = difficultyMode.pointRange
-        availableCards = cardDatabase.getAllCards().filter { range.contains($0.difficulty) }
+        availableCards = cardDatabase.getAllCards().filter { duo in
+            difficultyMode.shouldIncludePoints(duo.member1Points) || 
+            difficultyMode.shouldIncludePoints(duo.member2Points)
+        }
     }
     
     public func startNewRound(askerIndex: Int) -> GameRound? {
@@ -50,6 +52,7 @@ public class GameLogic {
         // Randomly pick which member to read
         let readMember = duo.getRandomMember()
         let correctAnswer = duo.getOtherMember(readMember)
+        let pointsIfCorrect = duo.getPointsForMember(correctAnswer)
         
         let round = GameRound(
             duoId: duo.id,
@@ -57,7 +60,8 @@ public class GameLogic {
             guesser: guesser,
             duoName: duo.duoName,
             readMember: readMember,
-            correctAnswer: correctAnswer
+            correctAnswer: correctAnswer,
+            pointsIfCorrect: pointsIfCorrect
         )
         currentRound = round
         state = .playing
@@ -73,12 +77,10 @@ public class GameLogic {
         currentRound?.isCorrect = isCorrect
         
         if isCorrect {
-            guard let duo = cardDatabase.getCard(id: round.duoId) else { return false }
-            let points = duo.difficulty
-            currentRound?.pointsAwarded = points
+            currentRound?.pointsAwarded = round.pointsIfCorrect
             
             if let guesserIndex = players.firstIndex(where: { $0.id == round.guesser.id }) {
-                players[guesserIndex].score += points
+                players[guesserIndex].score += round.pointsIfCorrect
             }
         }
         

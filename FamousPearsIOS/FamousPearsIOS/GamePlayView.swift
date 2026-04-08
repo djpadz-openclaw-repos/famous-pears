@@ -12,6 +12,7 @@ struct GamePlayView: View {
     @State private var showNextButton = false
     @State private var isMultiplayer = false
     @State private var waitingForHost = false
+    @State private var soundManager = SoundManager.shared
     
     var onGameEnd: () -> Void
     
@@ -166,6 +167,13 @@ struct GamePlayView: View {
         let isCorrect = gameLogic.submitAnswer(answerText)
         self.isCorrect = isCorrect
         self.resultMessage = isCorrect ? "Correct! 🎉" : "Incorrect ❌"
+        
+        // Play sound and haptic feedback
+        if isCorrect {
+            soundManager.playCorrectSound()
+        } else {
+            soundManager.playIncorrectSound()
+        }
         
         // Broadcast answer if multiplayer
         if isMultiplayer {

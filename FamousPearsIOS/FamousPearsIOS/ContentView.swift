@@ -9,6 +9,7 @@ struct ContentView: View {
         Player(name: "Player 1"),
         Player(name: "Player 2")
     ]
+    @State private var showSettings = false
     
     var body: some View {
         ZStack {
@@ -24,6 +25,7 @@ struct ContentView: View {
                 case .menu:
                     DifficultySelectionView(
                         selectedDifficulty: $selectedDifficulty,
+                        showSettings: $showSettings,
                         onStart: { gameState = .setup }
                     )
                     .slideIn(from: .leading)
@@ -57,6 +59,11 @@ struct ContentView: View {
                     }
                 }
             }
+            
+            if showSettings {
+                SettingsView()
+                    .transition(.move(edge: .trailing))
+            }
         }
     }
     
@@ -77,18 +84,27 @@ enum GameFlowState {
 
 struct DifficultySelectionView: View {
     @Binding var selectedDifficulty: DifficultyMode
+    @Binding var showSettings: Bool
     var onStart: () -> Void
     
     var body: some View {
         VStack(spacing: 30) {
-            VStack(spacing: 8) {
-                Text("Famous Pears")
-                    .font(.system(size: 48, weight: .bold))
-                    .foregroundColor(.blue)
-                
-                Text("Guess the famous duo!")
-                    .font(.headline)
-                    .foregroundColor(.gray)
+            HStack {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Famous Pears")
+                        .font(.system(size: 48, weight: .bold))
+                        .foregroundColor(.blue)
+                    
+                    Text("Guess the famous duo!")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+                Button(action: { showSettings = true }) {
+                    Image(systemName: "gear")
+                        .font(.system(size: 20))
+                        .foregroundColor(.blue)
+                }
             }
             .popIn()
             

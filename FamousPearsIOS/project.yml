@@ -18,8 +18,7 @@ targets:
     sources:
       - path: FamousPearsIOS
     dependencies:
-      - target: FamousPearsCore
-        embed: false
+      - package: FamousPearsCore
     settings:
       PRODUCT_NAME: FamousPearsIOS
       PRODUCT_BUNDLE_IDENTIFIER: com.famous-pears.ios

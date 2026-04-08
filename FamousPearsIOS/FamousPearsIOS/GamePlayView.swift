@@ -67,6 +67,17 @@ struct GamePlayView: View {
                             .background(Color.green.opacity(0.1))
                             .cornerRadius(12)
                             .popIn()
+                        
+                        HStack(spacing: 8) {
+                            Image(systemName: "star.fill")
+                                .foregroundColor(.yellow)
+                            Text("Correct answer worth \(round.pointsIfCorrect) points")
+                                .font(.caption)
+                                .foregroundColor(.orange)
+                        }
+                        .padding(8)
+                        .background(Color.orange.opacity(0.1))
+                        .cornerRadius(8)
                     }
                     
                     if !showResult {

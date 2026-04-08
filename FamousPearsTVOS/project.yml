@@ -18,8 +18,7 @@ targets:
     sources:
       - path: FamousPearsTVOS
     dependencies:
-      - target: FamousPearsCore
-        embed: false
+      - package: FamousPearsCore
     settings:
       PRODUCT_NAME: FamousPearsTVOS
       PRODUCT_BUNDLE_IDENTIFIER: com.famous-pears.tvos

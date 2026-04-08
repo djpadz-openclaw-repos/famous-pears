@@ -63,6 +63,18 @@ struct TVGameView: View {
                             .background(Color.green.opacity(0.2))
                             .cornerRadius(20)
                             .popIn()
+                        
+                        HStack(spacing: 16) {
+                            Image(systemName: "star.fill")
+                                .font(.system(size: 40))
+                                .foregroundColor(.yellow)
+                            Text("Worth \(round.pointsIfCorrect) points")
+                                .font(.system(size: 40, weight: .semibold))
+                                .foregroundColor(.yellow)
+                        }
+                        .padding(24)
+                        .background(Color.yellow.opacity(0.2))
+                        .cornerRadius(16)
                     }
                     
                     if showResult {

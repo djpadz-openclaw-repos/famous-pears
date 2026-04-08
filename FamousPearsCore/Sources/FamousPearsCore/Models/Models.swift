@@ -52,3 +52,19 @@ public enum GameState {
     case roundComplete
     case gameOver
 }
+
+public enum DifficultyMode {
+    case easy      // 1-2 point duos
+    case medium    // 2-3 point duos
+    case hard      // 4-5 point duos
+    case mixed     // all difficulties
+    
+    public var pointRange: ClosedRange<Int> {
+        switch self {
+        case .easy: return 1...2
+        case .medium: return 2...3
+        case .hard: return 4...5
+        case .mixed: return 1...5
+        }
+    }
+}

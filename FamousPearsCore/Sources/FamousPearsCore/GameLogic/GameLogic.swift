@@ -5,22 +5,36 @@ public class GameLogic {
     public var currentRound: GameRound?
     public var state: GameState = .setup
     public var rounds: [GameRound] = []
+    public var difficultyMode: DifficultyMode = .mixed
+    public var maxRounds: Int = 10
     
     private var cardDatabase = CardDatabase.shared
     private var usedCardIds: Set<Int> = []
+    private var availableCards: [Duo] = []
     
-    public init(players: [Player]) {
+    public init(players: [Player], difficulty: DifficultyMode = .mixed) {
         self.players = players
+        self.difficultyMode = difficulty
     }
     
     public func startGame() {
         state = .playing
         usedCardIds.removeAll()
         rounds.removeAll()
+        filterCardsByDifficulty()
+    }
+    
+    private func filterCardsByDifficulty() {
+        let range = difficultyMode.pointRange
+        availableCards = cardDatabase.getAllCards().filter { range.contains($0.difficulty) }
     }
     
     public func startNewRound(askerIndex: Int) -> GameRound? {
         guard askerIndex < players.count else { return nil }
+        guard rounds.count < maxRounds else {
+            endGame()
+            return nil
+        }
         
         let asker = players[askerIndex]
         let guesserIndex = (askerIndex + 1) % players.count
@@ -53,10 +67,13 @@ public class GameLogic {
             let points = duo.difficulty
             currentRound?.pointsAwarded = points
             
-            // Award points to guesser
             if let guesserIndex = players.firstIndex(where: { $0.id == round.guesser.id }) {
                 players[guesserIndex].score += points
             }
+        }
+        
+        if let round = currentRound {
+            rounds.append(round)
         }
         
         state = .roundComplete
@@ -71,8 +88,11 @@ public class GameLogic {
         players.sorted { $0.score > $1.score }
     }
     
+    public func isGameOver() -> Bool {
+        rounds.count >= maxRounds
+    }
+    
     private func getUnusedCard() -> Duo? {
-        let allCards = cardDatabase.getAllCards()
-        return allCards.first { !usedCardIds.contains($0.id) }
+        availableCards.first { !usedCardIds.contains($0.id) }
     }
 }

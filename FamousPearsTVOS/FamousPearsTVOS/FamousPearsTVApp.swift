@@ -6,6 +6,7 @@ struct FamousPearsTVApp: App {
     var body: some Scene {
         WindowGroup {
             TVContentView()
+                .environmentObject(MultipeerManager.shared)
         }
     }
 }

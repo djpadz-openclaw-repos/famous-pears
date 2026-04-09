@@ -23,7 +23,7 @@ targets:
       PRODUCT_NAME: FamousPeersTVOS
       PRODUCT_BUNDLE_IDENTIFIER: com.famous-peers.tvos
       CODE_SIGN_STYLE: Automatic
-      DEVELOPMENT_TEAM: ""
+      DEVELOPMENT_TEAM: "N2XUW3D6G2"
       SWIFT_VERSION: "5.9"
       TVOS_DEPLOYMENT_TARGET: "16.0"
     schemes:

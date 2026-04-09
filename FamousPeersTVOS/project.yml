@@ -1,6 +1,6 @@
 name: FamousPeersTVOS
 options:
-  bundleIdPrefix: com.famous-peers
+  bundleIdPrefix: net.padz.famous-peers
   deploymentTarget:
     tvOS: "16.0"
   usesTabs: false
@@ -21,7 +21,7 @@ targets:
       - package: FamousPeersCore
     settings:
       PRODUCT_NAME: FamousPeersTVOS
-      PRODUCT_BUNDLE_IDENTIFIER: com.famous-peers.tvos
+      PRODUCT_BUNDLE_IDENTIFIER: net.padz.famous-peers.tvos
       CODE_SIGN_STYLE: Automatic
       DEVELOPMENT_TEAM: "N2XUW3D6G2"
       SWIFT_VERSION: "5.9"

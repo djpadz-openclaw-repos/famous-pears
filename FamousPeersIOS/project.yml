@@ -1,6 +1,6 @@
 name: FamousPeersIOS
 options:
-  bundleIdPrefix: com.famous-peers
+  bundleIdPrefix: net.padz.famous-peers
   deploymentTarget:
     iOS: "16.0"
   usesTabs: false
@@ -21,7 +21,7 @@ targets:
       - package: FamousPeersCore
     settings:
       PRODUCT_NAME: FamousPeersIOS
-      PRODUCT_BUNDLE_IDENTIFIER: com.famous-peers.ios
+      PRODUCT_BUNDLE_IDENTIFIER: net.padz.famous-peers.ios
       CODE_SIGN_STYLE: Automatic
       DEVELOPMENT_TEAM: "N2XUW3D6G2"
       SWIFT_VERSION: "5.9"

@@ -14,7 +14,7 @@ targets:
   FamousPeersIOS:
     type: application
     platform: iOS
-    deploymentTarget: "16.0"
+    deploymentTarget: "18.6"
     sources:
       - path: FamousPeersIOS
     dependencies:
@@ -25,7 +25,7 @@ targets:
       CODE_SIGN_STYLE: Automatic
       DEVELOPMENT_TEAM: "N2XUW3D6G2"
       SWIFT_VERSION: "5.9"
-      IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+      IPHONEOS_DEPLOYMENT_TARGET: "18.6"
       GENERATE_INFOPLIST_FILE: YES
     schemes:
       FamousPeersIOS:

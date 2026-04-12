@@ -34,15 +34,15 @@ public class GameKitManager: NSObject, GKMatchDelegate {
     }
     
     public func startMatchmaking(minPlayers: Int = 2, maxPlayers: Int = 4) {
+        guard GKLocalPlayer.local.isAuthenticated else {
+            print("Local player not authenticated")
+            return
+        }
+        
         let request = GKMatchRequest()
         request.minPlayers = minPlayers
         request.maxPlayers = maxPlayers
-        
-        GKMatchmakerViewController.canBePresented { canPresent in
-            if canPresent {
-                print("Matchmaking available")
-            }
-        }
+        print("Starting matchmaking")
     }
     
     public func sendMessage(_ data: Data, to players: [GKPlayer]? = nil) {

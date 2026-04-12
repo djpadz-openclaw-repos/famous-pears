@@ -8,7 +8,7 @@ public class CardDatabase {
     }
     
     private func loadCards() {
-        guard let url = Bundle.module.url(forResource: "cards", withExtension: "json") else {
+        guard let url = Bundle(for: CardDatabase.self).url(forResource: "cards", withExtension: "json") else {
             print("Error: cards.json not found")
             return
         }

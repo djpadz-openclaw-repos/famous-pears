@@ -14,7 +14,7 @@ targets:
   FamousPeersIOS:
     type: application
     platform: iOS
-    deploymentTarget: "18.6"
+    deploymentTarget: "26.0"
     sources:
       - path: FamousPeersIOS
     dependencies:

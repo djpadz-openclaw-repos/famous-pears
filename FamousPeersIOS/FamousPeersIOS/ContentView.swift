@@ -59,12 +59,14 @@ struct ContentView: View {
                     }
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             if showSettings {
                 SettingsView()
                     .transition(.move(edge: .trailing))
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     private func startGame() {

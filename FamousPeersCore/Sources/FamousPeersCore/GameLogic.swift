@@ -1,9 +1,10 @@
 import Foundation
+import Combine
 
-public class GameLogic {
-    public var players: [Player]
-    public var currentRound: Int = 0
-    public var gameState: GameState = .setup
+public class GameLogic: ObservableObject {
+    @Published public var players: [Player]
+    @Published public var currentRound: Int = 0
+    @Published public var gameState: GameState = .setup
     public var difficulty: DifficultyMode = .mixed
     
     private let cardDatabase = CardDatabase()

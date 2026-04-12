@@ -34,7 +34,7 @@ public class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrows
     }
     
     public func startHosting() {
-        guard let session = session else { return }
+        guard session != nil else { return }
         
         advertiser = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: nil, serviceType: serviceType)
         advertiser?.delegate = self
@@ -42,7 +42,7 @@ public class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrows
     }
     
     public func startBrowsing() {
-        guard let session = session else { return }
+        guard session != nil else { return }
         
         browser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: serviceType)
         browser?.delegate = self

@@ -117,7 +117,7 @@ struct GamePlayView: View {
             
             Spacer()
         }
-        .onChange(of: gameLogic.gameState) { newState in
+        .onChange(of: gameLogic.gameState) { oldState, newState in
             if newState == .gameOver {
                 onGameEnd()
             }

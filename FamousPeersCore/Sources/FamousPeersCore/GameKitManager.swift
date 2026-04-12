@@ -27,7 +27,7 @@ public class GameKitManager: NSObject, GKMatchDelegate, ObservableObject {
                 return
             }
             
-            if let viewController = viewController {
+            if viewController != nil {
                 // Present authentication UI if needed
                 print("GameKit authentication required")
             }

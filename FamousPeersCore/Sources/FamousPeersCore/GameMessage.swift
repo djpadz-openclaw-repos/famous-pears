@@ -5,7 +5,7 @@ public protocol GameMessage: Codable {
 }
 
 public struct RoundStartedMessage: GameMessage {
-    public let messageType = "roundStarted"
+    public var messageType = "roundStarted"
     public let roundNumber: Int
     public let askerName: String
     public let guesserName: String
@@ -22,7 +22,7 @@ public struct RoundStartedMessage: GameMessage {
 }
 
 public struct AnswerSubmittedMessage: GameMessage {
-    public let messageType = "answerSubmitted"
+    public var messageType = "answerSubmitted"
     public let guesserName: String
     public let answer: String
     
@@ -33,7 +33,7 @@ public struct AnswerSubmittedMessage: GameMessage {
 }
 
 public struct RoundResultMessage: GameMessage {
-    public let messageType = "roundResult"
+    public var messageType = "roundResult"
     public let isCorrect: Bool
     public let pointsAwarded: Int
     public let correctAnswer: String
@@ -46,7 +46,7 @@ public struct RoundResultMessage: GameMessage {
 }
 
 public struct GameStateMessage: GameMessage {
-    public let messageType = "gameState"
+    public var messageType = "gameState"
     public let state: String
     public let leaderboard: [String: Int]
     
@@ -57,7 +57,7 @@ public struct GameStateMessage: GameMessage {
 }
 
 public struct GameEndedMessage: GameMessage {
-    public let messageType = "gameEnded"
+    public var messageType = "gameEnded"
     public let winner: String
     public let finalScores: [String: Int]
     

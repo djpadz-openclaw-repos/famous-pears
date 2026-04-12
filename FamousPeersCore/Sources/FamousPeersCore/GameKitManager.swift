@@ -1,5 +1,6 @@
 import GameKit
 import Foundation
+import Combine
 
 public protocol GameKitManagerDelegate: AnyObject {
     func gameKitManager(_ manager: GameKitManager, didReceiveMessage data: Data, from player: GKPlayer)
@@ -7,7 +8,9 @@ public protocol GameKitManagerDelegate: AnyObject {
     func gameKitManager(_ manager: GameKitManager, playerDisconnected player: GKPlayer)
 }
 
-public class GameKitManager: NSObject, GKMatchDelegate {
+public class GameKitManager: NSObject, GKMatchDelegate, ObservableObject {
+    public static let shared = GameKitManager()
+    
     public weak var delegate: GameKitManagerDelegate?
     public var match: GKMatch?
     public var localPlayer: GKPlayer?

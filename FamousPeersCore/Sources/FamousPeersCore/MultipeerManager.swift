@@ -1,5 +1,6 @@
 import MultipeerConnectivity
 import Foundation
+import Combine
 
 public protocol MultipeerManagerDelegate: AnyObject {
     func multipeerManager(_ manager: MultipeerManager, didReceiveMessage data: Data, from peer: MCPeerID)
@@ -7,7 +8,9 @@ public protocol MultipeerManagerDelegate: AnyObject {
     func multipeerManager(_ manager: MultipeerManager, peerDisconnected peer: MCPeerID)
 }
 
-public class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate {
+public class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate, ObservableObject {
+    public static let shared = MultipeerManager()
+    
     public weak var delegate: MultipeerManagerDelegate?
     
     private let serviceType = "famous-peers"

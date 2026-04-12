@@ -8,7 +8,11 @@ public class CardDatabase {
     }
     
     private func loadCards() {
-        guard let url = Bundle(for: CardDatabase.self).url(forResource: "cards", withExtension: "json") else {
+        // Try to load from the FamousPeersCore resource bundle
+        let bundleName = "FamousPeersCore_FamousPeersCore"
+        guard let bundleURL = Bundle(for: CardDatabase.self).url(forResource: bundleName, withExtension: "bundle"),
+              let resourceBundle = Bundle(url: bundleURL),
+              let url = resourceBundle.url(forResource: "cards", withExtension: "json") else {
             print("Error: cards.json not found")
             return
         }

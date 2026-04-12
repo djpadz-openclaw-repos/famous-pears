@@ -27,6 +27,8 @@ targets:
       SWIFT_VERSION: "5.9"
       IPHONEOS_DEPLOYMENT_TARGET: "18.6"
       GENERATE_INFOPLIST_FILE: YES
+    info:
+      UILaunchScreen: {}
     schemes:
       FamousPeersIOS:
         build:

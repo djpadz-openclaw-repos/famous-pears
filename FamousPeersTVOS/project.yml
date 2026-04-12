@@ -27,8 +27,6 @@ targets:
       SWIFT_VERSION: "5.9"
       TVOS_DEPLOYMENT_TARGET: "26.0"
       GENERATE_INFOPLIST_FILE: YES
-    info:
-      UILaunchScreen: {}
     schemes:
       FamousPeersTVOS:
         build:

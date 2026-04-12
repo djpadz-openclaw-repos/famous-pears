@@ -54,7 +54,7 @@ public class GameMultiplayer: NSObject, GameKitManagerDelegate, ObservableObject
     public func submitAnswer(_ answer: String) {
         guard let game = gameLogic else { return }
         
-        let isCorrect = game.submitAnswer(answer)
+        _ = game.submitAnswer(answer)
         
         let message = AnswerSubmittedMessage(
             guesserName: game.getCurrentGuesser().name,

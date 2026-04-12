@@ -26,6 +26,7 @@ targets:
       DEVELOPMENT_TEAM: "N2XUW3D6G2"
       SWIFT_VERSION: "5.9"
       TVOS_DEPLOYMENT_TARGET: "16.0"
+      GENERATE_INFOPLIST_FILE: YES
     schemes:
       FamousPeersTVOS:
         build:

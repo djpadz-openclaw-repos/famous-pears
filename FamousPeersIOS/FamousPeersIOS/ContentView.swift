@@ -51,7 +51,7 @@ struct ContentView: View {
                 case .results:
                     if let game = gameLogic {
                         ResultsView(
-                            leaderboard: game.getLeaderboard(),
+                            leaderboard: game.getLeaderboard().map { $0.player },
                             onPlayAgain: { gameState = .menu },
                             onExit: { gameState = .menu }
                         )

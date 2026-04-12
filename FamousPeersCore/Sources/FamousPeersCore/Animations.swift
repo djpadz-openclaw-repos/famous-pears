@@ -93,6 +93,23 @@ private struct PulseModifier: ViewModifier {
     }
 }
 
+private struct DelayModifier: ViewModifier {
+    let delay: Double
+    @State private var isVisible = false
+    
+    func body(content: Content) -> some View {
+        content
+            .opacity(isVisible ? 1 : 0)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        isVisible = true
+                    }
+                }
+            }
+    }
+}
+
 public extension View {
     func popIn() -> some View {
         modifier(PopInModifier())
@@ -108,5 +125,9 @@ public extension View {
     
     func pulse() -> some View {
         modifier(PulseModifier())
+    }
+    
+    func delay(_ delay: Double) -> some View {
+        modifier(DelayModifier(delay: delay))
     }
 }

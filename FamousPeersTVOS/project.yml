@@ -2,7 +2,7 @@ name: FamousPeersTVOS
 options:
   bundleIdPrefix: net.padz.famous-peers
   deploymentTarget:
-    tvOS: "16.0"
+    tvOS: "18.6"
   usesTabs: false
   indentWidth: 2
 

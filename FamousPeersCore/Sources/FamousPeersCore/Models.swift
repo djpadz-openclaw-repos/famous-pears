@@ -13,7 +13,7 @@ public struct Duo: Codable, Identifiable {
 
 public struct Player: Identifiable {
     public let id: UUID
-    public let name: String
+    public var name: String
     public var score: Int = 0
     
     public init(id: UUID = UUID(), name: String) {

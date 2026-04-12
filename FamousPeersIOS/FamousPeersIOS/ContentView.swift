@@ -28,6 +28,7 @@ struct ContentView: View {
                     onStart: { gameState = .setup }
                 )
                 .slideIn(from: .leading)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             case .setup:
                 GameSetupView(
@@ -37,6 +38,7 @@ struct ContentView: View {
                     onBack: { gameState = .menu }
                 )
                 .slideIn(from: .trailing)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             case .playing:
                 if let game = gameLogic {
@@ -45,6 +47,7 @@ struct ContentView: View {
                         onGameEnd: { gameState = .results }
                     )
                     .slideIn(from: .trailing)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 
             case .results:
@@ -55,6 +58,7 @@ struct ContentView: View {
                         onExit: { gameState = .menu }
                     )
                     .slideIn(from: .trailing)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
             

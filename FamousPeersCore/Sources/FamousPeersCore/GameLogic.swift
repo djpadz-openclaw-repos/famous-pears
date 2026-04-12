@@ -12,10 +12,25 @@ public class GameLogic: ObservableObject {
     private var currentDuo: Duo?
     private var currentAskerIndex: Int = 0
     private var currentGuesserIndex: Int = 1
+    private var aiManager: AIManager?
     
     public init(players: [Player], difficulty: DifficultyMode = .mixed) {
         self.players = players
         self.difficulty = difficulty
+        
+        // Initialize AI manager based on difficulty
+        let aiDifficulty: AIManager.Difficulty
+        switch difficulty {
+        case .easy:
+            aiDifficulty = .easy
+        case .medium:
+            aiDifficulty = .medium
+        case .hard:
+            aiDifficulty = .hard
+        case .mixed:
+            aiDifficulty = .medium
+        }
+        self.aiManager = AIManager(difficulty: aiDifficulty)
     }
     
     public func startGame() {
@@ -96,5 +111,29 @@ public class GameLogic: ObservableObject {
     
     public func getCurrentDuo() -> Duo? {
         return currentDuo
+    }
+    
+    // MARK: - AI Player Support
+    
+    public func isComputerPlayer(_ player: Player) -> Bool {
+        return player.name == "Computer"
+    }
+    
+    public func getComputerClue() -> String {
+        guard let duo = currentDuo, let aiManager = aiManager else { return "" }
+        return aiManager.generateClue(for: duo.member1, hint: duo.hint)
+    }
+    
+    public func getComputerGuess(possibleAnswers: [String]) -> String {
+        guard let aiManager = aiManager else { return "" }
+        return aiManager.makeGuess(givenClue: getCurrentClue(), possibleAnswers: possibleAnswers)
+    }
+    
+    public func getCurrentAskerIsComputer() -> Bool {
+        return isComputerPlayer(getCurrentAsker())
+    }
+    
+    public func getCurrentGuesserIsComputer() -> Bool {
+        return isComputerPlayer(getCurrentGuesser())
     }
 }

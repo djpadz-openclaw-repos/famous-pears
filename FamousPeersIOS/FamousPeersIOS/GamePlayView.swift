@@ -8,6 +8,9 @@ struct GamePlayView: View {
     @State private var isCorrect = false
     @State private var resultMessage = ""
     @State private var showNextButton = false
+    @State private var computerGuess = ""
+    @State private var showComputerGuess = false
+    @State private var isProcessingComputerTurn = false
     
     var onGameEnd: () -> Void
     
@@ -70,20 +73,58 @@ struct GamePlayView: View {
             
             // Answer input or result
             if !showResult {
-                VStack(spacing: 12) {
-                    TextField("Enter your guess", text: $answerText)
-                        .textFieldStyle(.roundedBorder)
-                        .padding()
-                    
-                    Button(action: submitAnswer) {
-                        Text("Submit Answer")
-                            .frame(maxWidth: .infinity)
+                if gameLogic.getCurrentGuesserIsComputer() {
+                    // Computer is guessing
+                    VStack(spacing: 12) {
+                        if showComputerGuess {
+                            VStack(spacing: 12) {
+                                Text("Computer's guess:")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                
+                                Text(computerGuess)
+                                    .font(.headline)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.orange.opacity(0.2))
+                                    .cornerRadius(8)
+                                
+                                Button(action: submitComputerGuess) {
+                                    Text("Submit")
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.green)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(8)
+                                }
+                                .padding()
+                            }
+                        } else {
+                            HStack {
+                                ProgressView()
+                                Text("Computer is thinking...")
+                                    .foregroundColor(.gray)
+                            }
                             .padding()
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
+                        }
                     }
-                    .padding()
+                } else {
+                    // Human is guessing
+                    VStack(spacing: 12) {
+                        TextField("Enter your guess", text: $answerText)
+                            .textFieldStyle(.roundedBorder)
+                            .padding()
+                        
+                        Button(action: submitAnswer) {
+                            Text("Submit Answer")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.green)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        }
+                        .padding()
+                    }
                 }
             } else {
                 VStack(spacing: 16) {
@@ -117,9 +158,26 @@ struct GamePlayView: View {
             
             Spacer()
         }
+        .onAppear {
+            handleComputerTurn()
+        }
         .onChange(of: gameLogic.gameState) { oldState, newState in
             if newState == .gameOver {
                 onGameEnd()
+            }
+        }
+    }
+    
+    private func handleComputerTurn() {
+        if gameLogic.getCurrentGuesserIsComputer() && !showComputerGuess {
+            isProcessingComputerTurn = true
+            
+            // Simulate thinking time
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                let possibleAnswers = ["Answer 1", "Answer 2", "Answer 3"]
+                computerGuess = gameLogic.getComputerGuess(possibleAnswers: possibleAnswers)
+                showComputerGuess = true
+                isProcessingComputerTurn = false
             }
         }
     }
@@ -134,20 +192,33 @@ struct GamePlayView: View {
         }
     }
     
+    private func submitComputerGuess() {
+        isCorrect = gameLogic.submitAnswer(computerGuess)
+        resultMessage = isCorrect ? "Computer guessed correctly!" : "Computer guessed incorrectly"
+        showResult = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            showNextButton = true
+        }
+    }
+    
     private func nextRound() {
         if gameLogic.gameState == .gameOver {
             onGameEnd()
         } else {
             answerText = ""
+            computerGuess = ""
             showResult = false
+            showComputerGuess = false
             showNextButton = false
             gameLogic.nextRound()
+            handleComputerTurn()
         }
     }
 }
 
 #Preview {
-    let players = [Player(name: "Player 1"), Player(name: "Player 2")]
+    let players = [Player(name: "Player 1"), Player(name: "Computer")]
     let gameLogic = GameLogic(players: players, difficulty: .mixed)
     gameLogic.startGame()
     

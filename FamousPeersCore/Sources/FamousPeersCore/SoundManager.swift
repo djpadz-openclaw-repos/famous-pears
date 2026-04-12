@@ -1,11 +1,12 @@
 import AVFoundation
 import UIKit
+import Combine
 
-public class SoundManager {
+public class SoundManager: ObservableObject {
     public static let shared = SoundManager()
     
-    public var soundEnabled = true
-    public var hapticsEnabled = true
+    @Published public var soundEnabled = true
+    @Published public var hapticsEnabled = true
     
     private init() {}
     

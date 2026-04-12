@@ -3,24 +3,24 @@ import FamousPeersCore
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var soundManager = SoundManager.shared
+    @ObservedObject var soundManager = SoundManager.shared
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
                 List {
                     Section("Audio & Haptics") {
-                        Toggle("Sound Effects", isOn: $soundManager.isSoundEnabled)
-                            .onChange(of: soundManager.isSoundEnabled) { _, enabled in
+                        Toggle("Sound Effects", isOn: $soundManager.soundEnabled)
+                            .onChange(of: soundManager.soundEnabled) { _, enabled in
                                 if enabled {
                                     soundManager.playCorrectSound()
                                 }
                             }
                         
-                        Toggle("Haptic Feedback", isOn: $soundManager.isHapticsEnabled)
-                            .onChange(of: soundManager.isHapticsEnabled) { _, enabled in
+                        Toggle("Haptic Feedback", isOn: $soundManager.hapticsEnabled)
+                            .onChange(of: soundManager.hapticsEnabled) { _, enabled in
                                 if enabled {
-                                    soundManager.triggerImpact(.light)
+                                    soundManager.playTapSound()
                                 }
                             }
                     }

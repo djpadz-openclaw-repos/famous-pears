@@ -49,7 +49,7 @@ public class GameKitManager: NSObject, GKMatchDelegate {
         guard let match = match else { return }
         
         do {
-            try match.send(data, to: players, dataMode: .reliable)
+            try match.send(data, to: players ?? [], dataMode: .reliable)
         } catch {
             print("Error sending GameKit message: \(error)")
         }

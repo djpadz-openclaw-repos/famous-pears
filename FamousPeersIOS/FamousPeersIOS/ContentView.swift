@@ -5,10 +5,8 @@ struct ContentView: View {
     @State private var gameState: GameFlowState = .menu
     @State private var selectedDifficulty: DifficultyMode = .mixed
     @State private var gameLogic: GameLogic?
-    @State private var players: [Player] = [
-        Player(name: "Player 1"),
-        Player(name: "Player 2")
-    ]
+    @State private var playerName: String = ""
+    @State private var gameMode: GameMode = .computer
     @State private var showSettings = false
     
     var body: some View {
@@ -22,20 +20,28 @@ struct ContentView: View {
             
             switch gameState {
             case .menu:
-                DifficultySelectionView(
-                    selectedDifficulty: $selectedDifficulty,
+                MainMenuView(
                     showSettings: $showSettings,
-                    onStart: { gameState = .setup }
+                    onStart: { gameState = .playerSetup }
                 )
                 .slideIn(from: .leading)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
-            case .setup:
-                GameSetupView(
-                    players: $players,
-                    difficulty: selectedDifficulty,
-                    onStart: startGame,
-                    onBack: { gameState = .menu }
+            case .playerSetup:
+                PlayerSetupView(
+                    playerName: $playerName,
+                    onContinue: { gameState = .modeSelection }
+                )
+                .slideIn(from: .trailing)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+            case .modeSelection:
+                GameModeSelectionView(
+                    selectedDifficulty: $selectedDifficulty,
+                    gameMode: $gameMode,
+                    onComputerStart: startGameVsComputer,
+                    onMultiplayerStart: startGameVsPlayer,
+                    onBack: { gameState = .playerSetup }
                 )
                 .slideIn(from: .trailing)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -70,8 +76,18 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
-    private func startGame() {
-        let game = GameLogic(players: players, difficulty: selectedDifficulty)
+    private func startGameVsComputer() {
+        let player = Player(name: playerName)
+        let computerPlayer = Player(name: "Computer")
+        let game = GameLogic(players: [player, computerPlayer], difficulty: selectedDifficulty)
+        game.startGame()
+        gameLogic = game
+        gameState = .playing
+    }
+    
+    private func startGameVsPlayer() {
+        let player = Player(name: playerName)
+        let game = GameLogic(players: [player], difficulty: selectedDifficulty)
         game.startGame()
         gameLogic = game
         gameState = .playing
@@ -80,62 +96,58 @@ struct ContentView: View {
 
 enum GameFlowState {
     case menu
-    case setup
+    case playerSetup
+    case modeSelection
     case playing
     case results
 }
 
-struct DifficultySelectionView: View {
-    @Binding var selectedDifficulty: DifficultyMode
+enum GameMode {
+    case computer
+    case multiplayer
+}
+
+// MARK: - Main Menu View
+
+private struct MainMenuView: View {
     @Binding var showSettings: Bool
     var onStart: () -> Void
     
     var body: some View {
         VStack(spacing: 30) {
-            HStack {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Famous Peers")
-                        .font(.system(size: 48, weight: .bold))
-                        .foregroundColor(.blue)
-                    
-                    Text("Guess the famous duo!")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                }
-                Spacer()
-                Button(action: { showSettings = true }) {
-                    Image(systemName: "gear")
-                        .font(.system(size: 20))
-                        .foregroundColor(.blue)
-                }
+            Spacer()
+            
+            VStack(spacing: 12) {
+                Text("Famous Peers")
+                    .font(.system(size: 48, weight: .bold))
+                    .foregroundColor(.blue)
+                
+                Text("Guess the famous duo!")
+                    .font(.headline)
+                    .foregroundColor(.gray)
             }
             .popIn()
             
-            VStack(spacing: 16) {
-                Text("Select Difficulty")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                
-                ForEach([DifficultyMode.easy, .medium, .hard, .mixed], id: \.self) { difficulty in
-                    DifficultyButton(
-                        difficulty: difficulty,
-                        isSelected: selectedDifficulty == difficulty,
-                        action: { selectedDifficulty = difficulty }
-                    )
-                    .slideIn(from: .leading)
-                }
-            }
-            .padding()
-            .background(Color.white.opacity(0.8))
-            .cornerRadius(12)
+            Spacer()
             
             Button(action: onStart) {
-                Text("Continue")
+                Text("Start Game")
                     .font(.headline)
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
+                    .cornerRadius(8)
+            }
+            .popIn()
+            
+            Button(action: { showSettings = true }) {
+                Text("Settings")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.gray.opacity(0.3))
+                    .foregroundColor(.primary)
                     .cornerRadius(8)
             }
             .popIn()
@@ -146,47 +158,48 @@ struct DifficultySelectionView: View {
     }
 }
 
-struct DifficultyButton: View {
-    let difficulty: DifficultyMode
-    let isSelected: Bool
-    let action: () -> Void
-    
-    var difficultyName: String {
-        switch difficulty {
-        case .easy: return "Easy (1-2 pts)"
-        case .medium: return "Medium (2-3 pts)"
-        case .hard: return "Hard (3-5 pts)"
-        case .mixed: return "Mixed (All)"
-        }
-    }
+// MARK: - Player Setup View
+
+private struct PlayerSetupView: View {
+    @Binding var playerName: String
+    var onContinue: () -> Void
     
     var body: some View {
-        Button(action: action) {
-            HStack {
-                Text(difficultyName)
-                    .font(.headline)
-                Spacer()
-                if isSelected {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.green)
-                }
+        VStack(spacing: 20) {
+            Text("Enter Your Name")
+                .font(.title2)
+                .fontWeight(.semibold)
+            
+            TextField("Your name", text: $playerName)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            Spacer()
+            
+            Button(action: onContinue) {
+                Text("Continue")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
             }
+            .disabled(playerName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             .padding()
-            .background(isSelected ? Color.blue.opacity(0.2) : Color.gray.opacity(0.1))
-            .foregroundColor(.primary)
-            .cornerRadius(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(isSelected ? Color.blue : Color.clear, lineWidth: 2)
-            )
+            
+            Spacer()
         }
+        .padding()
     }
 }
 
-struct GameSetupView: View {
-    @Binding var players: [Player]
-    let difficulty: DifficultyMode
-    var onStart: () -> Void
+// MARK: - Game Mode Selection View
+
+private struct GameModeSelectionView: View {
+    @Binding var selectedDifficulty: DifficultyMode
+    @Binding var gameMode: GameMode
+    var onComputerStart: () -> Void
+    var onMultiplayerStart: () -> Void
     var onBack: () -> Void
     
     var body: some View {
@@ -200,54 +213,64 @@ struct GameSetupView: View {
                     .foregroundColor(.blue)
                 }
                 Spacer()
-                Text("Game Setup")
-                    .font(.headline)
-                Spacer()
             }
             .padding()
+            
+            Text("Select Difficulty")
+                .font(.headline)
             
             VStack(spacing: 12) {
-                Text("Player Names")
-                    .font(.headline)
-                
-                ForEach($players) { $player in
-                    TextField("Player name", text: $player.name)
-                        .textFieldStyle(.roundedBorder)
-                        .padding(.horizontal)
+                ForEach([DifficultyMode.easy, .medium, .hard, .mixed], id: \.self) { difficulty in
+                    Button(action: { selectedDifficulty = difficulty }) {
+                        HStack {
+                            Text(difficultyName(difficulty))
+                                .font(.headline)
+                            Spacer()
+                            if selectedDifficulty == difficulty {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.green)
+                            }
+                        }
+                        .padding()
+                        .background(selectedDifficulty == difficulty ? Color.blue.opacity(0.2) : Color.gray.opacity(0.1))
+                        .foregroundColor(.primary)
+                        .cornerRadius(8)
+                    }
                 }
-            }
-            .popIn()
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Difficulty: \(difficultyString)")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
-            .padding()
-            .background(Color.gray.opacity(0.1))
-            .cornerRadius(8)
-            .padding()
-            
-            Button(action: onStart) {
-                Text("Start Game")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
             }
             .padding()
             
             Spacer()
+            
+            VStack(spacing: 12) {
+                Button(action: onComputerStart) {
+                    Text("Play vs Computer")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                
+                Button(action: onMultiplayerStart) {
+                    Text("Play vs Another Player")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.orange)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+            }
+            .padding()
         }
     }
     
-    var difficultyString: String {
+    private func difficultyName(_ difficulty: DifficultyMode) -> String {
         switch difficulty {
-        case .easy: return "Easy"
-        case .medium: return "Medium"
-        case .hard: return "Hard"
-        case .mixed: return "Mixed"
+        case .easy: return "Easy (1-2 pts)"
+        case .medium: return "Medium (2-3 pts)"
+        case .hard: return "Hard (3-5 pts)"
+        case .mixed: return "Mixed (All)"
         }
     }
 }

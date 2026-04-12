@@ -40,16 +40,13 @@ public class GameMultiplayer: NSObject, GameKitManagerDelegate, ObservableObject
     private func syncGameState() {
         guard let game = gameLogic else { return }
         
+        let leaderboard = Dictionary(uniqueKeysWithValues: game.players.map { ($0.name, $0.score) })
         let state = GameStateMessage(
-            round: game.currentRound,
-            gameState: game.gameState.rawValue,
-            askerIndex: game.getCurrentAsker().name,
-            guesserIndex: game.getCurrentGuesser().name,
-            clue: game.getCurrentClue(),
-            scores: game.players.map { $0.score }
+            state: game.gameState.rawValue,
+            leaderboard: leaderboard
         )
         
-        if let data = try? JSONEncoder().encode(state) {
+        if let data = MessageEncoder.encode(state) {
             gameKitManager.sendMessage(data)
         }
     }
@@ -59,13 +56,12 @@ public class GameMultiplayer: NSObject, GameKitManagerDelegate, ObservableObject
         
         let isCorrect = game.submitAnswer(answer)
         
-        let message = AnswerMessage(
-            answer: answer,
-            isCorrect: isCorrect,
-            playerName: game.getCurrentGuesser().name
+        let message = AnswerSubmittedMessage(
+            guesserName: game.getCurrentGuesser().name,
+            answer: answer
         )
         
-        if let data = try? JSONEncoder().encode(message) {
+        if let data = MessageEncoder.encode(message) {
             gameKitManager.sendMessage(data)
         }
     }
@@ -73,22 +69,28 @@ public class GameMultiplayer: NSObject, GameKitManagerDelegate, ObservableObject
     // MARK: - GameKitManagerDelegate
     
     public func gameKitManager(_ manager: GameKitManager, didReceiveMessage data: Data, from player: GKPlayer) {
-        // Try to decode as different message types
-        if let stateMessage = try? JSONDecoder().decode(GameStateMessage.self, from: data) {
-            handleGameStateUpdate(stateMessage)
-        } else if let answerMessage = try? JSONDecoder().decode(AnswerMessage.self, from: data) {
-            handleAnswerUpdate(answerMessage)
+        // Decode message using MessageEncoder
+        if let message = MessageEncoder.decode(data) {
+            if let stateMessage = message as? GameStateMessage {
+                handleGameStateUpdate(stateMessage)
+            } else if let answerMessage = message as? AnswerSubmittedMessage {
+                handleAnswerUpdate(answerMessage)
+            }
         }
     }
     
     public func gameKitManager(_ manager: GameKitManager, playerConnected player: GKPlayer) {
-        isConnected = true
-        remotePlayerName = player.displayName
+        DispatchQueue.main.async {
+            self.isConnected = true
+            self.remotePlayerName = player.displayName
+        }
     }
     
     public func gameKitManager(_ manager: GameKitManager, playerDisconnected player: GKPlayer) {
-        isConnected = false
-        remotePlayerName = nil
+        DispatchQueue.main.async {
+            self.isConnected = false
+            self.remotePlayerName = nil
+        }
     }
     
     private func handleGameStateUpdate(_ message: GameStateMessage) {
@@ -97,36 +99,19 @@ public class GameMultiplayer: NSObject, GameKitManagerDelegate, ObservableObject
         // Update local game state with remote state
         // This ensures both players stay in sync
         DispatchQueue.main.async {
-            // Update scores
-            for (index, score) in message.scores.enumerated() {
-                if index < game.players.count {
+            // Update scores from leaderboard
+            for (playerName, score) in message.leaderboard {
+                if let index = game.players.firstIndex(where: { $0.name == playerName }) {
                     game.players[index].score = score
                 }
             }
         }
     }
     
-    private func handleAnswerUpdate(_ message: AnswerMessage) {
+    private func handleAnswerUpdate(_ message: AnswerSubmittedMessage) {
         // Handle remote player's answer
         // This is used to update the UI with the remote player's action
     }
-}
-
-// MARK: - Message Types
-
-struct GameStateMessage: Codable {
-    let round: Int
-    let gameState: String
-    let askerIndex: String
-    let guesserIndex: String
-    let clue: String
-    let scores: [Int]
-}
-
-struct AnswerMessage: Codable {
-    let answer: String
-    let isCorrect: Bool
-    let playerName: String
 }
 
 // MARK: - GameState Extension

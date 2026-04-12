@@ -20,46 +20,43 @@ struct ContentView: View {
             )
             .ignoresSafeArea()
             
-            Group {
-                switch gameState {
-                case .menu:
-                    DifficultySelectionView(
-                        selectedDifficulty: $selectedDifficulty,
-                        showSettings: $showSettings,
-                        onStart: { gameState = .setup }
-                    )
-                    .slideIn(from: .leading)
-                    
-                case .setup:
-                    GameSetupView(
-                        players: $players,
-                        difficulty: selectedDifficulty,
-                        onStart: startGame,
-                        onBack: { gameState = .menu }
+            switch gameState {
+            case .menu:
+                DifficultySelectionView(
+                    selectedDifficulty: $selectedDifficulty,
+                    showSettings: $showSettings,
+                    onStart: { gameState = .setup }
+                )
+                .slideIn(from: .leading)
+                
+            case .setup:
+                GameSetupView(
+                    players: $players,
+                    difficulty: selectedDifficulty,
+                    onStart: startGame,
+                    onBack: { gameState = .menu }
+                )
+                .slideIn(from: .trailing)
+                
+            case .playing:
+                if let game = gameLogic {
+                    GamePlayView(
+                        gameLogic: game,
+                        onGameEnd: { gameState = .results }
                     )
                     .slideIn(from: .trailing)
-                    
-                case .playing:
-                    if let game = gameLogic {
-                        GamePlayView(
-                            gameLogic: game,
-                            onGameEnd: { gameState = .results }
-                        )
-                        .slideIn(from: .trailing)
-                    }
-                    
-                case .results:
-                    if let game = gameLogic {
-                        ResultsView(
-                            leaderboard: game.getLeaderboard().map { $0.player },
-                            onPlayAgain: { gameState = .menu },
-                            onExit: { gameState = .menu }
-                        )
-                        .slideIn(from: .trailing)
-                    }
+                }
+                
+            case .results:
+                if let game = gameLogic {
+                    ResultsView(
+                        leaderboard: game.getLeaderboard().map { $0.player },
+                        onPlayAgain: { gameState = .menu },
+                        onExit: { gameState = .menu }
+                    )
+                    .slideIn(from: .trailing)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             if showSettings {
                 SettingsView()

@@ -1,5 +1,6 @@
 import SwiftUI
 import FamousPeersCore
+import GameKit
 
 struct ContentView: View {
     @State private var gameState: GameFlowState = .menu
@@ -22,17 +23,9 @@ struct ContentView: View {
             case .menu:
                 MainMenuView(
                     showSettings: $showSettings,
-                    onStart: { gameState = .playerSetup }
+                    onStart: { gameState = .modeSelection }
                 )
                 .slideIn(from: .leading)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                
-            case .playerSetup:
-                PlayerSetupView(
-                    playerName: $playerName,
-                    onContinue: { gameState = .modeSelection }
-                )
-                .slideIn(from: .trailing)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             case .modeSelection:
@@ -41,7 +34,7 @@ struct ContentView: View {
                     gameMode: $gameMode,
                     onComputerStart: startGameVsComputer,
                     onMultiplayerStart: startGameVsPlayer,
-                    onBack: { gameState = .playerSetup }
+                    onBack: { gameState = .menu }
                 )
                 .slideIn(from: .trailing)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -74,6 +67,14 @@ struct ContentView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear {
+            loadPlayerNameFromGameKit()
+        }
+    }
+    }
+    
+    private func loadPlayerNameFromGameKit() {
+        playerName = GKLocalPlayer.local.displayName
     }
     
     private func startGameVsComputer() {
@@ -96,7 +97,6 @@ struct ContentView: View {
 
 enum GameFlowState {
     case menu
-    case playerSetup
     case modeSelection
     case playing
     case results
@@ -158,41 +158,6 @@ private struct MainMenuView: View {
     }
 }
 
-// MARK: - Player Setup View
-
-private struct PlayerSetupView: View {
-    @Binding var playerName: String
-    var onContinue: () -> Void
-    
-    var body: some View {
-        VStack(spacing: 20) {
-            Text("Enter Your Name")
-                .font(.title2)
-                .fontWeight(.semibold)
-            
-            TextField("Your name", text: $playerName)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-            
-            Spacer()
-            
-            Button(action: onContinue) {
-                Text("Continue")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-            }
-            .disabled(playerName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-            .padding()
-            
-            Spacer()
-        }
-        .padding()
-    }
-}
-
 // MARK: - Game Mode Selection View
 
 private struct GameModeSelectionView: View {
@@ -213,6 +178,9 @@ private struct GameModeSelectionView: View {
                     .foregroundColor(.blue)
                 }
                 Spacer()
+                Text("Player: ")
+                    .font(.caption)
+                    .foregroundColor(.gray)
             }
             .padding()
             

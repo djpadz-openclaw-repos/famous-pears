@@ -99,8 +99,6 @@ enum GameFlowState {
     case modeSelection
     case playing
     case results
-    case playing
-    case results
 }
 
 enum GameMode {

@@ -6,7 +6,7 @@
   {"id": 5, "category": "movies", "member1": "Abbott", "member2": "Costello", "difficulty": 3, "hint": "Golden age comedians"},
   {"id": 6, "category": "tech", "member1": "Steve", "member2": "Wozniak", "difficulty": 2, "hint": "Apple founders"},
   {"id": 7, "category": "tech", "member1": "Bill", "member2": "Gates", "difficulty": 1, "hint": "Microsoft founder"},
-  {"id": 8, "category": "history", "member1": "Lewis", "member2": "Clark", "difficulty": 3, "hint": "American explorers"},
+  {"id": 8, "category": "history", "member1": "Lewis and Clark", "member2": "Meriwether Lewis and William Clark", "difficulty": 3, "hint": "American explorers"},
   {"id": 9, "category": "history", "member1": "Romeo", "member2": "Juliet", "difficulty": 1, "hint": "Shakespeare lovers"},
   {"id": 10, "category": "concepts", "member1": "Peanut Butter", "member2": "Jelly", "difficulty": 1, "hint": "Classic sandwich"}
 ]

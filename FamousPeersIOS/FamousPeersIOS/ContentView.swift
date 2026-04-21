@@ -71,7 +71,6 @@ struct ContentView: View {
             loadPlayerNameFromGameKit()
         }
     }
-    }
     
     private func loadPlayerNameFromGameKit() {
         playerName = GKLocalPlayer.local.displayName
@@ -98,6 +97,8 @@ struct ContentView: View {
 enum GameFlowState {
     case menu
     case modeSelection
+    case playing
+    case results
     case playing
     case results
 }

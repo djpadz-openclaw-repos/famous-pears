@@ -30,7 +30,7 @@ public class CardDatabase {
             os_log("[CardDatabase] Successfully decoded %d cards", log: OSLog.default, type: .debug, allCards.count)
             
             if allCards.isEmpty {
-                os_log("[CardDatabase] WARNING: allCards is empty after decoding", log: OSLog.default, type: .warning)
+                os_log("[CardDatabase] WARNING: allCards is empty after decoding", log: OSLog.default, type: .info)
             }
         } catch {
             os_log("[CardDatabase] ERROR loading cards: %{public}@", log: OSLog.default, type: .error, error.localizedDescription)

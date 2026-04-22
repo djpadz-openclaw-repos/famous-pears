@@ -16,12 +16,6 @@ struct GamePlayView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            // DEBUG: Log game state
-            let _ = print("[GamePlayView] Clue: \(gameLogic.getCurrentClue() ?? "nil")")
-            let _ = print("[GamePlayView] Current Duo: \(gameLogic.getCurrentDuo()?.name ?? "nil")")
-            let _ = print("[GamePlayView] Computer Guesser: \(gameLogic.getCurrentGuesserIsComputer())")
-            let _ = print("[GamePlayView] Show Computer Guess: \(showComputerGuess)")
-            let _ = print("[GamePlayView] Computer Guess Value: \(computerGuess)")
             // Header
             HStack {
                 Text("Famous Peers")
@@ -165,6 +159,11 @@ struct GamePlayView: View {
             Spacer()
         }
         .onAppear {
+            print("[GamePlayView] Clue: \(gameLogic.getCurrentClue() ?? "nil")")
+            print("[GamePlayView] Current Duo: \(gameLogic.getCurrentDuo()?.name ?? "nil")")
+            print("[GamePlayView] Computer Guesser: \(gameLogic.getCurrentGuesserIsComputer())")
+            print("[GamePlayView] Show Computer Guess: \(showComputerGuess)")
+            print("[GamePlayView] Computer Guess Value: \(computerGuess)")
             handleComputerTurn()
         }
         .onChange(of: gameLogic.gameState) { oldState, newState in

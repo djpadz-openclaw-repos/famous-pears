@@ -46,11 +46,6 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
-                    }
-                )
-                .slideIn(from: .trailing)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                
             case .playing:
                 if let game = gameLogic {
                     GamePlayView(

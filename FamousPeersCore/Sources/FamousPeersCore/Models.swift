@@ -4,6 +4,7 @@ import Foundation
 
 public struct Duo: Codable, Identifiable {
     public let id: Int
+    public let uuid: String
     public let category: String
     public let duoName: String
     public let members: [[String]] // Array of [name, score] pairs

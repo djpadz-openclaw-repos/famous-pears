@@ -42,11 +42,8 @@ public class GameLogic: ObservableObject {
     public func startNewRound() {
         guard players.count >= 2 else { return }
         
-        // Get next card
-        let availableCards = cardDatabase.getCards(for: difficulty)
-            .filter { !usedCards.contains($0.id) }
-        
-        guard let nextCard = availableCards.randomElement() else {
+        // Get next card using weighted random selection
+        guard let nextCard = cardDatabase.getWeightedRandomCard(for: difficulty, excluding: usedCards) else {
             endGame()
             return
         }

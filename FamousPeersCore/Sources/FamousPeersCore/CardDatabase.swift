@@ -2,6 +2,7 @@ import Foundation
 
 public class CardDatabase {
     private var allCards: [Duo] = []
+    private var cardUsageTracker: [String: Date] = [:] // UUID -> last used time
     
     public init() {
         loadCards()
@@ -31,7 +32,46 @@ public class CardDatabase {
         return filtered.randomElement()
     }
     
+    public func getWeightedRandomCard(for difficulty: DifficultyMode, excluding excludedIds: Set<Int> = []) -> Duo? {
+        var filtered = getCards(for: difficulty)
+        if !excludedIds.isEmpty {
+            filtered = filtered.filter { !excludedIds.contains($0.id) }
+        }
+        guard !filtered.isEmpty else { return nil }
+        
+        // Calculate weights based on how long ago each card was used
+        let now = Date()
+        let weights = filtered.map { card -> Double in
+            let lastUsed = cardUsageTracker[card.uuid] ?? Date.distantPast
+            let timeSinceUsed = now.timeIntervalSince(lastUsed)
+            // Weight increases with time since last use (exponential to prefer older cards more)
+            return exp(timeSinceUsed / 3600) // Normalize by hours
+        }
+        
+        // Weighted random selection
+        let totalWeight = weights.reduce(0, +)
+        var randomValue = Double.random(in: 0..<totalWeight)
+        
+        for (index, weight) in weights.enumerated() {
+            randomValue -= weight
+            if randomValue <= 0 {
+                let selectedCard = filtered[index]
+                cardUsageTracker[selectedCard.uuid] = now
+                return selectedCard
+            }
+        }
+        
+        // Fallback (shouldn't reach here)
+        let selectedCard = filtered.last!
+        cardUsageTracker[selectedCard.uuid] = now
+        return selectedCard
+    }
+    
     public func getAllCards() -> [Duo] {
         return allCards
+    }
+    
+    public func resetUsageTracker() {
+        cardUsageTracker.removeAll()
     }
 }

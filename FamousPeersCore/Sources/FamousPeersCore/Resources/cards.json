@@ -1,102 +1,1802 @@
 [
-  {"id": 1, "category": "music", "difficulty": 3, "hint": "Jazz-rock duo, 1970s", "duoName": "Steely Dan", "members": [["Donald Fagen", 1], ["Walter Becker", 2]]},
-  {"id": 2, "category": "music", "difficulty": 1, "hint": "Legendary rock band", "duoName": "The Beatles", "members": [["John Lennon", 1], ["Paul McCartney", 1]]},
-  {"id": 3, "category": "music", "difficulty": 2, "hint": "Folk-rock duo, 1960s", "duoName": "Simon & Garfunkel", "members": [["Paul Simon", 1], ["Art Garfunkel", 2]]},
-  {"id": 4, "category": "music", "difficulty": 2, "hint": "British rock legends", "duoName": "The Rolling Stones", "members": [["Mick Jagger", 1], ["Keith Richards", 1]]},
-  {"id": 5, "category": "music", "difficulty": 3, "hint": "Punk rock pioneers", "duoName": "The Clash", "members": [["Joe Strummer", 2], ["Mick Jones", 2]]},
-  {"id": 6, "category": "music", "difficulty": 2, "hint": "Disco legends", "duoName": "Bee Gees", "members": [["Barry Gibb", 1], ["Robin Gibb", 2]]},
-  {"id": 7, "category": "music", "difficulty": 3, "hint": "Synth-pop duo", "duoName": "Depeche Mode", "members": [["Dave Gahan", 1], ["Martin Gore", 2]]},
-  {"id": 8, "category": "music", "difficulty": 2, "hint": "Reggae legends", "duoName": "Bob Marley & The Wailers", "members": [["Bob Marley", 1], ["Peter Tosh", 2]]},
-  {"id": 9, "category": "music", "difficulty": 3, "hint": "Rap pioneers", "duoName": "Run-DMC", "members": [["Run", 2], ["DMC", 2]]},
-  {"id": 10, "category": "music", "difficulty": 2, "hint": "Country duo", "duoName": "The Everly Brothers", "members": [["Don Everly", 2], ["Phil Everly", 2]]},
-  {"id": 11, "category": "music", "difficulty": 3, "hint": "Electronic pioneers", "duoName": "Kraftwerk", "members": [["Ralf Hütter", 2], ["Florian Schneider", 2]]},
-  {"id": 12, "category": "music", "difficulty": 2, "hint": "Soul legends", "duoName": "Sam & Dave", "members": [["Sam Moore", 2], ["Dave Prater", 2]]},
-  {"id": 13, "category": "music", "difficulty": 3, "hint": "New wave duo", "duoName": "The Police", "members": [["Sting", 1], ["Andy Summers", 2]]},
-  {"id": 14, "category": "music", "difficulty": 2, "hint": "Motown legends", "duoName": "Marvin Gaye & Tammi Terrell", "members": [["Marvin Gaye", 1], ["Tammi Terrell", 2]]},
-  {"id": 15, "category": "music", "difficulty": 3, "hint": "Grunge pioneers", "duoName": "Nirvana", "members": [["Kurt Cobain", 1], ["Dave Grohl", 2]]},
-  {"id": 16, "category": "movies", "difficulty": 2, "hint": "Classic comedy duo", "duoName": "Laurel and Hardy", "members": [["Stan Laurel", 2], ["Oliver Hardy", 2]]},
-  {"id": 17, "category": "movies", "difficulty": 3, "hint": "Golden age comedians", "duoName": "Abbott and Costello", "members": [["Bud Abbott", 2], ["Lou Costello", 2]]},
-  {"id": 18, "category": "movies", "difficulty": 2, "hint": "Action movie duo", "duoName": "Lethal Weapon", "members": [["Mel Gibson", 1], ["Danny Glover", 1]]},
-  {"id": 19, "category": "movies", "difficulty": 2, "hint": "Buddy cop comedy", "duoName": "48 Hrs.", "members": [["Eddie Murphy", 1], ["Nick Nolte", 2]]},
-  {"id": 20, "category": "movies", "difficulty": 1, "hint": "Romantic comedy duo", "duoName": "When Harry Met Sally", "members": [["Billy Crystal", 1], ["Meg Ryan", 1]]},
-  {"id": 21, "category": "movies", "difficulty": 2, "hint": "Sci-fi action duo", "duoName": "The Terminator", "members": [["Arnold Schwarzenegger", 1], ["Linda Hamilton", 2]]},
-  {"id": 22, "category": "movies", "difficulty": 3, "hint": "Western legends", "duoName": "Butch Cassidy and the Sundance Kid", "members": [["Paul Newman", 1], ["Robert Redford", 1]]},
-  {"id": 23, "category": "movies", "difficulty": 2, "hint": "Spy comedy duo", "duoName": "Get Smart", "members": [["Don Adams", 2], ["Barbara Feldon", 2]]},
-  {"id": 24, "category": "movies", "difficulty": 1, "hint": "Animated duo", "duoName": "Tom and Jerry", "members": [["Tom", 1], ["Jerry", 1]]},
-  {"id": 25, "category": "movies", "difficulty": 2, "hint": "Road trip comedy", "duoName": "Dumb and Dumber", "members": [["Jim Carrey", 1], ["Jeff Daniels", 2]]},
-  {"id": 26, "category": "movies", "difficulty": 3, "hint": "Noir detectives", "duoName": "The Big Sleep", "members": [["Humphrey Bogart", 1], ["Lauren Bacall", 2]]},
-  {"id": 27, "category": "movies", "difficulty": 2, "hint": "Superhero duo", "duoName": "Batman and Robin", "members": [["Batman", 1], ["Robin", 2]]},
-  {"id": 28, "category": "movies", "difficulty": 1, "hint": "Animated mice", "duoName": "Mickey and Minnie Mouse", "members": [["Mickey Mouse", 1], ["Minnie Mouse", 2]]},
-  {"id": 29, "category": "movies", "difficulty": 3, "hint": "Heist film duo", "duoName": "Ocean's Eleven", "members": [["George Clooney", 1], ["Brad Pitt", 1]]},
-  {"id": 30, "category": "movies", "difficulty": 2, "hint": "Buddy cop drama", "duoName": "Serpico", "members": [["Al Pacino", 1], ["John Randolph", 2]]},
-  {"id": 31, "category": "tech", "difficulty": 2, "hint": "Apple founders", "duoName": "Steve Jobs and Steve Wozniak", "members": [["Steve Jobs", 1], ["Steve Wozniak", 2]]},
-  {"id": 32, "category": "tech", "difficulty": 1, "hint": "Microsoft founders", "duoName": "Bill Gates and Paul Allen", "members": [["Bill Gates", 1], ["Paul Allen", 2]]},
-  {"id": 33, "category": "tech", "difficulty": 3, "hint": "Google founders", "duoName": "Larry Page and Sergey Brin", "members": [["Larry Page", 2], ["Sergey Brin", 2]]},
-  {"id": 34, "category": "tech", "difficulty": 2, "hint": "Facebook founders", "duoName": "Mark Zuckerberg and Eduardo Saverin", "members": [["Mark Zuckerberg", 1], ["Eduardo Saverin", 2]]},
-  {"id": 35, "category": "tech", "difficulty": 3, "hint": "Tesla and PayPal founder", "duoName": "Elon Musk and Martin Eberhard", "members": [["Elon Musk", 1], ["Martin Eberhard", 2]]},
-  {"id": 36, "category": "tech", "difficulty": 2, "hint": "Amazon founder", "duoName": "Jeff Bezos and MacKenzie Scott", "members": [["Jeff Bezos", 1], ["MacKenzie Scott", 2]]},
-  {"id": 37, "category": "tech", "difficulty": 3, "hint": "Twitter founders", "duoName": "Jack Dorsey and Noah Glass", "members": [["Jack Dorsey", 1], ["Noah Glass", 2]]},
-  {"id": 38, "category": "tech", "difficulty": 2, "hint": "LinkedIn founders", "duoName": "Reid Hoffman and Allen Blue", "members": [["Reid Hoffman", 2], ["Allen Blue", 2]]},
-  {"id": 39, "category": "tech", "difficulty": 3, "hint": "Snapchat founders", "duoName": "Evan Spiegel and Bobby Murphy", "members": [["Evan Spiegel", 2], ["Bobby Murphy", 2]]},
-  {"id": 40, "category": "tech", "difficulty": 2, "hint": "Instagram founders", "duoName": "Kevin Systrom and Mike Krieger", "members": [["Kevin Systrom", 2], ["Mike Krieger", 2]]},
-  {"id": 41, "category": "history", "difficulty": 3, "hint": "American explorers", "duoName": "Lewis and Clark", "members": [["Meriwether Lewis", 2], ["William Clark", 2]]},
-  {"id": 42, "category": "history", "difficulty": 1, "hint": "Shakespeare lovers", "duoName": "Romeo and Juliet", "members": [["Romeo", 1], ["Juliet", 1]]},
-  {"id": 43, "category": "history", "difficulty": 2, "hint": "French revolutionaries", "duoName": "Robespierre and Danton", "members": [["Maximilien Robespierre", 2], ["Georges Danton", 2]]},
-  {"id": 44, "category": "history", "difficulty": 3, "hint": "Ancient philosophers", "duoName": "Plato and Aristotle", "members": [["Plato", 2], ["Aristotle", 2]]},
-  {"id": 45, "category": "history", "difficulty": 2, "hint": "American presidents", "duoName": "Lincoln and Johnson", "members": [["Abraham Lincoln", 1], ["Andrew Johnson", 2]]},
-  {"id": 46, "category": "history", "difficulty": 3, "hint": "Medieval lovers", "duoName": "Abelard and Heloise", "members": [["Peter Abelard", 2], ["Heloise", 2]]},
-  {"id": 47, "category": "history", "difficulty": 2, "hint": "British monarchs", "duoName": "Henry VIII and Anne Boleyn", "members": [["Henry VIII", 1], ["Anne Boleyn", 2]]},
-  {"id": 48, "category": "history", "difficulty": 3, "hint": "Ancient lovers", "duoName": "Antony and Cleopatra", "members": [["Mark Antony", 2], ["Cleopatra", 1]]},
-  {"id": 49, "category": "history", "difficulty": 2, "hint": "Russian revolutionaries", "duoName": "Lenin and Trotsky", "members": [["Vladimir Lenin", 1], ["Leon Trotsky", 2]]},
-  {"id": 50, "category": "history", "difficulty": 3, "hint": "Medieval knights", "duoName": "Lancelot and Guinevere", "members": [["Lancelot", 2], ["Guinevere", 2]]},
-  {"id": 51, "category": "concepts", "difficulty": 1, "hint": "Classic sandwich", "duoName": "Peanut Butter and Jelly", "members": [["Peanut Butter", 1], ["Jelly", 1]]},
-  {"id": 52, "category": "concepts", "difficulty": 1, "hint": "Breakfast staples", "duoName": "Bacon and Eggs", "members": [["Bacon", 1], ["Eggs", 1]]},
-  {"id": 53, "category": "concepts", "difficulty": 2, "hint": "Philosophical opposites", "duoName": "Good and Evil", "members": [["Good", 1], ["Evil", 1]]},
-  {"id": 54, "category": "concepts", "difficulty": 1, "hint": "Time periods", "duoName": "Day and Night", "members": [["Day", 1], ["Night", 1]]},
-  {"id": 55, "category": "concepts", "difficulty": 2, "hint": "Mathematical concepts", "duoName": "Plus and Minus", "members": [["Plus", 2], ["Minus", 2]]},
-  {"id": 56, "category": "concepts", "difficulty": 1, "hint": "Opposite genders", "duoName": "Male and Female", "members": [["Male", 1], ["Female", 1]]},
-  {"id": 57, "category": "concepts", "difficulty": 2, "hint": "Logical states", "duoName": "True and False", "members": [["True", 1], ["False", 1]]},
-  {"id": 58, "category": "concepts", "difficulty": 1, "hint": "Condiments", "duoName": "Salt and Pepper", "members": [["Salt", 1], ["Pepper", 1]]},
-  {"id": 59, "category": "concepts", "difficulty": 2, "hint": "Celestial bodies", "duoName": "Sun and Moon", "members": [["Sun", 1], ["Moon", 1]]},
-  {"id": 60, "category": "concepts", "difficulty": 1, "hint": "Footwear pair", "duoName": "Shoes and Socks", "members": [["Shoes", 1], ["Socks", 2]]},
-  {"id": 61, "category": "music", "difficulty": 2, "hint": "British rock duo", "duoName": "Pink Floyd", "members": [["David Gilmour", 1], ["Roger Waters", 1]]},
-  {"id": 62, "category": "music", "difficulty": 3, "hint": "Prog rock legends", "duoName": "Yes", "members": [["Jon Anderson", 2], ["Chris Squire", 2]]},
-  {"id": 63, "category": "music", "difficulty": 2, "hint": "Heavy metal pioneers", "duoName": "Black Sabbath", "members": [["Ozzy Osbourne", 1], ["Tony Iommi", 2]]},
-  {"id": 64, "category": "music", "difficulty": 3, "hint": "Glam rock legends", "duoName": "David Bowie and Mick Jagger", "members": [["David Bowie", 1], ["Mick Jagger", 1]]},
-  {"id": 65, "category": "music", "difficulty": 2, "hint": "Punk rock duo", "duoName": "Sex Pistols", "members": [["Johnny Rotten", 2], ["Sid Vicious", 2]]},
-  {"id": 66, "category": "music", "difficulty": 3, "hint": "Funk legends", "duoName": "James Brown and George Clinton", "members": [["James Brown", 1], ["George Clinton", 2]]},
-  {"id": 67, "category": "music", "difficulty": 2, "hint": "Soul duo", "duoName": "Ike and Tina Turner", "members": [["Ike Turner", 2], ["Tina Turner", 1]]},
-  {"id": 68, "category": "music", "difficulty": 3, "hint": "Jazz legends", "duoName": "Miles Davis and John Coltrane", "members": [["Miles Davis", 1], ["John Coltrane", 2]]},
-  {"id": 69, "category": "music", "difficulty": 2, "hint": "Country legends", "duoName": "Johnny Cash and June Carter", "members": [["Johnny Cash", 1], ["June Carter", 2]]},
-  {"id": 70, "category": "music", "difficulty": 3, "hint": "Hip-hop pioneers", "duoName": "Grandmaster Flash and Melle Mel", "members": [["Grandmaster Flash", 2], ["Melle Mel", 2]]},
-  {"id": 71, "category": "movies", "difficulty": 2, "hint": "Action duo", "duoName": "Die Hard", "members": [["Bruce Willis", 1], ["Alan Rickman", 2]]},
-  {"id": 72, "category": "movies", "difficulty": 3, "hint": "Sci-fi action", "duoName": "The Matrix", "members": [["Keanu Reeves", 1], ["Laurence Fishburne", 2]]},
-  {"id": 73, "category": "movies", "difficulty": 2, "hint": "Comedy duo", "duoName": "Ghostbusters", "members": [["Bill Murray", 1], ["Dan Aykroyd", 1]]},
-  {"id": 74, "category": "movies", "difficulty": 3, "hint": "Romantic drama", "duoName": "Titanic", "members": [["Leonardo DiCaprio", 1], ["Kate Winslet", 1]]},
-  {"id": 75, "category": "movies", "difficulty": 2, "hint": "Superhero film", "duoName": "Superman", "members": [["Christopher Reeve", 1], ["Gene Hackman", 2]]},
-  {"id": 76, "category": "movies", "difficulty": 3, "hint": "Crime drama", "duoName": "Goodfellas", "members": [["Robert De Niro", 1], ["Joe Pesci", 2]]},
-  {"id": 77, "category": "movies", "difficulty": 2, "hint": "Western duo", "duoName": "True Grit", "members": [["John Wayne", 1], ["Jeff Bridges", 2]]},
-  {"id": 78, "category": "movies", "difficulty": 3, "hint": "Thriller duo", "duoName": "Silence of the Lambs", "members": [["Jodie Foster", 2], ["Anthony Hopkins", 1]]},
-  {"id": 79, "category": "movies", "difficulty": 2, "hint": "Adventure duo", "duoName": "Indiana Jones", "members": [["Harrison Ford", 1], ["Sean Connery", 1]]},
-  {"id": 80, "category": "movies", "difficulty": 3, "hint": "Animated duo", "duoName": "Toy Story", "members": [["Woody", 1], ["Buzz Lightyear", 1]]},
-  {"id": 81, "category": "tech", "difficulty": 2, "hint": "Xerox founders", "duoName": "Chester Carlson and Haloid", "members": [["Chester Carlson", 2], ["Joseph Wilson", 2]]},
-  {"id": 82, "category": "tech", "difficulty": 3, "hint": "Intel founders", "duoName": "Gordon Moore and Robert Noyce", "members": [["Gordon Moore", 2], ["Robert Noyce", 2]]},
-  {"id": 83, "category": "tech", "difficulty": 2, "hint": "Oracle founder", "duoName": "Larry Ellison and Bob Miner", "members": [["Larry Ellison", 1], ["Bob Miner", 2]]},
-  {"id": 84, "category": "tech", "difficulty": 3, "hint": "Cisco founders", "duoName": "Leonard Bosack and Sandra Lerner", "members": [["Leonard Bosack", 2], ["Sandra Lerner", 2]]},
-  {"id": 85, "category": "tech", "difficulty": 2, "hint": "Yahoo founders", "duoName": "Jerry Yang and David Filo", "members": [["Jerry Yang", 2], ["David Filo", 2]]},
-  {"id": 86, "category": "tech", "difficulty": 3, "hint": "eBay founder", "duoName": "Pierre Omidyar and Jeff Skoll", "members": [["Pierre Omidyar", 2], ["Jeff Skoll", 2]]},
-  {"id": 87, "category": "tech", "difficulty": 2, "hint": "Netscape founders", "duoName": "Marc Andreessen and Jim Clark", "members": [["Marc Andreessen", 2], ["Jim Clark", 2]]},
-  {"id": 88, "category": "tech", "difficulty": 3, "hint": "Dropbox founder", "duoName": "Drew Houston and Arash Ferdowsi", "members": [["Drew Houston", 2], ["Arash Ferdowsi", 2]]},
-  {"id": 89, "category": "tech", "difficulty": 2, "hint": "Airbnb founders", "duoName": "Brian Chesky and Joe Gebbia", "members": [["Brian Chesky", 2], ["Joe Gebbia", 2]]},
-  {"id": 90, "category": "tech", "difficulty": 3, "hint": "Uber founders", "duoName": "Travis Kalanick and Garrett Camp", "members": [["Travis Kalanick", 2], ["Garrett Camp", 2]]},
-  {"id": 91, "category": "history", "difficulty": 2, "hint": "American founding fathers", "duoName": "George Washington and Benjamin Franklin", "members": [["George Washington", 1], ["Benjamin Franklin", 1]]},
-  {"id": 92, "category": "history", "difficulty": 3, "hint": "Ancient generals", "duoName": "Alexander the Great and Aristotle", "members": [["Alexander the Great", 1], ["Aristotle", 2]]},
-  {"id": 93, "category": "history", "difficulty": 2, "hint": "Renaissance artists", "duoName": "Leonardo da Vinci and Michelangelo", "members": [["Leonardo da Vinci", 1], ["Michelangelo", 1]]},
-  {"id": 94, "category": "history", "difficulty": 3, "hint": "Scientific pioneers", "duoName": "Marie and Pierre Curie", "members": [["Marie Curie", 1], ["Pierre Curie", 2]]},
-  {"id": 95, "category": "history", "difficulty": 2, "hint": "Civil rights leaders", "duoName": "Martin Luther King Jr. and Malcolm X", "members": [["Martin Luther King Jr.", 1], ["Malcolm X", 2]]},
-  {"id": 96, "category": "concepts", "difficulty": 2, "hint": "Opposite directions", "duoName": "Left and Right", "members": [["Left", 1], ["Right", 1]]},
-  {"id": 97, "category": "concepts", "difficulty": 1, "hint": "Opposite sizes", "duoName": "Big and Small", "members": [["Big", 1], ["Small", 1]]},
-  {"id": 98, "category": "concepts", "difficulty": 2, "hint": "Opposite temperatures", "duoName": "Hot and Cold", "members": [["Hot", 1], ["Cold", 1]]},
-  {"id": 99, "category": "concepts", "difficulty": 1, "hint": "Opposite emotions", "duoName": "Happy and Sad", "members": [["Happy", 1], ["Sad", 1]]},
-  {"id": 100, "category": "concepts", "difficulty": 2, "hint": "Opposite states", "duoName": "Life and Death", "members": [["Life", 1], ["Death", 1]]}
+  {
+    "id": 1,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Jazz-rock duo, 1970s",
+    "duoName": "Steely Dan",
+    "members": [
+      [
+        "Donald Fagen",
+        1
+      ],
+      [
+        "Walter Becker",
+        2
+      ]
+    ],
+    "uuid": "f87dc0ba-f31b-4940-8a92-8d071c4d1e98"
+  },
+  {
+    "id": 2,
+    "category": "music",
+    "difficulty": 1,
+    "hint": "Legendary rock band",
+    "duoName": "The Beatles",
+    "members": [
+      [
+        "John Lennon",
+        1
+      ],
+      [
+        "Paul McCartney",
+        1
+      ]
+    ],
+    "uuid": "0840778e-8115-43de-824f-9b89495bd0ef"
+  },
+  {
+    "id": 3,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Folk-rock duo, 1960s",
+    "duoName": "Simon & Garfunkel",
+    "members": [
+      [
+        "Paul Simon",
+        1
+      ],
+      [
+        "Art Garfunkel",
+        2
+      ]
+    ],
+    "uuid": "079fc5b9-6712-4fae-b9f9-7f827869b14a"
+  },
+  {
+    "id": 4,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "British rock legends",
+    "duoName": "The Rolling Stones",
+    "members": [
+      [
+        "Mick Jagger",
+        1
+      ],
+      [
+        "Keith Richards",
+        1
+      ]
+    ],
+    "uuid": "e668a642-0ea2-4663-8a9c-8d430610b322"
+  },
+  {
+    "id": 5,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Punk rock pioneers",
+    "duoName": "The Clash",
+    "members": [
+      [
+        "Joe Strummer",
+        2
+      ],
+      [
+        "Mick Jones",
+        2
+      ]
+    ],
+    "uuid": "95c9f27b-711c-4bfd-b13c-db52a11de202"
+  },
+  {
+    "id": 6,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Disco legends",
+    "duoName": "Bee Gees",
+    "members": [
+      [
+        "Barry Gibb",
+        1
+      ],
+      [
+        "Robin Gibb",
+        2
+      ]
+    ],
+    "uuid": "5123a0fb-b11a-462b-8978-c199e802c3fb"
+  },
+  {
+    "id": 7,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Synth-pop duo",
+    "duoName": "Depeche Mode",
+    "members": [
+      [
+        "Dave Gahan",
+        1
+      ],
+      [
+        "Martin Gore",
+        2
+      ]
+    ],
+    "uuid": "39036f79-93b6-4e0b-8cb9-d4b76ebb5218"
+  },
+  {
+    "id": 8,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Reggae legends",
+    "duoName": "Bob Marley & The Wailers",
+    "members": [
+      [
+        "Bob Marley",
+        1
+      ],
+      [
+        "Peter Tosh",
+        2
+      ]
+    ],
+    "uuid": "133cb17f-8cd9-4fb3-b410-03c8f1658150"
+  },
+  {
+    "id": 9,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Rap pioneers",
+    "duoName": "Run-DMC",
+    "members": [
+      [
+        "Run",
+        2
+      ],
+      [
+        "DMC",
+        2
+      ]
+    ],
+    "uuid": "974acbe6-1458-42dc-8a6e-0047b81f9169"
+  },
+  {
+    "id": 10,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Country duo",
+    "duoName": "The Everly Brothers",
+    "members": [
+      [
+        "Don Everly",
+        2
+      ],
+      [
+        "Phil Everly",
+        2
+      ]
+    ],
+    "uuid": "bff817b8-2534-457b-823f-46e0133b90ba"
+  },
+  {
+    "id": 11,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Electronic pioneers",
+    "duoName": "Kraftwerk",
+    "members": [
+      [
+        "Ralf H\u00fctter",
+        2
+      ],
+      [
+        "Florian Schneider",
+        2
+      ]
+    ],
+    "uuid": "05b0b747-b765-4bf3-b9cd-0f113e752d0b"
+  },
+  {
+    "id": 12,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Soul legends",
+    "duoName": "Sam & Dave",
+    "members": [
+      [
+        "Sam Moore",
+        2
+      ],
+      [
+        "Dave Prater",
+        2
+      ]
+    ],
+    "uuid": "75673a3a-e90f-45c4-bf42-bf4c2f78f562"
+  },
+  {
+    "id": 13,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "New wave duo",
+    "duoName": "The Police",
+    "members": [
+      [
+        "Sting",
+        1
+      ],
+      [
+        "Andy Summers",
+        2
+      ]
+    ],
+    "uuid": "119cde39-e6c5-42a4-a8c4-f0550029ee1a"
+  },
+  {
+    "id": 14,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Motown legends",
+    "duoName": "Marvin Gaye & Tammi Terrell",
+    "members": [
+      [
+        "Marvin Gaye",
+        1
+      ],
+      [
+        "Tammi Terrell",
+        2
+      ]
+    ],
+    "uuid": "df996c0e-8ce8-4e78-97d9-0f78b837c5cf"
+  },
+  {
+    "id": 15,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Grunge pioneers",
+    "duoName": "Nirvana",
+    "members": [
+      [
+        "Kurt Cobain",
+        1
+      ],
+      [
+        "Dave Grohl",
+        2
+      ]
+    ],
+    "uuid": "00b080c7-dafb-4306-b723-de390e568e59"
+  },
+  {
+    "id": 16,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Classic comedy duo",
+    "duoName": "Laurel and Hardy",
+    "members": [
+      [
+        "Stan Laurel",
+        2
+      ],
+      [
+        "Oliver Hardy",
+        2
+      ]
+    ],
+    "uuid": "99f15f66-265d-4729-8c1a-29a3c3072306"
+  },
+  {
+    "id": 17,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Golden age comedians",
+    "duoName": "Abbott and Costello",
+    "members": [
+      [
+        "Bud Abbott",
+        2
+      ],
+      [
+        "Lou Costello",
+        2
+      ]
+    ],
+    "uuid": "bd8242aa-ef0b-4abf-81c9-5f7a07c2ef29"
+  },
+  {
+    "id": 18,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Action movie duo",
+    "duoName": "Lethal Weapon",
+    "members": [
+      [
+        "Mel Gibson",
+        1
+      ],
+      [
+        "Danny Glover",
+        1
+      ]
+    ],
+    "uuid": "430f2d1a-2706-4f32-9553-d408ddb234c2"
+  },
+  {
+    "id": 19,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Buddy cop comedy",
+    "duoName": "48 Hrs.",
+    "members": [
+      [
+        "Eddie Murphy",
+        1
+      ],
+      [
+        "Nick Nolte",
+        2
+      ]
+    ],
+    "uuid": "29729225-a606-4341-bb41-5a5fa60a6a1f"
+  },
+  {
+    "id": 20,
+    "category": "movies",
+    "difficulty": 1,
+    "hint": "Romantic comedy duo",
+    "duoName": "When Harry Met Sally",
+    "members": [
+      [
+        "Billy Crystal",
+        1
+      ],
+      [
+        "Meg Ryan",
+        1
+      ]
+    ],
+    "uuid": "8d8cc3e2-c3fb-400c-9211-802e117d5787"
+  },
+  {
+    "id": 21,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Sci-fi action duo",
+    "duoName": "The Terminator",
+    "members": [
+      [
+        "Arnold Schwarzenegger",
+        1
+      ],
+      [
+        "Linda Hamilton",
+        2
+      ]
+    ],
+    "uuid": "fad5a660-13e1-44ec-988a-fb91ba4c0845"
+  },
+  {
+    "id": 22,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Western legends",
+    "duoName": "Butch Cassidy and the Sundance Kid",
+    "members": [
+      [
+        "Paul Newman",
+        1
+      ],
+      [
+        "Robert Redford",
+        1
+      ]
+    ],
+    "uuid": "9948440c-62bd-4089-a834-6f1d388f28cd"
+  },
+  {
+    "id": 23,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Spy comedy duo",
+    "duoName": "Get Smart",
+    "members": [
+      [
+        "Don Adams",
+        2
+      ],
+      [
+        "Barbara Feldon",
+        2
+      ]
+    ],
+    "uuid": "d488f45b-ca1f-4670-b5dd-ec6b8eb60ebd"
+  },
+  {
+    "id": 24,
+    "category": "movies",
+    "difficulty": 1,
+    "hint": "Animated duo",
+    "duoName": "Tom and Jerry",
+    "members": [
+      [
+        "Tom",
+        1
+      ],
+      [
+        "Jerry",
+        1
+      ]
+    ],
+    "uuid": "ce5c541b-020d-4f5a-818e-8e2beb93af4e"
+  },
+  {
+    "id": 25,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Road trip comedy",
+    "duoName": "Dumb and Dumber",
+    "members": [
+      [
+        "Jim Carrey",
+        1
+      ],
+      [
+        "Jeff Daniels",
+        2
+      ]
+    ],
+    "uuid": "5b66f2ab-d29a-4aa6-8485-023e76bbc53a"
+  },
+  {
+    "id": 26,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Noir detectives",
+    "duoName": "The Big Sleep",
+    "members": [
+      [
+        "Humphrey Bogart",
+        1
+      ],
+      [
+        "Lauren Bacall",
+        2
+      ]
+    ],
+    "uuid": "686de801-b78e-486b-b0bb-98efdb697b39"
+  },
+  {
+    "id": 27,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Superhero duo",
+    "duoName": "Batman and Robin",
+    "members": [
+      [
+        "Batman",
+        1
+      ],
+      [
+        "Robin",
+        2
+      ]
+    ],
+    "uuid": "6e4720da-505d-48cd-99d2-f2bdb8b93f41"
+  },
+  {
+    "id": 28,
+    "category": "movies",
+    "difficulty": 1,
+    "hint": "Animated mice",
+    "duoName": "Mickey and Minnie Mouse",
+    "members": [
+      [
+        "Mickey Mouse",
+        1
+      ],
+      [
+        "Minnie Mouse",
+        2
+      ]
+    ],
+    "uuid": "d5d0aba9-6534-4008-8ac0-8a146ba5e7e2"
+  },
+  {
+    "id": 29,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Heist film duo",
+    "duoName": "Ocean's Eleven",
+    "members": [
+      [
+        "George Clooney",
+        1
+      ],
+      [
+        "Brad Pitt",
+        1
+      ]
+    ],
+    "uuid": "5b450f0d-99e1-4e15-afc8-35b8c616121e"
+  },
+  {
+    "id": 30,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Buddy cop drama",
+    "duoName": "Serpico",
+    "members": [
+      [
+        "Al Pacino",
+        1
+      ],
+      [
+        "John Randolph",
+        2
+      ]
+    ],
+    "uuid": "5ee6325c-d90e-4a6a-a9af-37f82fd869b2"
+  },
+  {
+    "id": 31,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Apple founders",
+    "duoName": "Steve Jobs and Steve Wozniak",
+    "members": [
+      [
+        "Steve Jobs",
+        1
+      ],
+      [
+        "Steve Wozniak",
+        2
+      ]
+    ],
+    "uuid": "109668c7-24c0-49d7-9274-c918340fb0ef"
+  },
+  {
+    "id": 32,
+    "category": "tech",
+    "difficulty": 1,
+    "hint": "Microsoft founders",
+    "duoName": "Bill Gates and Paul Allen",
+    "members": [
+      [
+        "Bill Gates",
+        1
+      ],
+      [
+        "Paul Allen",
+        2
+      ]
+    ],
+    "uuid": "dca2519a-cd8b-4c73-bc31-951f18103033"
+  },
+  {
+    "id": 33,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "Google founders",
+    "duoName": "Larry Page and Sergey Brin",
+    "members": [
+      [
+        "Larry Page",
+        2
+      ],
+      [
+        "Sergey Brin",
+        2
+      ]
+    ],
+    "uuid": "1a7725b1-e171-4ead-b7c0-795888bd9a03"
+  },
+  {
+    "id": 34,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Facebook founders",
+    "duoName": "Mark Zuckerberg and Eduardo Saverin",
+    "members": [
+      [
+        "Mark Zuckerberg",
+        1
+      ],
+      [
+        "Eduardo Saverin",
+        2
+      ]
+    ],
+    "uuid": "78c31753-c19f-4b96-9c5c-75873dddc255"
+  },
+  {
+    "id": 35,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "Tesla and PayPal founder",
+    "duoName": "Elon Musk and Martin Eberhard",
+    "members": [
+      [
+        "Elon Musk",
+        1
+      ],
+      [
+        "Martin Eberhard",
+        2
+      ]
+    ],
+    "uuid": "c4b7647d-3651-4c34-ad75-c6d4718cb4de"
+  },
+  {
+    "id": 36,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Amazon founder",
+    "duoName": "Jeff Bezos and MacKenzie Scott",
+    "members": [
+      [
+        "Jeff Bezos",
+        1
+      ],
+      [
+        "MacKenzie Scott",
+        2
+      ]
+    ],
+    "uuid": "f3c6572c-5ddd-4d0b-88a1-f88600a1264f"
+  },
+  {
+    "id": 37,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "Twitter founders",
+    "duoName": "Jack Dorsey and Noah Glass",
+    "members": [
+      [
+        "Jack Dorsey",
+        1
+      ],
+      [
+        "Noah Glass",
+        2
+      ]
+    ],
+    "uuid": "f33994c7-283f-4bfd-9f9a-7792d11f7f80"
+  },
+  {
+    "id": 38,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "LinkedIn founders",
+    "duoName": "Reid Hoffman and Allen Blue",
+    "members": [
+      [
+        "Reid Hoffman",
+        2
+      ],
+      [
+        "Allen Blue",
+        2
+      ]
+    ],
+    "uuid": "a9defcc8-0085-425d-b7f5-1c099ba3f474"
+  },
+  {
+    "id": 39,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "Snapchat founders",
+    "duoName": "Evan Spiegel and Bobby Murphy",
+    "members": [
+      [
+        "Evan Spiegel",
+        2
+      ],
+      [
+        "Bobby Murphy",
+        2
+      ]
+    ],
+    "uuid": "05882fee-dead-44a0-b6c7-70ee4b4738e0"
+  },
+  {
+    "id": 40,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Instagram founders",
+    "duoName": "Kevin Systrom and Mike Krieger",
+    "members": [
+      [
+        "Kevin Systrom",
+        2
+      ],
+      [
+        "Mike Krieger",
+        2
+      ]
+    ],
+    "uuid": "9d0685f7-bc14-4933-ae0c-107f9256624b"
+  },
+  {
+    "id": 41,
+    "category": "history",
+    "difficulty": 3,
+    "hint": "American explorers",
+    "duoName": "Lewis and Clark",
+    "members": [
+      [
+        "Meriwether Lewis",
+        2
+      ],
+      [
+        "William Clark",
+        2
+      ]
+    ],
+    "uuid": "cb49a9d3-d6d1-4100-9a0d-737a754c9168"
+  },
+  {
+    "id": 42,
+    "category": "history",
+    "difficulty": 1,
+    "hint": "Shakespeare lovers",
+    "duoName": "Romeo and Juliet",
+    "members": [
+      [
+        "Romeo",
+        1
+      ],
+      [
+        "Juliet",
+        1
+      ]
+    ],
+    "uuid": "c397da34-9e0b-44af-9450-89dfe0fbab05"
+  },
+  {
+    "id": 43,
+    "category": "history",
+    "difficulty": 2,
+    "hint": "French revolutionaries",
+    "duoName": "Robespierre and Danton",
+    "members": [
+      [
+        "Maximilien Robespierre",
+        2
+      ],
+      [
+        "Georges Danton",
+        2
+      ]
+    ],
+    "uuid": "394ecb91-f4cb-49bf-ab41-e0bd731043e4"
+  },
+  {
+    "id": 44,
+    "category": "history",
+    "difficulty": 3,
+    "hint": "Ancient philosophers",
+    "duoName": "Plato and Aristotle",
+    "members": [
+      [
+        "Plato",
+        2
+      ],
+      [
+        "Aristotle",
+        2
+      ]
+    ],
+    "uuid": "64fbb333-04f1-4fe7-9f34-2938d44f67f7"
+  },
+  {
+    "id": 45,
+    "category": "history",
+    "difficulty": 2,
+    "hint": "American presidents",
+    "duoName": "Lincoln and Johnson",
+    "members": [
+      [
+        "Abraham Lincoln",
+        1
+      ],
+      [
+        "Andrew Johnson",
+        2
+      ]
+    ],
+    "uuid": "608f37cc-4a30-452d-b4de-d68f3219c6fa"
+  },
+  {
+    "id": 46,
+    "category": "history",
+    "difficulty": 3,
+    "hint": "Medieval lovers",
+    "duoName": "Abelard and Heloise",
+    "members": [
+      [
+        "Peter Abelard",
+        2
+      ],
+      [
+        "Heloise",
+        2
+      ]
+    ],
+    "uuid": "9e311d33-6c0c-4541-92cc-6e4360bf70c0"
+  },
+  {
+    "id": 47,
+    "category": "history",
+    "difficulty": 2,
+    "hint": "British monarchs",
+    "duoName": "Henry VIII and Anne Boleyn",
+    "members": [
+      [
+        "Henry VIII",
+        1
+      ],
+      [
+        "Anne Boleyn",
+        2
+      ]
+    ],
+    "uuid": "6d14e7ee-cf61-4dd5-b696-09192364a61a"
+  },
+  {
+    "id": 48,
+    "category": "history",
+    "difficulty": 3,
+    "hint": "Ancient lovers",
+    "duoName": "Antony and Cleopatra",
+    "members": [
+      [
+        "Mark Antony",
+        2
+      ],
+      [
+        "Cleopatra",
+        1
+      ]
+    ],
+    "uuid": "6ba2fa3b-026c-42c5-b61c-2ebd4dc1ed77"
+  },
+  {
+    "id": 49,
+    "category": "history",
+    "difficulty": 2,
+    "hint": "Russian revolutionaries",
+    "duoName": "Lenin and Trotsky",
+    "members": [
+      [
+        "Vladimir Lenin",
+        1
+      ],
+      [
+        "Leon Trotsky",
+        2
+      ]
+    ],
+    "uuid": "dd4cb52f-110f-441d-80d3-eccf1dd0ec70"
+  },
+  {
+    "id": 50,
+    "category": "history",
+    "difficulty": 3,
+    "hint": "Medieval knights",
+    "duoName": "Lancelot and Guinevere",
+    "members": [
+      [
+        "Lancelot",
+        2
+      ],
+      [
+        "Guinevere",
+        2
+      ]
+    ],
+    "uuid": "5e5c953a-0974-4176-8233-a8dea76a54ab"
+  },
+  {
+    "id": 51,
+    "category": "concepts",
+    "difficulty": 1,
+    "hint": "Classic sandwich",
+    "duoName": "Peanut Butter and Jelly",
+    "members": [
+      [
+        "Peanut Butter",
+        1
+      ],
+      [
+        "Jelly",
+        1
+      ]
+    ],
+    "uuid": "bc698c74-c8c1-4c70-9e08-544987b1ff6a"
+  },
+  {
+    "id": 52,
+    "category": "concepts",
+    "difficulty": 1,
+    "hint": "Breakfast staples",
+    "duoName": "Bacon and Eggs",
+    "members": [
+      [
+        "Bacon",
+        1
+      ],
+      [
+        "Eggs",
+        1
+      ]
+    ],
+    "uuid": "32eb5dc1-2a55-4c05-98e0-3d863280f99c"
+  },
+  {
+    "id": 53,
+    "category": "concepts",
+    "difficulty": 2,
+    "hint": "Philosophical opposites",
+    "duoName": "Good and Evil",
+    "members": [
+      [
+        "Good",
+        1
+      ],
+      [
+        "Evil",
+        1
+      ]
+    ],
+    "uuid": "d1323605-baf3-43a9-ae30-5d3a680b9ec1"
+  },
+  {
+    "id": 54,
+    "category": "concepts",
+    "difficulty": 1,
+    "hint": "Time periods",
+    "duoName": "Day and Night",
+    "members": [
+      [
+        "Day",
+        1
+      ],
+      [
+        "Night",
+        1
+      ]
+    ],
+    "uuid": "cc2ca02b-0374-446a-8866-e8fdabc82a3f"
+  },
+  {
+    "id": 55,
+    "category": "concepts",
+    "difficulty": 2,
+    "hint": "Mathematical concepts",
+    "duoName": "Plus and Minus",
+    "members": [
+      [
+        "Plus",
+        2
+      ],
+      [
+        "Minus",
+        2
+      ]
+    ],
+    "uuid": "59e5f596-6b9a-44f3-9c15-70f644e9911a"
+  },
+  {
+    "id": 56,
+    "category": "concepts",
+    "difficulty": 1,
+    "hint": "Opposite genders",
+    "duoName": "Male and Female",
+    "members": [
+      [
+        "Male",
+        1
+      ],
+      [
+        "Female",
+        1
+      ]
+    ],
+    "uuid": "d96b4c12-e334-44a9-9dd8-3eb36604b653"
+  },
+  {
+    "id": 57,
+    "category": "concepts",
+    "difficulty": 2,
+    "hint": "Logical states",
+    "duoName": "True and False",
+    "members": [
+      [
+        "True",
+        1
+      ],
+      [
+        "False",
+        1
+      ]
+    ],
+    "uuid": "e9c35fcd-b101-4433-b4ef-c111f0b915a3"
+  },
+  {
+    "id": 58,
+    "category": "concepts",
+    "difficulty": 1,
+    "hint": "Condiments",
+    "duoName": "Salt and Pepper",
+    "members": [
+      [
+        "Salt",
+        1
+      ],
+      [
+        "Pepper",
+        1
+      ]
+    ],
+    "uuid": "d56dfd6d-f5e1-4c2d-a15f-297d863c1002"
+  },
+  {
+    "id": 59,
+    "category": "concepts",
+    "difficulty": 2,
+    "hint": "Celestial bodies",
+    "duoName": "Sun and Moon",
+    "members": [
+      [
+        "Sun",
+        1
+      ],
+      [
+        "Moon",
+        1
+      ]
+    ],
+    "uuid": "aa1ff573-57c8-4a96-8836-5d63dfaf6402"
+  },
+  {
+    "id": 60,
+    "category": "concepts",
+    "difficulty": 1,
+    "hint": "Footwear pair",
+    "duoName": "Shoes and Socks",
+    "members": [
+      [
+        "Shoes",
+        1
+      ],
+      [
+        "Socks",
+        2
+      ]
+    ],
+    "uuid": "d8bede96-fcac-4d33-9e12-9b18c8f81168"
+  },
+  {
+    "id": 61,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "British rock duo",
+    "duoName": "Pink Floyd",
+    "members": [
+      [
+        "David Gilmour",
+        1
+      ],
+      [
+        "Roger Waters",
+        1
+      ]
+    ],
+    "uuid": "f337a095-7030-4a71-aa6f-f428cf106278"
+  },
+  {
+    "id": 62,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Prog rock legends",
+    "duoName": "Yes",
+    "members": [
+      [
+        "Jon Anderson",
+        2
+      ],
+      [
+        "Chris Squire",
+        2
+      ]
+    ],
+    "uuid": "68e40793-f089-46c5-be8b-71415a0c7fc6"
+  },
+  {
+    "id": 63,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Heavy metal pioneers",
+    "duoName": "Black Sabbath",
+    "members": [
+      [
+        "Ozzy Osbourne",
+        1
+      ],
+      [
+        "Tony Iommi",
+        2
+      ]
+    ],
+    "uuid": "25312048-dbba-4f24-bab9-4aed1a061a3b"
+  },
+  {
+    "id": 64,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Glam rock legends",
+    "duoName": "David Bowie and Mick Jagger",
+    "members": [
+      [
+        "David Bowie",
+        1
+      ],
+      [
+        "Mick Jagger",
+        1
+      ]
+    ],
+    "uuid": "e6b5da00-a859-4273-836a-83387141635d"
+  },
+  {
+    "id": 65,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Punk rock duo",
+    "duoName": "Sex Pistols",
+    "members": [
+      [
+        "Johnny Rotten",
+        2
+      ],
+      [
+        "Sid Vicious",
+        2
+      ]
+    ],
+    "uuid": "4ac03e5f-e871-47af-be2f-c61d5fb84eb7"
+  },
+  {
+    "id": 66,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Funk legends",
+    "duoName": "James Brown and George Clinton",
+    "members": [
+      [
+        "James Brown",
+        1
+      ],
+      [
+        "George Clinton",
+        2
+      ]
+    ],
+    "uuid": "5477af07-3125-46e0-b943-ff92e6dd1c6d"
+  },
+  {
+    "id": 67,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Soul duo",
+    "duoName": "Ike and Tina Turner",
+    "members": [
+      [
+        "Ike Turner",
+        2
+      ],
+      [
+        "Tina Turner",
+        1
+      ]
+    ],
+    "uuid": "6502effc-4669-4db8-b5cc-b0fb01b50945"
+  },
+  {
+    "id": 68,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Jazz legends",
+    "duoName": "Miles Davis and John Coltrane",
+    "members": [
+      [
+        "Miles Davis",
+        1
+      ],
+      [
+        "John Coltrane",
+        2
+      ]
+    ],
+    "uuid": "52a47090-c8ae-4dc4-b243-20a7003d696d"
+  },
+  {
+    "id": 69,
+    "category": "music",
+    "difficulty": 2,
+    "hint": "Country legends",
+    "duoName": "Johnny Cash and June Carter",
+    "members": [
+      [
+        "Johnny Cash",
+        1
+      ],
+      [
+        "June Carter",
+        2
+      ]
+    ],
+    "uuid": "dd338294-5384-4a02-ba09-5afb6197c3ee"
+  },
+  {
+    "id": 70,
+    "category": "music",
+    "difficulty": 3,
+    "hint": "Hip-hop pioneers",
+    "duoName": "Grandmaster Flash and Melle Mel",
+    "members": [
+      [
+        "Grandmaster Flash",
+        2
+      ],
+      [
+        "Melle Mel",
+        2
+      ]
+    ],
+    "uuid": "229bd618-bb18-4f60-9ae5-16f3808660dc"
+  },
+  {
+    "id": 71,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Action duo",
+    "duoName": "Die Hard",
+    "members": [
+      [
+        "Bruce Willis",
+        1
+      ],
+      [
+        "Alan Rickman",
+        2
+      ]
+    ],
+    "uuid": "d7247354-c7e3-4a63-94c5-140892e136ff"
+  },
+  {
+    "id": 72,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Sci-fi action",
+    "duoName": "The Matrix",
+    "members": [
+      [
+        "Keanu Reeves",
+        1
+      ],
+      [
+        "Laurence Fishburne",
+        2
+      ]
+    ],
+    "uuid": "4cdf2d5b-af6d-4d17-8843-4ed5e9f06ce1"
+  },
+  {
+    "id": 73,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Comedy duo",
+    "duoName": "Ghostbusters",
+    "members": [
+      [
+        "Bill Murray",
+        1
+      ],
+      [
+        "Dan Aykroyd",
+        1
+      ]
+    ],
+    "uuid": "8e8f6c10-ec50-4957-a713-912acc958e07"
+  },
+  {
+    "id": 74,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Romantic drama",
+    "duoName": "Titanic",
+    "members": [
+      [
+        "Leonardo DiCaprio",
+        1
+      ],
+      [
+        "Kate Winslet",
+        1
+      ]
+    ],
+    "uuid": "ba790189-65a1-4093-bbb2-8ffe43880dc1"
+  },
+  {
+    "id": 75,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Superhero film",
+    "duoName": "Superman",
+    "members": [
+      [
+        "Christopher Reeve",
+        1
+      ],
+      [
+        "Gene Hackman",
+        2
+      ]
+    ],
+    "uuid": "e8afa5ec-0876-4e3b-91fc-6146d56e4a60"
+  },
+  {
+    "id": 76,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Crime drama",
+    "duoName": "Goodfellas",
+    "members": [
+      [
+        "Robert De Niro",
+        1
+      ],
+      [
+        "Joe Pesci",
+        2
+      ]
+    ],
+    "uuid": "1edae5f5-40e5-48d6-ab76-cdf0efc17d8d"
+  },
+  {
+    "id": 77,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Western duo",
+    "duoName": "True Grit",
+    "members": [
+      [
+        "John Wayne",
+        1
+      ],
+      [
+        "Jeff Bridges",
+        2
+      ]
+    ],
+    "uuid": "a19f94d1-e81f-4703-9fa2-d6b4752087af"
+  },
+  {
+    "id": 78,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Thriller duo",
+    "duoName": "Silence of the Lambs",
+    "members": [
+      [
+        "Jodie Foster",
+        2
+      ],
+      [
+        "Anthony Hopkins",
+        1
+      ]
+    ],
+    "uuid": "e461cbf0-7649-43e8-a717-fec59ec480b6"
+  },
+  {
+    "id": 79,
+    "category": "movies",
+    "difficulty": 2,
+    "hint": "Adventure duo",
+    "duoName": "Indiana Jones",
+    "members": [
+      [
+        "Harrison Ford",
+        1
+      ],
+      [
+        "Sean Connery",
+        1
+      ]
+    ],
+    "uuid": "1b55b595-691a-47dc-a80a-0b7928cee4a0"
+  },
+  {
+    "id": 80,
+    "category": "movies",
+    "difficulty": 3,
+    "hint": "Animated duo",
+    "duoName": "Toy Story",
+    "members": [
+      [
+        "Woody",
+        1
+      ],
+      [
+        "Buzz Lightyear",
+        1
+      ]
+    ],
+    "uuid": "a6b64255-71a2-4685-858c-6809ba35d80f"
+  },
+  {
+    "id": 81,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Xerox founders",
+    "duoName": "Chester Carlson and Haloid",
+    "members": [
+      [
+        "Chester Carlson",
+        2
+      ],
+      [
+        "Joseph Wilson",
+        2
+      ]
+    ],
+    "uuid": "9d0ee87b-7428-4f10-84f3-c6133b20b622"
+  },
+  {
+    "id": 82,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "Intel founders",
+    "duoName": "Gordon Moore and Robert Noyce",
+    "members": [
+      [
+        "Gordon Moore",
+        2
+      ],
+      [
+        "Robert Noyce",
+        2
+      ]
+    ],
+    "uuid": "900a73ab-a187-4823-b16b-748dde8aad75"
+  },
+  {
+    "id": 83,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Oracle founder",
+    "duoName": "Larry Ellison and Bob Miner",
+    "members": [
+      [
+        "Larry Ellison",
+        1
+      ],
+      [
+        "Bob Miner",
+        2
+      ]
+    ],
+    "uuid": "0dd090c1-6a5f-49b8-bf91-7ef45290ead3"
+  },
+  {
+    "id": 84,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "Cisco founders",
+    "duoName": "Leonard Bosack and Sandra Lerner",
+    "members": [
+      [
+        "Leonard Bosack",
+        2
+      ],
+      [
+        "Sandra Lerner",
+        2
+      ]
+    ],
+    "uuid": "919b54a7-a438-4584-b961-02a6d03b0c72"
+  },
+  {
+    "id": 85,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Yahoo founders",
+    "duoName": "Jerry Yang and David Filo",
+    "members": [
+      [
+        "Jerry Yang",
+        2
+      ],
+      [
+        "David Filo",
+        2
+      ]
+    ],
+    "uuid": "f9db4fad-f329-4179-bbaf-230fb8c380b1"
+  },
+  {
+    "id": 86,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "eBay founder",
+    "duoName": "Pierre Omidyar and Jeff Skoll",
+    "members": [
+      [
+        "Pierre Omidyar",
+        2
+      ],
+      [
+        "Jeff Skoll",
+        2
+      ]
+    ],
+    "uuid": "ac7f8a38-7584-45c1-8a0f-605e6c122ee2"
+  },
+  {
+    "id": 87,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Netscape founders",
+    "duoName": "Marc Andreessen and Jim Clark",
+    "members": [
+      [
+        "Marc Andreessen",
+        2
+      ],
+      [
+        "Jim Clark",
+        2
+      ]
+    ],
+    "uuid": "a3faff59-fa87-4ff7-9539-59e2b0dcd888"
+  },
+  {
+    "id": 88,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "Dropbox founder",
+    "duoName": "Drew Houston and Arash Ferdowsi",
+    "members": [
+      [
+        "Drew Houston",
+        2
+      ],
+      [
+        "Arash Ferdowsi",
+        2
+      ]
+    ],
+    "uuid": "706e4922-4505-41a8-b85d-d9df86be56f9"
+  },
+  {
+    "id": 89,
+    "category": "tech",
+    "difficulty": 2,
+    "hint": "Airbnb founders",
+    "duoName": "Brian Chesky and Joe Gebbia",
+    "members": [
+      [
+        "Brian Chesky",
+        2
+      ],
+      [
+        "Joe Gebbia",
+        2
+      ]
+    ],
+    "uuid": "211bf215-0338-4b4d-905b-871fba3fd7e9"
+  },
+  {
+    "id": 90,
+    "category": "tech",
+    "difficulty": 3,
+    "hint": "Uber founders",
+    "duoName": "Travis Kalanick and Garrett Camp",
+    "members": [
+      [
+        "Travis Kalanick",
+        2
+      ],
+      [
+        "Garrett Camp",
+        2
+      ]
+    ],
+    "uuid": "be2a6eed-3302-49da-8c6b-3294b25e97b7"
+  },
+  {
+    "id": 91,
+    "category": "history",
+    "difficulty": 2,
+    "hint": "American founding fathers",
+    "duoName": "George Washington and Benjamin Franklin",
+    "members": [
+      [
+        "George Washington",
+        1
+      ],
+      [
+        "Benjamin Franklin",
+        1
+      ]
+    ],
+    "uuid": "99b562ad-2ee3-4144-bc33-a692f669bebb"
+  },
+  {
+    "id": 92,
+    "category": "history",
+    "difficulty": 3,
+    "hint": "Ancient generals",
+    "duoName": "Alexander the Great and Aristotle",
+    "members": [
+      [
+        "Alexander the Great",
+        1
+      ],
+      [
+        "Aristotle",
+        2
+      ]
+    ],
+    "uuid": "f3a49c34-7695-43a2-9c1a-6efdc7a7f0c9"
+  },
+  {
+    "id": 93,
+    "category": "history",
+    "difficulty": 2,
+    "hint": "Renaissance artists",
+    "duoName": "Leonardo da Vinci and Michelangelo",
+    "members": [
+      [
+        "Leonardo da Vinci",
+        1
+      ],
+      [
+        "Michelangelo",
+        1
+      ]
+    ],
+    "uuid": "8e4d9eaa-4380-4690-8f1d-eee540004658"
+  },
+  {
+    "id": 94,
+    "category": "history",
+    "difficulty": 3,
+    "hint": "Scientific pioneers",
+    "duoName": "Marie and Pierre Curie",
+    "members": [
+      [
+        "Marie Curie",
+        1
+      ],
+      [
+        "Pierre Curie",
+        2
+      ]
+    ],
+    "uuid": "d808216d-de32-4b40-be8a-263e58052438"
+  },
+  {
+    "id": 95,
+    "category": "history",
+    "difficulty": 2,
+    "hint": "Civil rights leaders",
+    "duoName": "Martin Luther King Jr. and Malcolm X",
+    "members": [
+      [
+        "Martin Luther King Jr.",
+        1
+      ],
+      [
+        "Malcolm X",
+        2
+      ]
+    ],
+    "uuid": "b6619ec7-c312-42ee-b8dd-703e13fe2479"
+  },
+  {
+    "id": 96,
+    "category": "concepts",
+    "difficulty": 2,
+    "hint": "Opposite directions",
+    "duoName": "Left and Right",
+    "members": [
+      [
+        "Left",
+        1
+      ],
+      [
+        "Right",
+        1
+      ]
+    ],
+    "uuid": "16be30be-69e8-42eb-82ee-3a8c6c5916d1"
+  },
+  {
+    "id": 97,
+    "category": "concepts",
+    "difficulty": 1,
+    "hint": "Opposite sizes",
+    "duoName": "Big and Small",
+    "members": [
+      [
+        "Big",
+        1
+      ],
+      [
+        "Small",
+        1
+      ]
+    ],
+    "uuid": "ebccc8d0-5f4d-4e66-97a2-569f4e15f863"
+  },
+  {
+    "id": 98,
+    "category": "concepts",
+    "difficulty": 2,
+    "hint": "Opposite temperatures",
+    "duoName": "Hot and Cold",
+    "members": [
+      [
+        "Hot",
+        1
+      ],
+      [
+        "Cold",
+        1
+      ]
+    ],
+    "uuid": "d5e2b5e5-bfa7-45d7-8424-640f2c745c29"
+  },
+  {
+    "id": 99,
+    "category": "concepts",
+    "difficulty": 1,
+    "hint": "Opposite emotions",
+    "duoName": "Happy and Sad",
+    "members": [
+      [
+        "Happy",
+        1
+      ],
+      [
+        "Sad",
+        1
+      ]
+    ],
+    "uuid": "c096f72f-f9d3-44af-a582-4ba9d7ffc466"
+  },
+  {
+    "id": 100,
+    "category": "concepts",
+    "difficulty": 2,
+    "hint": "Opposite states",
+    "duoName": "Life and Death",
+    "members": [
+      [
+        "Life",
+        1
+      ],
+      [
+        "Death",
+        1
+      ]
+    ],
+    "uuid": "58a276c9-720b-486f-b94c-8e7d638322ae"
+  }
 ]

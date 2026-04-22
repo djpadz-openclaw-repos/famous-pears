@@ -11,152 +11,163 @@ struct GamePlayView: View {
     @State private var computerGuess = ""
     @State private var showComputerGuess = false
     @State private var isProcessingComputerTurn = false
+    @State private var showTrivia = false
     
     var onGameEnd: () -> Void
     
     var body: some View {
         VStack(spacing: 20) {
-            // Header
-            HStack {
-                Text("Famous Peers")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                Spacer()
-                Text("Round \(gameLogic.currentRound)")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-            }
-            .padding()
-            
-            // Current players
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Asker")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                    Text(gameLogic.getCurrentAsker().name)
-                        .font(.headline)
-                }
-                Spacer()
-                VStack(alignment: .trailing) {
-                    Text("Guesser")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                    Text(gameLogic.getCurrentGuesser().name)
-                        .font(.headline)
-                }
-            }
-            .padding()
-            .background(Color.gray.opacity(0.1))
-            .cornerRadius(8)
-            .padding()
-            
-            Spacer()
-            
-            // Clue
-            VStack(spacing: 12) {
-                Text("The clue is:")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                
-                Text(gameLogic.getCurrentClue())
-                    .font(.system(size: 32, weight: .bold))
-                    .foregroundColor(.blue)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue.opacity(0.1))
-                    .cornerRadius(12)
-            }
-            .padding()
-            
-            Spacer()
-            
-            // Answer input or result
-            if !showResult {
-                if gameLogic.getCurrentGuesserIsComputer() {
-                    // Computer is guessing
-                    VStack(spacing: 12) {
-                        if showComputerGuess {
-                            VStack(spacing: 12) {
-                                Text("Computer's guess:")
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                                
-                                Text(computerGuess)
-                                    .font(.headline)
-                                    .padding()
-                                    .frame(maxWidth: .infinity)
-                                    .background(Color.orange.opacity(0.2))
-                                    .cornerRadius(8)
-                                
-                                Button(action: submitComputerGuess) {
-                                    Text("Submit")
-                                        .frame(maxWidth: .infinity)
-                                        .padding()
-                                        .background(Color.green)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(8)
-                                }
-                                .padding()
-                            }
-                        } else {
-                            HStack {
-                                ProgressView()
-                                Text("Computer is thinking...")
-                                    .foregroundColor(.gray)
-                            }
-                            .padding()
-                        }
-                    }
-                } else {
-                    // Human is guessing
-                    VStack(spacing: 12) {
-                        TextField("Enter your guess", text: $answerText)
-                            .textFieldStyle(.roundedBorder)
-                            .padding()
-                        
-                        Button(action: submitAnswer) {
-                            Text("Submit Answer")
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.green)
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
-                        }
-                        .padding()
+            // Show trivia if result was shown and trivia should be displayed
+            if showResult && showTrivia, let currentDuo = gameLogic.getCurrentDuo() {
+                TriviaView(duo: currentDuo) {
+                    showTrivia = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        showNextButton = true
                     }
                 }
             } else {
-                VStack(spacing: 16) {
-                    Text(resultMessage)
-                        .font(.headline)
-                        .foregroundColor(isCorrect ? .green : .red)
-                    
-                    if isCorrect {
-                        Text("Correct! +\(gameLogic.getCurrentDuo()?.difficulty ?? 0) points")
-                            .font(.subheadline)
-                            .foregroundColor(.green)
+                // Header
+                HStack {
+                    Text("Famous Peers")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text("Round \(gameLogic.currentRound)")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                .padding()
+                
+                // Current players
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Asker")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        Text(gameLogic.getCurrentAsker().name)
+                            .font(.headline)
                     }
-                    
-                    if showNextButton {
-                        Button(action: nextRound) {
-                            Text(gameLogic.gameState == .gameOver ? "Game Over" : "Next Round")
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
-                        }
-                        .padding()
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text("Guesser")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        Text(gameLogic.getCurrentGuesser().name)
+                            .font(.headline)
                     }
                 }
                 .padding()
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(8)
                 .padding()
+                
+                Spacer()
+                
+                // Clue
+                VStack(spacing: 12) {
+                    Text("The clue is:")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                    
+                    Text(gameLogic.getCurrentClue())
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(.blue)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue.opacity(0.1))
+                        .cornerRadius(12)
+                }
+                .padding()
+                
+                Spacer()
+                
+                // Answer input or result
+                if !showResult {
+                    if gameLogic.getCurrentGuesserIsComputer() {
+                        // Computer is guessing
+                        VStack(spacing: 12) {
+                            if showComputerGuess {
+                                VStack(spacing: 12) {
+                                    Text("Computer's guess:")
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                    
+                                    Text(computerGuess)
+                                        .font(.headline)
+                                        .padding()
+                                        .frame(maxWidth: .infinity)
+                                        .background(Color.orange.opacity(0.2))
+                                        .cornerRadius(8)
+                                    
+                                    Button(action: submitComputerGuess) {
+                                        Text("Submit")
+                                            .frame(maxWidth: .infinity)
+                                            .padding()
+                                            .background(Color.green)
+                                            .foregroundColor(.white)
+                                            .cornerRadius(8)
+                                    }
+                                    .padding()
+                                }
+                            } else {
+                                HStack {
+                                    ProgressView()
+                                    Text("Computer is thinking...")
+                                        .foregroundColor(.gray)
+                                }
+                                .padding()
+                            }
+                        }
+                    } else {
+                        // Human is guessing
+                        VStack(spacing: 12) {
+                            TextField("Enter your guess", text: $answerText)
+                                .textFieldStyle(.roundedBorder)
+                                .padding()
+                            
+                            Button(action: submitAnswer) {
+                                Text("Submit Answer")
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.green)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                            .padding()
+                        }
+                    }
+                } else if !showTrivia {
+                    VStack(spacing: 16) {
+                        Text(resultMessage)
+                            .font(.headline)
+                            .foregroundColor(isCorrect ? .green : .red)
+                        
+                        if isCorrect {
+                            Text("Correct! +\(gameLogic.getCurrentDuo()?.difficulty ?? 0) points")
+                                .font(.subheadline)
+                                .foregroundColor(.green)
+                        }
+                        
+                        if showNextButton {
+                            Button(action: nextRound) {
+                                Text(gameLogic.gameState == .gameOver ? "Game Over" : "Next Round")
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                            .padding()
+                        }
+                    }
+                    .padding()
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8)
+                    .padding()
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
         }
         .onAppear {
             print("[GamePlayView] Clue: \(gameLogic.getCurrentClue() ?? "nil")")
@@ -196,7 +207,7 @@ struct GamePlayView: View {
         showResult = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            showNextButton = true
+            showTrivia = true
         }
     }
     
@@ -206,7 +217,7 @@ struct GamePlayView: View {
         showResult = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            showNextButton = true
+            showTrivia = true
         }
     }
     
@@ -219,6 +230,7 @@ struct GamePlayView: View {
             showResult = false
             showComputerGuess = false
             showNextButton = false
+            showTrivia = false
             gameLogic.nextRound()
             handleComputerTurn()
         }

@@ -10,6 +10,7 @@ public struct Duo: Codable, Identifiable {
     public let members: [[AnyCodable]] // Array of [name, difficulty] pairs
     public let difficulty: Int
     public let hint: String
+    public let trivia: String?
     
     // Helper properties for backward compatibility
     public var member1: String { duoName }

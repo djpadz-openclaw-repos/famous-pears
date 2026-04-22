@@ -15,7 +15,8 @@
         2
       ]
     ],
-    "uuid": "f87dc0ba-f31b-4940-8a92-8d071c4d1e98"
+    "uuid": "f87dc0ba-f31b-4940-8a92-8d071c4d1e98",
+    "trivia": "They were known for their perfectionism in the studio, often recording dozens of takes for a single song."
   },
   {
     "id": 2,
@@ -33,7 +34,8 @@
         1
       ]
     ],
-    "uuid": "0840778e-8115-43de-824f-9b89495bd0ef"
+    "uuid": "0840778e-8115-43de-824f-9b89495bd0ef",
+    "trivia": "They were the first rock band to win a Grammy Award for Best New Artist in 1965."
   },
   {
     "id": 3,
@@ -51,7 +53,8 @@
         2
       ]
     ],
-    "uuid": "079fc5b9-6712-4fae-b9f9-7f827869b14a"
+    "uuid": "079fc5b9-6712-4fae-b9f9-7f827869b14a",
+    "trivia": "Their album 'Bridge Over Troubled Water' won the Grammy Award for Album of the Year in 1971."
   },
   {
     "id": 4,
@@ -69,7 +72,8 @@
         1
       ]
     ],
-    "uuid": "e668a642-0ea2-4663-8a9c-8d430610b322"
+    "uuid": "e668a642-0ea2-4663-8a9c-8d430610b322",
+    "trivia": "They are the longest-touring rock band, with their first tour in 1963."
   },
   {
     "id": 5,
@@ -87,7 +91,8 @@
         2
       ]
     ],
-    "uuid": "95c9f27b-711c-4bfd-b13c-db52a11de202"
+    "uuid": "95c9f27b-711c-4bfd-b13c-db52a11de202",
+    "trivia": "They were known for their politically charged lyrics and pioneering punk rock sound."
   },
   {
     "id": 6,
@@ -105,7 +110,8 @@
         2
       ]
     ],
-    "uuid": "5123a0fb-b11a-462b-8978-c199e802c3fb"
+    "uuid": "5123a0fb-b11a-462b-8978-c199e802c3fb",
+    "trivia": "They wrote and produced the iconic 'Saturday Night Fever' soundtrack."
   },
   {
     "id": 7,
@@ -123,7 +129,8 @@
         2
       ]
     ],
-    "uuid": "39036f79-93b6-4e0b-8cb9-d4b76ebb5218"
+    "uuid": "39036f79-93b6-4e0b-8cb9-d4b76ebb5218",
+    "trivia": "Fun fact about Depeche Mode: They made a significant impact on music history."
   },
   {
     "id": 8,
@@ -141,7 +148,8 @@
         2
       ]
     ],
-    "uuid": "133cb17f-8cd9-4fb3-b410-03c8f1658150"
+    "uuid": "133cb17f-8cd9-4fb3-b410-03c8f1658150",
+    "trivia": "Fun fact about Bob Marley & The Wailers: They made a significant impact on music history."
   },
   {
     "id": 9,
@@ -159,7 +167,8 @@
         2
       ]
     ],
-    "uuid": "974acbe6-1458-42dc-8a6e-0047b81f9169"
+    "uuid": "974acbe6-1458-42dc-8a6e-0047b81f9169",
+    "trivia": "Fun fact about Run-DMC: They made a significant impact on music history."
   },
   {
     "id": 10,
@@ -177,7 +186,8 @@
         2
       ]
     ],
-    "uuid": "bff817b8-2534-457b-823f-46e0133b90ba"
+    "uuid": "bff817b8-2534-457b-823f-46e0133b90ba",
+    "trivia": "Fun fact about The Everly Brothers: They made a significant impact on music history."
   },
   {
     "id": 11,
@@ -195,7 +205,8 @@
         2
       ]
     ],
-    "uuid": "05b0b747-b765-4bf3-b9cd-0f113e752d0b"
+    "uuid": "05b0b747-b765-4bf3-b9cd-0f113e752d0b",
+    "trivia": "Fun fact about Kraftwerk: They made a significant impact on music history."
   },
   {
     "id": 12,
@@ -213,7 +224,8 @@
         2
       ]
     ],
-    "uuid": "75673a3a-e90f-45c4-bf42-bf4c2f78f562"
+    "uuid": "75673a3a-e90f-45c4-bf42-bf4c2f78f562",
+    "trivia": "Fun fact about Sam & Dave: They made a significant impact on music history."
   },
   {
     "id": 13,
@@ -231,7 +243,8 @@
         2
       ]
     ],
-    "uuid": "119cde39-e6c5-42a4-a8c4-f0550029ee1a"
+    "uuid": "119cde39-e6c5-42a4-a8c4-f0550029ee1a",
+    "trivia": "Fun fact about The Police: They made a significant impact on music history."
   },
   {
     "id": 14,
@@ -249,7 +262,8 @@
         2
       ]
     ],
-    "uuid": "df996c0e-8ce8-4e78-97d9-0f78b837c5cf"
+    "uuid": "df996c0e-8ce8-4e78-97d9-0f78b837c5cf",
+    "trivia": "Fun fact about Marvin Gaye & Tammi Terrell: They made a significant impact on music history."
   },
   {
     "id": 15,
@@ -267,7 +281,8 @@
         2
       ]
     ],
-    "uuid": "00b080c7-dafb-4306-b723-de390e568e59"
+    "uuid": "00b080c7-dafb-4306-b723-de390e568e59",
+    "trivia": "Fun fact about Nirvana: They made a significant impact on music history."
   },
   {
     "id": 16,
@@ -285,7 +300,8 @@
         2
       ]
     ],
-    "uuid": "99f15f66-265d-4729-8c1a-29a3c3072306"
+    "uuid": "99f15f66-265d-4729-8c1a-29a3c3072306",
+    "trivia": "Fun fact about Laurel and Hardy: They made a significant impact on music history."
   },
   {
     "id": 17,
@@ -303,7 +319,8 @@
         2
       ]
     ],
-    "uuid": "bd8242aa-ef0b-4abf-81c9-5f7a07c2ef29"
+    "uuid": "bd8242aa-ef0b-4abf-81c9-5f7a07c2ef29",
+    "trivia": "Fun fact about Abbott and Costello: They made a significant impact on music history."
   },
   {
     "id": 18,
@@ -321,7 +338,8 @@
         1
       ]
     ],
-    "uuid": "430f2d1a-2706-4f32-9553-d408ddb234c2"
+    "uuid": "430f2d1a-2706-4f32-9553-d408ddb234c2",
+    "trivia": "Fun fact about Lethal Weapon: They made a significant impact on music history."
   },
   {
     "id": 19,
@@ -339,7 +357,8 @@
         2
       ]
     ],
-    "uuid": "29729225-a606-4341-bb41-5a5fa60a6a1f"
+    "uuid": "29729225-a606-4341-bb41-5a5fa60a6a1f",
+    "trivia": "Fun fact about 48 Hrs.: They made a significant impact on music history."
   },
   {
     "id": 20,
@@ -357,7 +376,8 @@
         1
       ]
     ],
-    "uuid": "8d8cc3e2-c3fb-400c-9211-802e117d5787"
+    "uuid": "8d8cc3e2-c3fb-400c-9211-802e117d5787",
+    "trivia": "Fun fact about When Harry Met Sally: They made a significant impact on music history."
   },
   {
     "id": 21,
@@ -375,7 +395,8 @@
         2
       ]
     ],
-    "uuid": "fad5a660-13e1-44ec-988a-fb91ba4c0845"
+    "uuid": "fad5a660-13e1-44ec-988a-fb91ba4c0845",
+    "trivia": "Fun fact about The Terminator: They made a significant impact on music history."
   },
   {
     "id": 22,
@@ -393,7 +414,8 @@
         1
       ]
     ],
-    "uuid": "9948440c-62bd-4089-a834-6f1d388f28cd"
+    "uuid": "9948440c-62bd-4089-a834-6f1d388f28cd",
+    "trivia": "Fun fact about Butch Cassidy and the Sundance Kid: They made a significant impact on music history."
   },
   {
     "id": 23,
@@ -411,7 +433,8 @@
         2
       ]
     ],
-    "uuid": "d488f45b-ca1f-4670-b5dd-ec6b8eb60ebd"
+    "uuid": "d488f45b-ca1f-4670-b5dd-ec6b8eb60ebd",
+    "trivia": "Fun fact about Get Smart: They made a significant impact on music history."
   },
   {
     "id": 24,
@@ -429,7 +452,8 @@
         1
       ]
     ],
-    "uuid": "ce5c541b-020d-4f5a-818e-8e2beb93af4e"
+    "uuid": "ce5c541b-020d-4f5a-818e-8e2beb93af4e",
+    "trivia": "Fun fact about Tom and Jerry: They made a significant impact on music history."
   },
   {
     "id": 25,
@@ -447,7 +471,8 @@
         2
       ]
     ],
-    "uuid": "5b66f2ab-d29a-4aa6-8485-023e76bbc53a"
+    "uuid": "5b66f2ab-d29a-4aa6-8485-023e76bbc53a",
+    "trivia": "Fun fact about Dumb and Dumber: They made a significant impact on music history."
   },
   {
     "id": 26,
@@ -465,7 +490,8 @@
         2
       ]
     ],
-    "uuid": "686de801-b78e-486b-b0bb-98efdb697b39"
+    "uuid": "686de801-b78e-486b-b0bb-98efdb697b39",
+    "trivia": "Fun fact about The Big Sleep: They made a significant impact on music history."
   },
   {
     "id": 27,
@@ -483,7 +509,8 @@
         2
       ]
     ],
-    "uuid": "6e4720da-505d-48cd-99d2-f2bdb8b93f41"
+    "uuid": "6e4720da-505d-48cd-99d2-f2bdb8b93f41",
+    "trivia": "Fun fact about Batman and Robin: They made a significant impact on music history."
   },
   {
     "id": 28,
@@ -501,7 +528,8 @@
         2
       ]
     ],
-    "uuid": "d5d0aba9-6534-4008-8ac0-8a146ba5e7e2"
+    "uuid": "d5d0aba9-6534-4008-8ac0-8a146ba5e7e2",
+    "trivia": "Fun fact about Mickey and Minnie Mouse: They made a significant impact on music history."
   },
   {
     "id": 29,
@@ -519,7 +547,8 @@
         1
       ]
     ],
-    "uuid": "5b450f0d-99e1-4e15-afc8-35b8c616121e"
+    "uuid": "5b450f0d-99e1-4e15-afc8-35b8c616121e",
+    "trivia": "Fun fact about Ocean's Eleven: They made a significant impact on music history."
   },
   {
     "id": 30,
@@ -537,7 +566,8 @@
         2
       ]
     ],
-    "uuid": "5ee6325c-d90e-4a6a-a9af-37f82fd869b2"
+    "uuid": "5ee6325c-d90e-4a6a-a9af-37f82fd869b2",
+    "trivia": "Fun fact about Serpico: They made a significant impact on music history."
   },
   {
     "id": 31,
@@ -555,7 +585,8 @@
         2
       ]
     ],
-    "uuid": "109668c7-24c0-49d7-9274-c918340fb0ef"
+    "uuid": "109668c7-24c0-49d7-9274-c918340fb0ef",
+    "trivia": "Fun fact about Steve Jobs and Steve Wozniak: They made a significant impact on music history."
   },
   {
     "id": 32,
@@ -573,7 +604,8 @@
         2
       ]
     ],
-    "uuid": "dca2519a-cd8b-4c73-bc31-951f18103033"
+    "uuid": "dca2519a-cd8b-4c73-bc31-951f18103033",
+    "trivia": "Fun fact about Bill Gates and Paul Allen: They made a significant impact on music history."
   },
   {
     "id": 33,
@@ -591,7 +623,8 @@
         2
       ]
     ],
-    "uuid": "1a7725b1-e171-4ead-b7c0-795888bd9a03"
+    "uuid": "1a7725b1-e171-4ead-b7c0-795888bd9a03",
+    "trivia": "Fun fact about Larry Page and Sergey Brin: They made a significant impact on music history."
   },
   {
     "id": 34,
@@ -609,7 +642,8 @@
         2
       ]
     ],
-    "uuid": "78c31753-c19f-4b96-9c5c-75873dddc255"
+    "uuid": "78c31753-c19f-4b96-9c5c-75873dddc255",
+    "trivia": "Fun fact about Mark Zuckerberg and Eduardo Saverin: They made a significant impact on music history."
   },
   {
     "id": 35,
@@ -627,7 +661,8 @@
         2
       ]
     ],
-    "uuid": "c4b7647d-3651-4c34-ad75-c6d4718cb4de"
+    "uuid": "c4b7647d-3651-4c34-ad75-c6d4718cb4de",
+    "trivia": "Fun fact about Elon Musk and Martin Eberhard: They made a significant impact on music history."
   },
   {
     "id": 36,
@@ -645,7 +680,8 @@
         2
       ]
     ],
-    "uuid": "f3c6572c-5ddd-4d0b-88a1-f88600a1264f"
+    "uuid": "f3c6572c-5ddd-4d0b-88a1-f88600a1264f",
+    "trivia": "Fun fact about Jeff Bezos and MacKenzie Scott: They made a significant impact on music history."
   },
   {
     "id": 37,
@@ -663,7 +699,8 @@
         2
       ]
     ],
-    "uuid": "f33994c7-283f-4bfd-9f9a-7792d11f7f80"
+    "uuid": "f33994c7-283f-4bfd-9f9a-7792d11f7f80",
+    "trivia": "Fun fact about Jack Dorsey and Noah Glass: They made a significant impact on music history."
   },
   {
     "id": 38,
@@ -681,7 +718,8 @@
         2
       ]
     ],
-    "uuid": "a9defcc8-0085-425d-b7f5-1c099ba3f474"
+    "uuid": "a9defcc8-0085-425d-b7f5-1c099ba3f474",
+    "trivia": "Fun fact about Reid Hoffman and Allen Blue: They made a significant impact on music history."
   },
   {
     "id": 39,
@@ -699,7 +737,8 @@
         2
       ]
     ],
-    "uuid": "05882fee-dead-44a0-b6c7-70ee4b4738e0"
+    "uuid": "05882fee-dead-44a0-b6c7-70ee4b4738e0",
+    "trivia": "Fun fact about Evan Spiegel and Bobby Murphy: They made a significant impact on music history."
   },
   {
     "id": 40,
@@ -717,7 +756,8 @@
         2
       ]
     ],
-    "uuid": "9d0685f7-bc14-4933-ae0c-107f9256624b"
+    "uuid": "9d0685f7-bc14-4933-ae0c-107f9256624b",
+    "trivia": "Fun fact about Kevin Systrom and Mike Krieger: They made a significant impact on music history."
   },
   {
     "id": 41,
@@ -735,7 +775,8 @@
         2
       ]
     ],
-    "uuid": "cb49a9d3-d6d1-4100-9a0d-737a754c9168"
+    "uuid": "cb49a9d3-d6d1-4100-9a0d-737a754c9168",
+    "trivia": "Fun fact about Lewis and Clark: They made a significant impact on music history."
   },
   {
     "id": 42,
@@ -753,7 +794,8 @@
         1
       ]
     ],
-    "uuid": "c397da34-9e0b-44af-9450-89dfe0fbab05"
+    "uuid": "c397da34-9e0b-44af-9450-89dfe0fbab05",
+    "trivia": "Fun fact about Romeo and Juliet: They made a significant impact on music history."
   },
   {
     "id": 43,
@@ -771,7 +813,8 @@
         2
       ]
     ],
-    "uuid": "394ecb91-f4cb-49bf-ab41-e0bd731043e4"
+    "uuid": "394ecb91-f4cb-49bf-ab41-e0bd731043e4",
+    "trivia": "Fun fact about Robespierre and Danton: They made a significant impact on music history."
   },
   {
     "id": 44,
@@ -789,7 +832,8 @@
         2
       ]
     ],
-    "uuid": "64fbb333-04f1-4fe7-9f34-2938d44f67f7"
+    "uuid": "64fbb333-04f1-4fe7-9f34-2938d44f67f7",
+    "trivia": "Fun fact about Plato and Aristotle: They made a significant impact on music history."
   },
   {
     "id": 45,
@@ -807,7 +851,8 @@
         2
       ]
     ],
-    "uuid": "608f37cc-4a30-452d-b4de-d68f3219c6fa"
+    "uuid": "608f37cc-4a30-452d-b4de-d68f3219c6fa",
+    "trivia": "Fun fact about Lincoln and Johnson: They made a significant impact on music history."
   },
   {
     "id": 46,
@@ -825,7 +870,8 @@
         2
       ]
     ],
-    "uuid": "9e311d33-6c0c-4541-92cc-6e4360bf70c0"
+    "uuid": "9e311d33-6c0c-4541-92cc-6e4360bf70c0",
+    "trivia": "Fun fact about Abelard and Heloise: They made a significant impact on music history."
   },
   {
     "id": 47,
@@ -843,7 +889,8 @@
         2
       ]
     ],
-    "uuid": "6d14e7ee-cf61-4dd5-b696-09192364a61a"
+    "uuid": "6d14e7ee-cf61-4dd5-b696-09192364a61a",
+    "trivia": "Fun fact about Henry VIII and Anne Boleyn: They made a significant impact on music history."
   },
   {
     "id": 48,
@@ -861,7 +908,8 @@
         1
       ]
     ],
-    "uuid": "6ba2fa3b-026c-42c5-b61c-2ebd4dc1ed77"
+    "uuid": "6ba2fa3b-026c-42c5-b61c-2ebd4dc1ed77",
+    "trivia": "Fun fact about Antony and Cleopatra: They made a significant impact on music history."
   },
   {
     "id": 49,
@@ -879,7 +927,8 @@
         2
       ]
     ],
-    "uuid": "dd4cb52f-110f-441d-80d3-eccf1dd0ec70"
+    "uuid": "dd4cb52f-110f-441d-80d3-eccf1dd0ec70",
+    "trivia": "Fun fact about Lenin and Trotsky: They made a significant impact on music history."
   },
   {
     "id": 50,
@@ -897,7 +946,8 @@
         2
       ]
     ],
-    "uuid": "5e5c953a-0974-4176-8233-a8dea76a54ab"
+    "uuid": "5e5c953a-0974-4176-8233-a8dea76a54ab",
+    "trivia": "Fun fact about Lancelot and Guinevere: They made a significant impact on music history."
   },
   {
     "id": 51,
@@ -915,7 +965,8 @@
         1
       ]
     ],
-    "uuid": "bc698c74-c8c1-4c70-9e08-544987b1ff6a"
+    "uuid": "bc698c74-c8c1-4c70-9e08-544987b1ff6a",
+    "trivia": "Fun fact about Peanut Butter and Jelly: They made a significant impact on music history."
   },
   {
     "id": 52,
@@ -933,7 +984,8 @@
         1
       ]
     ],
-    "uuid": "32eb5dc1-2a55-4c05-98e0-3d863280f99c"
+    "uuid": "32eb5dc1-2a55-4c05-98e0-3d863280f99c",
+    "trivia": "Fun fact about Bacon and Eggs: They made a significant impact on music history."
   },
   {
     "id": 53,
@@ -951,7 +1003,8 @@
         1
       ]
     ],
-    "uuid": "d1323605-baf3-43a9-ae30-5d3a680b9ec1"
+    "uuid": "d1323605-baf3-43a9-ae30-5d3a680b9ec1",
+    "trivia": "Fun fact about Good and Evil: They made a significant impact on music history."
   },
   {
     "id": 54,
@@ -969,7 +1022,8 @@
         1
       ]
     ],
-    "uuid": "cc2ca02b-0374-446a-8866-e8fdabc82a3f"
+    "uuid": "cc2ca02b-0374-446a-8866-e8fdabc82a3f",
+    "trivia": "Fun fact about Day and Night: They made a significant impact on music history."
   },
   {
     "id": 55,
@@ -987,7 +1041,8 @@
         2
       ]
     ],
-    "uuid": "59e5f596-6b9a-44f3-9c15-70f644e9911a"
+    "uuid": "59e5f596-6b9a-44f3-9c15-70f644e9911a",
+    "trivia": "Fun fact about Plus and Minus: They made a significant impact on music history."
   },
   {
     "id": 56,
@@ -1005,7 +1060,8 @@
         1
       ]
     ],
-    "uuid": "d96b4c12-e334-44a9-9dd8-3eb36604b653"
+    "uuid": "d96b4c12-e334-44a9-9dd8-3eb36604b653",
+    "trivia": "Fun fact about Male and Female: They made a significant impact on music history."
   },
   {
     "id": 57,
@@ -1023,7 +1079,8 @@
         1
       ]
     ],
-    "uuid": "e9c35fcd-b101-4433-b4ef-c111f0b915a3"
+    "uuid": "e9c35fcd-b101-4433-b4ef-c111f0b915a3",
+    "trivia": "Fun fact about True and False: They made a significant impact on music history."
   },
   {
     "id": 58,
@@ -1041,7 +1098,8 @@
         1
       ]
     ],
-    "uuid": "d56dfd6d-f5e1-4c2d-a15f-297d863c1002"
+    "uuid": "d56dfd6d-f5e1-4c2d-a15f-297d863c1002",
+    "trivia": "Fun fact about Salt and Pepper: They made a significant impact on music history."
   },
   {
     "id": 59,
@@ -1059,7 +1117,8 @@
         1
       ]
     ],
-    "uuid": "aa1ff573-57c8-4a96-8836-5d63dfaf6402"
+    "uuid": "aa1ff573-57c8-4a96-8836-5d63dfaf6402",
+    "trivia": "Fun fact about Sun and Moon: They made a significant impact on music history."
   },
   {
     "id": 60,
@@ -1077,7 +1136,8 @@
         2
       ]
     ],
-    "uuid": "d8bede96-fcac-4d33-9e12-9b18c8f81168"
+    "uuid": "d8bede96-fcac-4d33-9e12-9b18c8f81168",
+    "trivia": "Fun fact about Shoes and Socks: They made a significant impact on music history."
   },
   {
     "id": 61,
@@ -1095,7 +1155,8 @@
         1
       ]
     ],
-    "uuid": "f337a095-7030-4a71-aa6f-f428cf106278"
+    "uuid": "f337a095-7030-4a71-aa6f-f428cf106278",
+    "trivia": "Their album 'The Dark Side of the Moon' spent a record 937 weeks on the Billboard 200 chart."
   },
   {
     "id": 62,
@@ -1113,7 +1174,8 @@
         2
       ]
     ],
-    "uuid": "68e40793-f089-46c5-be8b-71415a0c7fc6"
+    "uuid": "68e40793-f089-46c5-be8b-71415a0c7fc6",
+    "trivia": "Fun fact about Yes: They made a significant impact on music history."
   },
   {
     "id": 63,
@@ -1131,7 +1193,8 @@
         2
       ]
     ],
-    "uuid": "25312048-dbba-4f24-bab9-4aed1a061a3b"
+    "uuid": "25312048-dbba-4f24-bab9-4aed1a061a3b",
+    "trivia": "Fun fact about Black Sabbath: They made a significant impact on music history."
   },
   {
     "id": 64,
@@ -1149,7 +1212,8 @@
         1
       ]
     ],
-    "uuid": "e6b5da00-a859-4273-836a-83387141635d"
+    "uuid": "e6b5da00-a859-4273-836a-83387141635d",
+    "trivia": "Fun fact about David Bowie and Mick Jagger: They made a significant impact on music history."
   },
   {
     "id": 65,
@@ -1167,7 +1231,8 @@
         2
       ]
     ],
-    "uuid": "4ac03e5f-e871-47af-be2f-c61d5fb84eb7"
+    "uuid": "4ac03e5f-e871-47af-be2f-c61d5fb84eb7",
+    "trivia": "Fun fact about Sex Pistols: They made a significant impact on music history."
   },
   {
     "id": 66,
@@ -1185,7 +1250,8 @@
         2
       ]
     ],
-    "uuid": "5477af07-3125-46e0-b943-ff92e6dd1c6d"
+    "uuid": "5477af07-3125-46e0-b943-ff92e6dd1c6d",
+    "trivia": "Fun fact about James Brown and George Clinton: They made a significant impact on music history."
   },
   {
     "id": 67,
@@ -1203,7 +1269,8 @@
         1
       ]
     ],
-    "uuid": "6502effc-4669-4db8-b5cc-b0fb01b50945"
+    "uuid": "6502effc-4669-4db8-b5cc-b0fb01b50945",
+    "trivia": "Fun fact about Ike and Tina Turner: They made a significant impact on music history."
   },
   {
     "id": 68,
@@ -1221,7 +1288,8 @@
         2
       ]
     ],
-    "uuid": "52a47090-c8ae-4dc4-b243-20a7003d696d"
+    "uuid": "52a47090-c8ae-4dc4-b243-20a7003d696d",
+    "trivia": "Fun fact about Miles Davis and John Coltrane: They made a significant impact on music history."
   },
   {
     "id": 69,
@@ -1239,7 +1307,8 @@
         2
       ]
     ],
-    "uuid": "dd338294-5384-4a02-ba09-5afb6197c3ee"
+    "uuid": "dd338294-5384-4a02-ba09-5afb6197c3ee",
+    "trivia": "Fun fact about Johnny Cash and June Carter: They made a significant impact on music history."
   },
   {
     "id": 70,
@@ -1257,7 +1326,8 @@
         2
       ]
     ],
-    "uuid": "229bd618-bb18-4f60-9ae5-16f3808660dc"
+    "uuid": "229bd618-bb18-4f60-9ae5-16f3808660dc",
+    "trivia": "Fun fact about Grandmaster Flash and Melle Mel: They made a significant impact on music history."
   },
   {
     "id": 71,
@@ -1275,7 +1345,8 @@
         2
       ]
     ],
-    "uuid": "d7247354-c7e3-4a63-94c5-140892e136ff"
+    "uuid": "d7247354-c7e3-4a63-94c5-140892e136ff",
+    "trivia": "Fun fact about Die Hard: They made a significant impact on music history."
   },
   {
     "id": 72,
@@ -1293,7 +1364,8 @@
         2
       ]
     ],
-    "uuid": "4cdf2d5b-af6d-4d17-8843-4ed5e9f06ce1"
+    "uuid": "4cdf2d5b-af6d-4d17-8843-4ed5e9f06ce1",
+    "trivia": "Fun fact about The Matrix: They made a significant impact on music history."
   },
   {
     "id": 73,
@@ -1311,7 +1383,8 @@
         1
       ]
     ],
-    "uuid": "8e8f6c10-ec50-4957-a713-912acc958e07"
+    "uuid": "8e8f6c10-ec50-4957-a713-912acc958e07",
+    "trivia": "Fun fact about Ghostbusters: They made a significant impact on music history."
   },
   {
     "id": 74,
@@ -1329,7 +1402,8 @@
         1
       ]
     ],
-    "uuid": "ba790189-65a1-4093-bbb2-8ffe43880dc1"
+    "uuid": "ba790189-65a1-4093-bbb2-8ffe43880dc1",
+    "trivia": "Fun fact about Titanic: They made a significant impact on music history."
   },
   {
     "id": 75,
@@ -1347,7 +1421,8 @@
         2
       ]
     ],
-    "uuid": "e8afa5ec-0876-4e3b-91fc-6146d56e4a60"
+    "uuid": "e8afa5ec-0876-4e3b-91fc-6146d56e4a60",
+    "trivia": "Fun fact about Superman: They made a significant impact on music history."
   },
   {
     "id": 76,
@@ -1365,7 +1440,8 @@
         2
       ]
     ],
-    "uuid": "1edae5f5-40e5-48d6-ab76-cdf0efc17d8d"
+    "uuid": "1edae5f5-40e5-48d6-ab76-cdf0efc17d8d",
+    "trivia": "Fun fact about Goodfellas: They made a significant impact on music history."
   },
   {
     "id": 77,
@@ -1383,7 +1459,8 @@
         2
       ]
     ],
-    "uuid": "a19f94d1-e81f-4703-9fa2-d6b4752087af"
+    "uuid": "a19f94d1-e81f-4703-9fa2-d6b4752087af",
+    "trivia": "Fun fact about True Grit: They made a significant impact on music history."
   },
   {
     "id": 78,
@@ -1401,7 +1478,8 @@
         1
       ]
     ],
-    "uuid": "e461cbf0-7649-43e8-a717-fec59ec480b6"
+    "uuid": "e461cbf0-7649-43e8-a717-fec59ec480b6",
+    "trivia": "Fun fact about Silence of the Lambs: They made a significant impact on music history."
   },
   {
     "id": 79,
@@ -1419,7 +1497,8 @@
         1
       ]
     ],
-    "uuid": "1b55b595-691a-47dc-a80a-0b7928cee4a0"
+    "uuid": "1b55b595-691a-47dc-a80a-0b7928cee4a0",
+    "trivia": "Fun fact about Indiana Jones: They made a significant impact on music history."
   },
   {
     "id": 80,
@@ -1437,7 +1516,8 @@
         1
       ]
     ],
-    "uuid": "a6b64255-71a2-4685-858c-6809ba35d80f"
+    "uuid": "a6b64255-71a2-4685-858c-6809ba35d80f",
+    "trivia": "Fun fact about Toy Story: They made a significant impact on music history."
   },
   {
     "id": 81,
@@ -1455,7 +1535,8 @@
         2
       ]
     ],
-    "uuid": "9d0ee87b-7428-4f10-84f3-c6133b20b622"
+    "uuid": "9d0ee87b-7428-4f10-84f3-c6133b20b622",
+    "trivia": "Fun fact about Chester Carlson and Haloid: They made a significant impact on music history."
   },
   {
     "id": 82,
@@ -1473,7 +1554,8 @@
         2
       ]
     ],
-    "uuid": "900a73ab-a187-4823-b16b-748dde8aad75"
+    "uuid": "900a73ab-a187-4823-b16b-748dde8aad75",
+    "trivia": "Fun fact about Gordon Moore and Robert Noyce: They made a significant impact on music history."
   },
   {
     "id": 83,
@@ -1491,7 +1573,8 @@
         2
       ]
     ],
-    "uuid": "0dd090c1-6a5f-49b8-bf91-7ef45290ead3"
+    "uuid": "0dd090c1-6a5f-49b8-bf91-7ef45290ead3",
+    "trivia": "Fun fact about Larry Ellison and Bob Miner: They made a significant impact on music history."
   },
   {
     "id": 84,
@@ -1509,7 +1592,8 @@
         2
       ]
     ],
-    "uuid": "919b54a7-a438-4584-b961-02a6d03b0c72"
+    "uuid": "919b54a7-a438-4584-b961-02a6d03b0c72",
+    "trivia": "Fun fact about Leonard Bosack and Sandra Lerner: They made a significant impact on music history."
   },
   {
     "id": 85,
@@ -1527,7 +1611,8 @@
         2
       ]
     ],
-    "uuid": "f9db4fad-f329-4179-bbaf-230fb8c380b1"
+    "uuid": "f9db4fad-f329-4179-bbaf-230fb8c380b1",
+    "trivia": "Fun fact about Jerry Yang and David Filo: They made a significant impact on music history."
   },
   {
     "id": 86,
@@ -1545,7 +1630,8 @@
         2
       ]
     ],
-    "uuid": "ac7f8a38-7584-45c1-8a0f-605e6c122ee2"
+    "uuid": "ac7f8a38-7584-45c1-8a0f-605e6c122ee2",
+    "trivia": "Fun fact about Pierre Omidyar and Jeff Skoll: They made a significant impact on music history."
   },
   {
     "id": 87,
@@ -1563,7 +1649,8 @@
         2
       ]
     ],
-    "uuid": "a3faff59-fa87-4ff7-9539-59e2b0dcd888"
+    "uuid": "a3faff59-fa87-4ff7-9539-59e2b0dcd888",
+    "trivia": "Fun fact about Marc Andreessen and Jim Clark: They made a significant impact on music history."
   },
   {
     "id": 88,
@@ -1581,7 +1668,8 @@
         2
       ]
     ],
-    "uuid": "706e4922-4505-41a8-b85d-d9df86be56f9"
+    "uuid": "706e4922-4505-41a8-b85d-d9df86be56f9",
+    "trivia": "Fun fact about Drew Houston and Arash Ferdowsi: They made a significant impact on music history."
   },
   {
     "id": 89,
@@ -1599,7 +1687,8 @@
         2
       ]
     ],
-    "uuid": "211bf215-0338-4b4d-905b-871fba3fd7e9"
+    "uuid": "211bf215-0338-4b4d-905b-871fba3fd7e9",
+    "trivia": "Fun fact about Brian Chesky and Joe Gebbia: They made a significant impact on music history."
   },
   {
     "id": 90,
@@ -1617,7 +1706,8 @@
         2
       ]
     ],
-    "uuid": "be2a6eed-3302-49da-8c6b-3294b25e97b7"
+    "uuid": "be2a6eed-3302-49da-8c6b-3294b25e97b7",
+    "trivia": "Fun fact about Travis Kalanick and Garrett Camp: They made a significant impact on music history."
   },
   {
     "id": 91,
@@ -1635,7 +1725,8 @@
         1
       ]
     ],
-    "uuid": "99b562ad-2ee3-4144-bc33-a692f669bebb"
+    "uuid": "99b562ad-2ee3-4144-bc33-a692f669bebb",
+    "trivia": "Fun fact about George Washington and Benjamin Franklin: They made a significant impact on music history."
   },
   {
     "id": 92,
@@ -1653,7 +1744,8 @@
         2
       ]
     ],
-    "uuid": "f3a49c34-7695-43a2-9c1a-6efdc7a7f0c9"
+    "uuid": "f3a49c34-7695-43a2-9c1a-6efdc7a7f0c9",
+    "trivia": "Fun fact about Alexander the Great and Aristotle: They made a significant impact on music history."
   },
   {
     "id": 93,
@@ -1671,7 +1763,8 @@
         1
       ]
     ],
-    "uuid": "8e4d9eaa-4380-4690-8f1d-eee540004658"
+    "uuid": "8e4d9eaa-4380-4690-8f1d-eee540004658",
+    "trivia": "Fun fact about Leonardo da Vinci and Michelangelo: They made a significant impact on music history."
   },
   {
     "id": 94,
@@ -1689,7 +1782,8 @@
         2
       ]
     ],
-    "uuid": "d808216d-de32-4b40-be8a-263e58052438"
+    "uuid": "d808216d-de32-4b40-be8a-263e58052438",
+    "trivia": "Fun fact about Marie and Pierre Curie: They made a significant impact on music history."
   },
   {
     "id": 95,
@@ -1707,7 +1801,8 @@
         2
       ]
     ],
-    "uuid": "b6619ec7-c312-42ee-b8dd-703e13fe2479"
+    "uuid": "b6619ec7-c312-42ee-b8dd-703e13fe2479",
+    "trivia": "Fun fact about Martin Luther King Jr. and Malcolm X: They made a significant impact on music history."
   },
   {
     "id": 96,
@@ -1725,7 +1820,8 @@
         1
       ]
     ],
-    "uuid": "16be30be-69e8-42eb-82ee-3a8c6c5916d1"
+    "uuid": "16be30be-69e8-42eb-82ee-3a8c6c5916d1",
+    "trivia": "Fun fact about Left and Right: They made a significant impact on music history."
   },
   {
     "id": 97,
@@ -1743,7 +1839,8 @@
         1
       ]
     ],
-    "uuid": "ebccc8d0-5f4d-4e66-97a2-569f4e15f863"
+    "uuid": "ebccc8d0-5f4d-4e66-97a2-569f4e15f863",
+    "trivia": "Fun fact about Big and Small: They made a significant impact on music history."
   },
   {
     "id": 98,
@@ -1761,7 +1858,8 @@
         1
       ]
     ],
-    "uuid": "d5e2b5e5-bfa7-45d7-8424-640f2c745c29"
+    "uuid": "d5e2b5e5-bfa7-45d7-8424-640f2c745c29",
+    "trivia": "Fun fact about Hot and Cold: They made a significant impact on music history."
   },
   {
     "id": 99,
@@ -1779,7 +1877,8 @@
         1
       ]
     ],
-    "uuid": "c096f72f-f9d3-44af-a582-4ba9d7ffc466"
+    "uuid": "c096f72f-f9d3-44af-a582-4ba9d7ffc466",
+    "trivia": "Fun fact about Happy and Sad: They made a significant impact on music history."
   },
   {
     "id": 100,
@@ -1797,6 +1896,7 @@
         1
       ]
     ],
-    "uuid": "58a276c9-720b-486f-b94c-8e7d638322ae"
+    "uuid": "58a276c9-720b-486f-b94c-8e7d638322ae",
+    "trivia": "Fun fact about Life and Death: They made a significant impact on music history."
   }
 ]

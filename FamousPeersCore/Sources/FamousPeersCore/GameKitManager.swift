@@ -111,3 +111,4 @@ public class GameKitManager: NSObject, GKMatchDelegate, GKMatchmakerViewControll
         os_log("[GameKitManager] Matchmaker error: %{public}@", log: OSLog.default, type: .error, error.localizedDescription)
         viewController.dismiss(animated: true)
     }
+}

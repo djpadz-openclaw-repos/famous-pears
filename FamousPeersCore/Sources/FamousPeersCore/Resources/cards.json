@@ -760,87 +760,11 @@
     "trivia": null
   },
   {
-    "id": 72,
-    "category": "movies",
-    "difficulty": 3,
-    "hint": "Sci-fi action",
-    "duoName": "The Matrix",
-    "members": [
-      [
-        "Keanu Reeves",
-        1
-      ],
-      [
-        "Laurence Fishburne",
-        2
-      ]
-    ],
-    "uuid": "4cdf2d5b-af6d-4d17-8843-4ed5e9f06ce1",
-    "trivia": null
-  },
-  {
-    "id": 73,
-    "category": "movies",
-    "difficulty": 2,
-    "hint": "Comedy duo",
-    "duoName": "Ghostbusters",
-    "members": [
-      [
-        "Bill Murray",
-        1
-      ],
-      [
-        "Dan Aykroyd",
-        1
-      ]
-    ],
-    "uuid": "8e8f6c10-ec50-4957-a713-912acc958e07",
-    "trivia": null
-  },
-  {
-    "id": 74,
-    "category": "movies",
-    "difficulty": 3,
-    "hint": "Romantic drama",
-    "duoName": "Titanic",
-    "members": [
-      [
-        "Leonardo DiCaprio",
-        1
-      ],
-      [
-        "Kate Winslet",
-        1
-      ]
-    ],
-    "uuid": "ba790189-65a1-4093-bbb2-8ffe43880dc1",
-    "trivia": null
-  },
-  {
-    "id": 76,
-    "category": "movies",
-    "difficulty": 3,
-    "hint": "Crime drama",
-    "duoName": "Goodfellas",
-    "members": [
-      [
-        "Robert De Niro",
-        1
-      ],
-      [
-        "Joe Pesci",
-        2
-      ]
-    ],
-    "uuid": "1edae5f5-40e5-48d6-ab76-cdf0efc17d8d",
-    "trivia": null
-  },
-  {
     "id": 77,
     "category": "movies",
     "difficulty": 2,
     "hint": "Western duo",
-    "duoName": "True Grit",
+    "duoName": "Actors who played Rooster Cogburn",
     "members": [
       [
         "John Wayne",
@@ -848,7 +772,7 @@
       ],
       [
         "Jeff Bridges",
-        2
+        1
       ]
     ],
     "uuid": "a19f94d1-e81f-4703-9fa2-d6b4752087af",
@@ -871,25 +795,6 @@
       ]
     ],
     "uuid": "e461cbf0-7649-43e8-a717-fec59ec480b6",
-    "trivia": null
-  },
-  {
-    "id": 79,
-    "category": "movies",
-    "difficulty": 2,
-    "hint": "Adventure duo",
-    "duoName": "Indiana Jones",
-    "members": [
-      [
-        "Harrison Ford",
-        1
-      ],
-      [
-        "Sean Connery",
-        1
-      ]
-    ],
-    "uuid": "1b55b595-691a-47dc-a80a-0b7928cee4a0",
     "trivia": null
   },
   {

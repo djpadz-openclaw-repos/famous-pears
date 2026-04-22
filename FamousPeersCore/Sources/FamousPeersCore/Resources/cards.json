@@ -95,25 +95,6 @@
     "trivia": null
   },
   {
-    "id": 14,
-    "category": "music",
-    "difficulty": 2,
-    "hint": "Motown legends",
-    "duoName": "Marvin Gaye & Tammi Terrell",
-    "members": [
-      [
-        "Marvin Gaye",
-        1
-      ],
-      [
-        "Tammi Terrell",
-        2
-      ]
-    ],
-    "uuid": "df996c0e-8ce8-4e78-97d9-0f78b837c5cf",
-    "trivia": null
-  },
-  {
     "id": 16,
     "category": "movies",
     "difficulty": 2,

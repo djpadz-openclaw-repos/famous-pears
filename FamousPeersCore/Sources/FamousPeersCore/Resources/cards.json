@@ -722,25 +722,6 @@
     "trivia": "Fun fact about Henry VIII and Anne Boleyn: They made a significant impact on music history."
   },
   {
-    "id": 48,
-    "category": "history",
-    "difficulty": 3,
-    "hint": "Ancient lovers",
-    "duoName": "Antony and Cleopatra",
-    "members": [
-      [
-        "Mark Antony",
-        2
-      ],
-      [
-        "Cleopatra",
-        1
-      ]
-    ],
-    "uuid": "6ba2fa3b-026c-42c5-b61c-2ebd4dc1ed77",
-    "trivia": "Fun fact about Antony and Cleopatra: They made a significant impact on music history."
-  },
-  {
     "id": 49,
     "category": "history",
     "difficulty": 2,
@@ -891,25 +872,6 @@
     ],
     "uuid": "d96b4c12-e334-44a9-9dd8-3eb36604b653",
     "trivia": "Fun fact about Male and Female: They made a significant impact on music history."
-  },
-  {
-    "id": 57,
-    "category": "concepts",
-    "difficulty": 2,
-    "hint": "Logical states",
-    "duoName": "True and False",
-    "members": [
-      [
-        "True",
-        1
-      ],
-      [
-        "False",
-        1
-      ]
-    ],
-    "uuid": "e9c35fcd-b101-4433-b4ef-c111f0b915a3",
-    "trivia": "Fun fact about True and False: They made a significant impact on music history."
   },
   {
     "id": 58,

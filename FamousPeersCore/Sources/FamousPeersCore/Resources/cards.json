@@ -38,63 +38,6 @@
     "trivia": "Their album 'Bridge Over Troubled Water' won the Grammy Award for Album of the Year in 1971."
   },
   {
-    "id": 5,
-    "category": "music",
-    "difficulty": 3,
-    "hint": "Punk rock pioneers",
-    "duoName": "The Clash",
-    "members": [
-      [
-        "Joe Strummer",
-        2
-      ],
-      [
-        "Mick Jones",
-        2
-      ]
-    ],
-    "uuid": "95c9f27b-711c-4bfd-b13c-db52a11de202",
-    "trivia": "They were known for their politically charged lyrics and pioneering punk rock sound."
-  },
-  {
-    "id": 7,
-    "category": "music",
-    "difficulty": 3,
-    "hint": "Synth-pop duo",
-    "duoName": "Depeche Mode",
-    "members": [
-      [
-        "Dave Gahan",
-        1
-      ],
-      [
-        "Martin Gore",
-        2
-      ]
-    ],
-    "uuid": "39036f79-93b6-4e0b-8cb9-d4b76ebb5218",
-    "trivia": "Fun fact about Depeche Mode: They made a significant impact on music history."
-  },
-  {
-    "id": 8,
-    "category": "music",
-    "difficulty": 2,
-    "hint": "Reggae legends",
-    "duoName": "Bob Marley & The Wailers",
-    "members": [
-      [
-        "Bob Marley",
-        1
-      ],
-      [
-        "Peter Tosh",
-        2
-      ]
-    ],
-    "uuid": "133cb17f-8cd9-4fb3-b410-03c8f1658150",
-    "trivia": "Fun fact about Bob Marley & The Wailers: They made a significant impact on music history."
-  },
-  {
     "id": 9,
     "category": "music",
     "difficulty": 3,
@@ -131,25 +74,6 @@
     ],
     "uuid": "bff817b8-2534-457b-823f-46e0133b90ba",
     "trivia": "Fun fact about The Everly Brothers: They made a significant impact on music history."
-  },
-  {
-    "id": 11,
-    "category": "music",
-    "difficulty": 3,
-    "hint": "Electronic pioneers",
-    "duoName": "Kraftwerk",
-    "members": [
-      [
-        "Ralf H\u00fctter",
-        2
-      ],
-      [
-        "Florian Schneider",
-        2
-      ]
-    ],
-    "uuid": "05b0b747-b765-4bf3-b9cd-0f113e752d0b",
-    "trivia": "Fun fact about Kraftwerk: They made a significant impact on music history."
   },
   {
     "id": 12,

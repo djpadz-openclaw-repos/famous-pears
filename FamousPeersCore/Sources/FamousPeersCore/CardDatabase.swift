@@ -1,4 +1,5 @@
 import Foundation
+import os.log
 
 public class CardDatabase {
     private var allCards: [Duo] = []
@@ -9,31 +10,30 @@ public class CardDatabase {
     }
     
     private func loadCards() {
-        print("[CardDatabase] Starting loadCards()")
-        print("[CardDatabase] Bundle.module: \(Bundle.module)")
+        os_log("[CardDatabase] Starting loadCards()", log: OSLog.default, type: .debug)
         
         guard let url = Bundle.module.url(forResource: "cards", withExtension: "json") else {
-            print("[CardDatabase] ERROR: cards.json not found at root")
+            os_log("[CardDatabase] ERROR: cards.json not found at root", log: OSLog.default, type: .error)
             return
         }
         
-        print("[CardDatabase] Found cards.json at: \(url)")
+        os_log("[CardDatabase] Found cards.json at: %{public}@", log: OSLog.default, type: .debug, url.absoluteString)
         loadCardsFromURL(url)
     }
     
     private func loadCardsFromURL(_ url: URL) {
         do {
             let data = try Data(contentsOf: url)
-            print("[CardDatabase] Loaded \(data.count) bytes from cards.json")
+            os_log("[CardDatabase] Loaded %d bytes from cards.json", log: OSLog.default, type: .debug, data.count)
             
             allCards = try JSONDecoder().decode([Duo].self, from: data)
-            print("[CardDatabase] Successfully decoded \(allCards.count) cards")
+            os_log("[CardDatabase] Successfully decoded %d cards", log: OSLog.default, type: .debug, allCards.count)
             
             if allCards.isEmpty {
-                print("[CardDatabase] WARNING: allCards is empty after decoding")
+                os_log("[CardDatabase] WARNING: allCards is empty after decoding", log: OSLog.default, type: .warning)
             }
         } catch {
-            print("[CardDatabase] ERROR loading cards: \(error)")
+            os_log("[CardDatabase] ERROR loading cards: %{public}@", log: OSLog.default, type: .error, error.localizedDescription)
         }
     }
     

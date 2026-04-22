@@ -9,26 +9,31 @@ public class CardDatabase {
     }
     
     private func loadCards() {
-        guard let url = Bundle.module.url(forResource: "cards", withExtension: "json", subdirectory: "Resources") else {
-            print("Error: cards.json not found in Resources subdirectory")
-            // Try alternative path
-            guard let altUrl = Bundle.module.url(forResource: "cards", withExtension: "json") else {
-                print("Error: cards.json not found at root")
-                return
-            }
-            loadCardsFromURL(altUrl)
+        print("[CardDatabase] Starting loadCards()")
+        print("[CardDatabase] Bundle.module: \(Bundle.module)")
+        
+        guard let url = Bundle.module.url(forResource: "cards", withExtension: "json") else {
+            print("[CardDatabase] ERROR: cards.json not found at root")
             return
         }
+        
+        print("[CardDatabase] Found cards.json at: \(url)")
         loadCardsFromURL(url)
     }
     
     private func loadCardsFromURL(_ url: URL) {
         do {
             let data = try Data(contentsOf: url)
+            print("[CardDatabase] Loaded \(data.count) bytes from cards.json")
+            
             allCards = try JSONDecoder().decode([Duo].self, from: data)
-            print("Successfully loaded \(allCards.count) cards")
+            print("[CardDatabase] Successfully decoded \(allCards.count) cards")
+            
+            if allCards.isEmpty {
+                print("[CardDatabase] WARNING: allCards is empty after decoding")
+            }
         } catch {
-            print("Error loading cards: \(error)")
+            print("[CardDatabase] ERROR loading cards: \(error)")
         }
     }
     

@@ -23,19 +23,21 @@ public struct TriviaView: View {
                     .foregroundColor(.primary)
             }
             
-            VStack(spacing: 12) {
-                Image(systemName: "lightbulb.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(.yellow)
-                
-                Text(duo.trivia ?? "No trivia available for this duo.")
-                    .font(.body)
-                    .lineLimit(nil)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.secondary)
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(12)
+            if let trivia = duo.trivia, !trivia.trimmingCharacters(in: .whitespaces).isEmpty {
+                VStack(spacing: 12) {
+                    Image(systemName: "lightbulb.fill")
+                        .font(.system(size: 40))
+                        .foregroundColor(.yellow)
+                    
+                    Text(trivia)
+                        .font(.body)
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(12)
+                }
             }
             
             Spacer()

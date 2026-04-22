@@ -1,8 +1,10 @@
 import SwiftUI
 import FamousPearsCore
+import GameKit
 
 struct ContentView: View {
     @State private var gameManager: MultiplayerGameManager?
+    @State private var gameKitManager: GameKitManager?
     @State private var playerName = ""
     @State private var gameMode: GameMode = .gameKit
     @State private var showGameSetup = false
@@ -16,6 +18,12 @@ struct ContentView: View {
         NavigationStack {
             if let manager = gameManager {
                 GameFlowView(gameManager: manager)
+            } else if gameMode == .gameKit && gameKitManager != nil {
+                GameKitMatchmakingView(
+                    gameKitManager: gameKitManager!,
+                    playerName: playerName,
+                    onMatchFound: startGameWithMatch
+                )
             } else {
                 MainMenuView(
                     playerName: $playerName,
@@ -29,9 +37,95 @@ struct ContentView: View {
     private func startGame() {
         guard !playerName.isEmpty else { return }
         
-        let networkMode: NetworkCoordinator.NetworkMode = gameMode == .gameKit ? .gameKit : .multipeer(isHost: false)
+        if gameMode == .gameKit {
+            // Initialize GameKit manager and start matchmaking
+            let gkManager = GameKitManager()
+            gameKitManager = gkManager
+            
+            // Start matchmaking after a brief delay to ensure manager is set up
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                gkManager.startMatchmaking(minPlayers: 2, maxPlayers: 4)
+            }
+        } else {
+            // Multipeer mode - create game manager directly
+            let networkMode: NetworkCoordinator.NetworkMode = .multipeer(isHost: false)
+            let manager = MultiplayerGameManager(displayName: playerName, networkMode: networkMode, totalRounds: 5)
+            gameManager = manager
+        }
+    }
+    
+    private func startGameWithMatch() {
+        guard let gkManager = gameKitManager else { return }
+        
+        let networkMode: NetworkCoordinator.NetworkMode = .gameKit
         let manager = MultiplayerGameManager(displayName: playerName, networkMode: networkMode, totalRounds: 5)
         gameManager = manager
+        gameKitManager = nil
+    }
+}
+
+struct GameKitMatchmakingView: View {
+    @ObservedObject var gameKitManager: GameKitManager
+    let playerName: String
+    var onMatchFound: () -> Void
+    
+    var body: some View {
+        ZStack {
+            VStack(spacing: 24) {
+                VStack(spacing: 8) {
+                    Text("Finding Match")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    Text("Waiting for opponent...")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                
+                ProgressView()
+                    .scaleEffect(1.5)
+                
+                if let error = gameKitManager.error {
+                    VStack(spacing: 12) {
+                        Image(systemName: "exclamationmark.circle.fill")
+                            .font(.system(size: 32))
+                            .foregroundColor(.red)
+                        Text("Error")
+                            .fontWeight(.bold)
+                        Text(error)
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding()
+                    .background(Color.red.opacity(0.1))
+                    .cornerRadius(8)
+                }
+                
+                Spacer()
+            }
+            .padding()
+            
+            // Present GKMatchmakerViewController if available
+            if let matchmakerVC = gameKitManager.matchmakerViewController {
+                GameKitMatchmakerContainer(viewController: matchmakerVC)
+                    .ignoresSafeArea()
+            }
+        }
+        .onChange(of: gameKitManager.matchStarted) { oldValue, newValue in
+            if newValue {
+                onMatchFound()
+            }
+        }
+    }
+}
+
+struct GameKitMatchmakerContainer: UIViewControllerRepresentable {
+    let viewController: UIViewController
+    
+    func makeUIViewController(context: Context) -> UIViewController {
+        return viewController
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
     }
 }
 

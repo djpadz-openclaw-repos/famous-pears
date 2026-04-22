@@ -63,7 +63,9 @@ public class CardDatabase {
             let lastUsed = cardUsageTracker[card.uuid] ?? Date.distantPast
             let timeSinceUsed = now.timeIntervalSince(lastUsed)
             // Weight increases with time since last use (exponential to prefer older cards more)
-            return exp(timeSinceUsed / 3600) // Normalize by hours
+            // Cap at 100 hours to prevent exp() overflow to infinity
+            let cappedTime = min(timeSinceUsed / 3600, 100)
+            return exp(cappedTime)
         }
         
         // Weighted random selection

@@ -27,6 +27,8 @@ targets:
       SWIFT_VERSION: "5.9"
       IPHONEOS_DEPLOYMENT_TARGET: "26.0"
       INFOPLIST_FILE: FamousPeersIOS/Info.plist
+      CODE_SIGN_ENTITLEMENTS: FamousPeersIOS/FamousPeersIOS.entitlements
+      GENERATE_INFOPLIST_FILE: "YES"
     schemes:
       FamousPeersIOS:
         build:

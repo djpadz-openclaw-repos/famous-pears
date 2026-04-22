@@ -574,14 +574,14 @@
     "category": "history",
     "difficulty": 1,
     "hint": "Shakespeare lovers",
-    "duoName": "Romeo and Juliet",
+    "duoName": "Warring families in Romeo and Juliet",
     "members": [
       [
-        "Romeo",
+        "Montague",
         1
       ],
       [
-        "Juliet",
+        "Capulet",
         1
       ]
     ],

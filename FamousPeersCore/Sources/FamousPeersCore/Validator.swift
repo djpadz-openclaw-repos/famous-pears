@@ -36,6 +36,10 @@ public class Validator {
         let m = s1.count
         let n = s2.count
         
+        // Handle empty strings
+        if m == 0 { return n }
+        if n == 0 { return m }
+        
         var dp = Array(repeating: Array(repeating: 0, count: n + 1), count: m + 1)
         
         for i in 0...m {

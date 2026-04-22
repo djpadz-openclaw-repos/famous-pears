@@ -190,25 +190,6 @@
     "trivia": null
   },
   {
-    "id": 21,
-    "category": "movies",
-    "difficulty": 2,
-    "hint": "Sci-fi action duo",
-    "duoName": "The Terminator",
-    "members": [
-      [
-        "Arnold Schwarzenegger",
-        1
-      ],
-      [
-        "Linda Hamilton",
-        2
-      ]
-    ],
-    "uuid": "fad5a660-13e1-44ec-988a-fb91ba4c0845",
-    "trivia": null
-  },
-  {
     "id": 22,
     "category": "movies",
     "difficulty": 3,
@@ -1042,25 +1023,6 @@
       ]
     ],
     "uuid": "ba790189-65a1-4093-bbb2-8ffe43880dc1",
-    "trivia": null
-  },
-  {
-    "id": 75,
-    "category": "movies",
-    "difficulty": 2,
-    "hint": "Superhero film",
-    "duoName": "Superman",
-    "members": [
-      [
-        "Christopher Reeve",
-        1
-      ],
-      [
-        "Gene Hackman",
-        2
-      ]
-    ],
-    "uuid": "e8afa5ec-0876-4e3b-91fc-6146d56e4a60",
     "trivia": null
   },
   {

@@ -5,10 +5,14 @@ import Foundation
 public struct Duo: Codable, Identifiable {
     public let id: Int
     public let category: String
-    public let member1: String
-    public let member2: String
+    public let duoName: String
+    public let members: [[String]] // Array of [name, score] pairs
     public let difficulty: Int
     public let hint: String
+    
+    // Helper properties for backward compatibility
+    public var member1: String { duoName }
+    public var member2: String { members.first?.first ?? "" }
 }
 
 public struct Player: Identifiable {

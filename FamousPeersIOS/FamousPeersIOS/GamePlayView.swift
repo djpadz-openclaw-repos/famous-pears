@@ -63,19 +63,37 @@ struct GamePlayView: View {
                 
                 Spacer()
                 
-                // Clue
-                VStack(spacing: 12) {
-                    Text("The clue is:")
-                        .font(.caption)
-                        .foregroundColor(.gray)
+                // Duo Name and Clue
+                VStack(spacing: 16) {
+                    // Duo Name
+                    VStack(spacing: 8) {
+                        Text("The duo is:")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        
+                        Text(gameLogic.getCurrentDuo()?.duoName ?? "")
+                            .font(.system(size: 28, weight: .bold))
+                            .foregroundColor(.purple)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.purple.opacity(0.1))
+                            .cornerRadius(12)
+                    }
                     
-                    Text(gameLogic.getCurrentClue())
-                        .font(.system(size: 32, weight: .bold))
-                        .foregroundColor(.blue)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue.opacity(0.1))
-                        .cornerRadius(12)
+                    // Clue
+                    VStack(spacing: 8) {
+                        Text("The clue is:")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        
+                        Text(gameLogic.getCurrentClue())
+                            .font(.system(size: 24, weight: .semibold))
+                            .foregroundColor(.blue)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue.opacity(0.1))
+                            .cornerRadius(12)
+                    }
                 }
                 .padding()
                 

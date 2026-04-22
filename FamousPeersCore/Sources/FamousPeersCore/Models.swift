@@ -7,13 +7,68 @@ public struct Duo: Codable, Identifiable {
     public let uuid: String
     public let category: String
     public let duoName: String
-    public let members: [[String]] // Array of [name, score] pairs
+    public let members: [[AnyCodable]] // Array of [name, difficulty] pairs
     public let difficulty: Int
     public let hint: String
     
     // Helper properties for backward compatibility
     public var member1: String { duoName }
-    public var member2: String { members.first?.first ?? "" }
+    public var member2: String { 
+        guard let first = members.first, first.count > 0 else { return "" }
+        return first[0].value as? String ?? ""
+    }
+}
+
+// Helper type to handle mixed types in JSON
+public enum AnyCodable: Codable {
+    case string(String)
+    case int(Int)
+    case double(Double)
+    case bool(Bool)
+    case null
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if container.decodeNil() {
+            self = .null
+        } else if let bool = try? container.decode(Bool.self) {
+            self = .bool(bool)
+        } else if let int = try? container.decode(Int.self) {
+            self = .int(int)
+        } else if let double = try? container.decode(Double.self) {
+            self = .double(double)
+        } else if let string = try? container.decode(String.self) {
+            self = .string(string)
+        } else {
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode AnyCodable")
+        }
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .string(let string):
+            try container.encode(string)
+        case .int(let int):
+            try container.encode(int)
+        case .double(let double):
+            try container.encode(double)
+        case .bool(let bool):
+            try container.encode(bool)
+        case .null:
+            try container.encodeNil()
+        }
+    }
+    
+    var value: Any {
+        switch self {
+        case .string(let string): return string
+        case .int(let int): return int
+        case .double(let double): return double
+        case .bool(let bool): return bool
+        case .null: return NSNull()
+        }
+    }
 }
 
 public struct Player: Identifiable {

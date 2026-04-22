@@ -160,7 +160,7 @@ struct GamePlayView: View {
         }
         .onAppear {
             print("[GamePlayView] Clue: \(gameLogic.getCurrentClue() ?? "nil")")
-            print("[GamePlayView] Current Duo: \(gameLogic.getCurrentDuo()?.name ?? "nil")")
+            print("[GamePlayView] Current Duo: \(gameLogic.getCurrentDuo()?.duoName ?? "nil")")
             print("[GamePlayView] Computer Guesser: \(gameLogic.getCurrentGuesserIsComputer())")
             print("[GamePlayView] Show Computer Guess: \(showComputerGuess)")
             print("[GamePlayView] Computer Guess Value: \(computerGuess)")

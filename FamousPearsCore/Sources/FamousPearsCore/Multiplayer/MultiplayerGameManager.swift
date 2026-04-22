@@ -17,6 +17,7 @@ public class MultiplayerGameManager: NSObject, ObservableObject {
     private var localPlayerId: String
     private var playerScores: [String: Int] = [:]
     private var playerRoundsWon: [String: Int] = [:]
+    private var currentRoundAnswers: [String: String] = [:]
     
     public enum GamePhase {
         case waiting
@@ -124,6 +125,9 @@ public class MultiplayerGameManager: NSObject, ObservableObject {
     }
     
     private func handlePlayerAnswer(_ answer: AnswerMessage) async {
+        // Store the answer for this round
+        currentRoundAnswers[answer.playerId] = answer.answer
+        
         let isCorrect = validator.validateAnswer(answer.answer, against: gameState.currentRound.answer)
         
         if isCorrect {
@@ -186,6 +190,9 @@ public class MultiplayerGameManager: NSObject, ObservableObject {
     public func startRound() async {
         guard isGameActive else { return }
         
+        // Clear answers from previous round
+        currentRoundAnswers.removeAll()
+        
         currentRound += 1
         guard currentRound <= totalRounds else {
             await endGame()
@@ -232,13 +239,17 @@ public class MultiplayerGameManager: NSObject, ObservableObject {
     }
     
     public func endRound() async {
-        let correctPlayers = players.filter { player in
-            validator.validateAnswer(gameState.currentRound.answer, against: gameState.currentRound.answer)
-        }.map { $0.id }
-        
+        // Determine correct players based on their submitted answers
+        var correctPlayers: [String] = []
         var pointsAwarded: [String: Int] = [:]
-        for playerId in correctPlayers {
-            pointsAwarded[playerId] = gameLogic.calculatePoints(difficulty: gameState.currentRound.difficulty)
+        
+        for (playerId, answer) in currentRoundAnswers {
+            if validator.validateAnswer(answer, against: gameState.currentRound.answer) {
+                correctPlayers.append(playerId)
+                let points = gameLogic.calculatePoints(difficulty: gameState.currentRound.difficulty)
+                pointsAwarded[playerId] = points
+                playerRoundsWon[playerId, default: 0] += 1
+            }
         }
         
         let roundEndMsg = RoundEndMessage(

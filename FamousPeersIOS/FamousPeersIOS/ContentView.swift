@@ -39,6 +39,15 @@ struct ContentView: View {
                 .slideIn(from: .trailing)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
+            case .multiplayerMatchmaking:
+                MultiplayerMatchmakingView(
+                    onMatchFound: { match in
+                        handleMatchFound(match)
+                    }
+                )
+                .slideIn(from: .trailing)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
             case .playing:
                 if let game = gameLogic {
                     GamePlayView(
@@ -86,8 +95,13 @@ struct ContentView: View {
     }
     
     private func startGameVsPlayer() {
+        gameState = .multiplayerMatchmaking
+    }
+    
+    private func handleMatchFound(_ match: GKMatch) {
         let player = Player(name: playerName)
-        let game = GameLogic(players: [player], difficulty: selectedDifficulty)
+        let remotePlayer = Player(name: match.players.first?.displayName ?? "Opponent")
+        let game = GameLogic(players: [player, remotePlayer], difficulty: selectedDifficulty)
         game.startGame()
         gameLogic = game
         gameState = .playing
@@ -97,6 +111,7 @@ struct ContentView: View {
 enum GameFlowState {
     case menu
     case modeSelection
+    case multiplayerMatchmaking
     case playing
     case results
 }

@@ -180,7 +180,7 @@ struct GamePlayView: View {
             
             // Simulate thinking time
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                let possibleAnswers = ["Answer 1", "Answer 2", "Answer 3"]
+                let possibleAnswers = gameLogic.getPossibleAnswers(count: 3)
                 print("[handleComputerTurn] Possible answers: \(possibleAnswers)")
                 computerGuess = gameLogic.getComputerGuess(possibleAnswers: possibleAnswers)
                 print("[handleComputerTurn] Computer guess result: \(computerGuess)")

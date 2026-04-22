@@ -133,4 +133,23 @@ public class GameLogic: ObservableObject {
     public func getCurrentGuesserIsComputer() -> Bool {
         return isComputerPlayer(getCurrentGuesser())
     }
+    
+    public func getPossibleAnswers(count: Int = 3) -> [String] {
+        guard let currentDuo = currentDuo else { return [] }
+        
+        // Start with the correct answer
+        var answers = [currentDuo.member2]
+        
+        // Get random distractors from other duos
+        let allCards = cardDatabase.getAllCards()
+        let otherCards = allCards.filter { $0.id != currentDuo.id }
+        
+        for _ in 0..<(count - 1) {
+            if let randomCard = otherCards.randomElement() {
+                answers.append(randomCard.member2)
+            }
+        }
+        
+        return answers.shuffled()
+    }
 }

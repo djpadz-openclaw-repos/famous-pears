@@ -40,9 +40,12 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             case .multiplayerMatchmaking:
-                MultiplayerMatchmakingView(
-                    onMatchFound: { match in
-                        handleMatchFound(match)
+                VStack {
+                    Text("Multiplayer Coming Soon")
+                        .font(.headline)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
                     }
                 )
                 .slideIn(from: .trailing)

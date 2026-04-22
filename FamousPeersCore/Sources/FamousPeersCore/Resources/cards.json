@@ -741,44 +741,6 @@
     "trivia": null
   },
   {
-    "id": 51,
-    "category": "concepts",
-    "difficulty": 1,
-    "hint": "Classic sandwich",
-    "duoName": "Peanut Butter and Jelly",
-    "members": [
-      [
-        "Peanut Butter",
-        1
-      ],
-      [
-        "Jelly",
-        1
-      ]
-    ],
-    "uuid": "bc698c74-c8c1-4c70-9e08-544987b1ff6a",
-    "trivia": null
-  },
-  {
-    "id": 52,
-    "category": "concepts",
-    "difficulty": 1,
-    "hint": "Breakfast staples",
-    "duoName": "Bacon and Eggs",
-    "members": [
-      [
-        "Bacon",
-        1
-      ],
-      [
-        "Eggs",
-        1
-      ]
-    ],
-    "uuid": "32eb5dc1-2a55-4c05-98e0-3d863280f99c",
-    "trivia": null
-  },
-  {
     "id": 53,
     "category": "concepts",
     "difficulty": 2,
@@ -852,25 +814,6 @@
       ]
     ],
     "uuid": "d96b4c12-e334-44a9-9dd8-3eb36604b653",
-    "trivia": null
-  },
-  {
-    "id": 58,
-    "category": "concepts",
-    "difficulty": 1,
-    "hint": "Condiments",
-    "duoName": "Salt and Pepper",
-    "members": [
-      [
-        "Salt",
-        1
-      ],
-      [
-        "Pepper",
-        1
-      ]
-    ],
-    "uuid": "d56dfd6d-f5e1-4c2d-a15f-297d863c1002",
     "trivia": null
   },
   {
@@ -1213,25 +1156,6 @@
       ]
     ],
     "uuid": "a6b64255-71a2-4685-858c-6809ba35d80f",
-    "trivia": null
-  },
-  {
-    "id": 81,
-    "category": "tech",
-    "difficulty": 2,
-    "hint": "Xerox founders",
-    "duoName": "Chester Carlson and Haloid",
-    "members": [
-      [
-        "Chester Carlson",
-        2
-      ],
-      [
-        "Joseph Wilson",
-        2
-      ]
-    ],
-    "uuid": "9d0ee87b-7428-4f10-84f3-c6133b20b622",
     "trivia": null
   },
   {

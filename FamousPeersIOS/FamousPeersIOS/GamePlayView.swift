@@ -16,6 +16,12 @@ struct GamePlayView: View {
     
     var body: some View {
         VStack(spacing: 20) {
+            // DEBUG: Log game state
+            let _ = print("[GamePlayView] Clue: \(gameLogic.getCurrentClue() ?? \"nil\")")
+            let _ = print("[GamePlayView] Current Duo: \(gameLogic.getCurrentDuo()?.name ?? \"nil\")")
+            let _ = print("[GamePlayView] Computer Guesser: \(gameLogic.getCurrentGuesserIsComputer())")
+            let _ = print("[GamePlayView] Show Computer Guess: \(showComputerGuess)")
+            let _ = print("[GamePlayView] Computer Guess Value: \(computerGuess)")
             // Header
             HStack {
                 Text("Famous Peers")
@@ -171,11 +177,14 @@ struct GamePlayView: View {
     private func handleComputerTurn() {
         if gameLogic.getCurrentGuesserIsComputer() && !showComputerGuess {
             isProcessingComputerTurn = true
+            print("[handleComputerTurn] Starting computer turn")
             
             // Simulate thinking time
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 let possibleAnswers = ["Answer 1", "Answer 2", "Answer 3"]
+                print("[handleComputerTurn] Possible answers: \(possibleAnswers)")
                 computerGuess = gameLogic.getComputerGuess(possibleAnswers: possibleAnswers)
+                print("[handleComputerTurn] Computer guess result: \(computerGuess)")
                 showComputerGuess = true
                 isProcessingComputerTurn = false
             }

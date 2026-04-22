@@ -52,7 +52,10 @@ public class CardDatabase {
         if !excludedIds.isEmpty {
             filtered = filtered.filter { !excludedIds.contains($0.id) }
         }
-        guard !filtered.isEmpty else { return nil }
+        guard !filtered.isEmpty else {
+            os_log("[CardDatabase] WARNING: No cards available for difficulty", log: OSLog.default, type: .info)
+            return nil
+        }
         
         // Calculate weights based on how long ago each card was used
         let now = Date()
@@ -65,6 +68,15 @@ public class CardDatabase {
         
         // Weighted random selection
         let totalWeight = weights.reduce(0, +)
+        
+        // Guard against invalid range (totalWeight must be > 0)
+        guard totalWeight > 0 else {
+            os_log("[CardDatabase] WARNING: totalWeight is 0, using random selection", log: OSLog.default, type: .info)
+            let selectedCard = filtered.randomElement()!
+            cardUsageTracker[selectedCard.uuid] = now
+            return selectedCard
+        }
+        
         var randomValue = Double.random(in: 0..<totalWeight)
         
         for (index, weight) in weights.enumerated() {

@@ -19,25 +19,6 @@
     "trivia": "They were known for their perfectionism in the studio, often recording dozens of takes for a single song."
   },
   {
-    "id": 2,
-    "category": "music",
-    "difficulty": 1,
-    "hint": "Legendary rock band",
-    "duoName": "The Beatles",
-    "members": [
-      [
-        "John Lennon",
-        1
-      ],
-      [
-        "Paul McCartney",
-        1
-      ]
-    ],
-    "uuid": "0840778e-8115-43de-824f-9b89495bd0ef",
-    "trivia": "They were the first rock band to win a Grammy Award for Best New Artist in 1965."
-  },
-  {
     "id": 3,
     "category": "music",
     "difficulty": 2,
@@ -57,25 +38,6 @@
     "trivia": "Their album 'Bridge Over Troubled Water' won the Grammy Award for Album of the Year in 1971."
   },
   {
-    "id": 4,
-    "category": "music",
-    "difficulty": 2,
-    "hint": "British rock legends",
-    "duoName": "The Rolling Stones",
-    "members": [
-      [
-        "Mick Jagger",
-        1
-      ],
-      [
-        "Keith Richards",
-        1
-      ]
-    ],
-    "uuid": "e668a642-0ea2-4663-8a9c-8d430610b322",
-    "trivia": "They are the longest-touring rock band, with their first tour in 1963."
-  },
-  {
     "id": 5,
     "category": "music",
     "difficulty": 3,
@@ -93,25 +55,6 @@
     ],
     "uuid": "95c9f27b-711c-4bfd-b13c-db52a11de202",
     "trivia": "They were known for their politically charged lyrics and pioneering punk rock sound."
-  },
-  {
-    "id": 6,
-    "category": "music",
-    "difficulty": 2,
-    "hint": "Disco legends",
-    "duoName": "Bee Gees",
-    "members": [
-      [
-        "Barry Gibb",
-        1
-      ],
-      [
-        "Robin Gibb",
-        2
-      ]
-    ],
-    "uuid": "5123a0fb-b11a-462b-8978-c199e802c3fb",
-    "trivia": "They wrote and produced the iconic 'Saturday Night Fever' soundtrack."
   },
   {
     "id": 7,
@@ -228,25 +171,6 @@
     "trivia": "Fun fact about Sam & Dave: They made a significant impact on music history."
   },
   {
-    "id": 13,
-    "category": "music",
-    "difficulty": 3,
-    "hint": "New wave duo",
-    "duoName": "The Police",
-    "members": [
-      [
-        "Sting",
-        1
-      ],
-      [
-        "Andy Summers",
-        2
-      ]
-    ],
-    "uuid": "119cde39-e6c5-42a4-a8c4-f0550029ee1a",
-    "trivia": "Fun fact about The Police: They made a significant impact on music history."
-  },
-  {
     "id": 14,
     "category": "music",
     "difficulty": 2,
@@ -264,25 +188,6 @@
     ],
     "uuid": "df996c0e-8ce8-4e78-97d9-0f78b837c5cf",
     "trivia": "Fun fact about Marvin Gaye & Tammi Terrell: They made a significant impact on music history."
-  },
-  {
-    "id": 15,
-    "category": "music",
-    "difficulty": 3,
-    "hint": "Grunge pioneers",
-    "duoName": "Nirvana",
-    "members": [
-      [
-        "Kurt Cobain",
-        1
-      ],
-      [
-        "Dave Grohl",
-        2
-      ]
-    ],
-    "uuid": "00b080c7-dafb-4306-b723-de390e568e59",
-    "trivia": "Fun fact about Nirvana: They made a significant impact on music history."
   },
   {
     "id": 16,
@@ -1140,63 +1045,6 @@
     "trivia": "Fun fact about Shoes and Socks: They made a significant impact on music history."
   },
   {
-    "id": 61,
-    "category": "music",
-    "difficulty": 2,
-    "hint": "British rock duo",
-    "duoName": "Pink Floyd",
-    "members": [
-      [
-        "David Gilmour",
-        1
-      ],
-      [
-        "Roger Waters",
-        1
-      ]
-    ],
-    "uuid": "f337a095-7030-4a71-aa6f-f428cf106278",
-    "trivia": "Their album 'The Dark Side of the Moon' spent a record 937 weeks on the Billboard 200 chart."
-  },
-  {
-    "id": 62,
-    "category": "music",
-    "difficulty": 3,
-    "hint": "Prog rock legends",
-    "duoName": "Yes",
-    "members": [
-      [
-        "Jon Anderson",
-        2
-      ],
-      [
-        "Chris Squire",
-        2
-      ]
-    ],
-    "uuid": "68e40793-f089-46c5-be8b-71415a0c7fc6",
-    "trivia": "Fun fact about Yes: They made a significant impact on music history."
-  },
-  {
-    "id": 63,
-    "category": "music",
-    "difficulty": 2,
-    "hint": "Heavy metal pioneers",
-    "duoName": "Black Sabbath",
-    "members": [
-      [
-        "Ozzy Osbourne",
-        1
-      ],
-      [
-        "Tony Iommi",
-        2
-      ]
-    ],
-    "uuid": "25312048-dbba-4f24-bab9-4aed1a061a3b",
-    "trivia": "Fun fact about Black Sabbath: They made a significant impact on music history."
-  },
-  {
     "id": 64,
     "category": "music",
     "difficulty": 3,
@@ -1214,25 +1062,6 @@
     ],
     "uuid": "e6b5da00-a859-4273-836a-83387141635d",
     "trivia": "Fun fact about David Bowie and Mick Jagger: They made a significant impact on music history."
-  },
-  {
-    "id": 65,
-    "category": "music",
-    "difficulty": 2,
-    "hint": "Punk rock duo",
-    "duoName": "Sex Pistols",
-    "members": [
-      [
-        "Johnny Rotten",
-        2
-      ],
-      [
-        "Sid Vicious",
-        2
-      ]
-    ],
-    "uuid": "4ac03e5f-e871-47af-be2f-c61d5fb84eb7",
-    "trivia": "Fun fact about Sex Pistols: They made a significant impact on music history."
   },
   {
     "id": 66,

@@ -103,7 +103,7 @@ public class GameLogic: ObservableObject {
     }
     
     public func getCurrentClue() -> String {
-        return currentDuo?.member1 ?? ""
+        return currentDuo?.hint ?? ""
     }
     
     public func getCurrentDuo() -> Duo? {
